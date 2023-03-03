@@ -4,11 +4,73 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9f24fdae-1a2b-4e38-a0f4-471413627a31" name="Changes" comment="" />
+    <list default="true" id="9f24fdae-1a2b-4e38-a0f4-471413627a31" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/project/controller/ApartmentController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/project/controller/CLIController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/project/controller/CondoController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/project/controller/PrivateHouseController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/project/controller/RentalPropertyController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/project/controller/TenantController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/project/datasource/DataStore.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/project/entity/Address.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/project/entity/Apartment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/project/entity/Condo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/project/entity/Contact.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/project/entity/PrivateHouse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/project/entity/Property.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/project/entity/ProspectiveTenant.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/project/entity/Tenant.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/project/entity/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/project/interfaces/INotificationService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/project/interfaces/IProperty.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/project/interfaces/IPropertyController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/project/interfaces/IPropertyView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/project/repository/PropertiesRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/project/repository/TenantRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/project/service/BillingService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/project/service/PropertyServices.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/project/service/TenantServices.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/project/util/ControllerFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/project/util/Helper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/project/util/RentalPropertyFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/project/util/ScannerSingleton.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/project/views/ApartmentView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/project/views/CLIView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/project/views/CondoView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/project/views/PrivateHouseView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/project/views/RentalPropertyView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/project/views/TenantView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/app/project/controller/ApartmentControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/app/project/controller/TenantControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/app/project/repository/PropertiesRepositoryTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/app/project/repository/TenantRepositoryTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/app/project/service/PropertyServicesTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/app/project/service/TenantServicesTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/Main.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="package-info" />
+        <option value="Interface" />
+        <option value="Class" />
+        <option value="JUnit5 Test Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
@@ -18,19 +80,81 @@
     </option>
   </component>
   <component name="ProjectId" id="2MNfiYf1TwB9ulfYgH6SUPlC1wq" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.includeInheritedMembers": "true",
+    "last_opened_file_path": "C:/Users/ozwin/Downloads/Digital-Phonebook-master",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.app.project.controller" />
+      <recent name="com.app.project.repository" />
+      <recent name="com.app.project.service" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.APP_MVC_Phase1">
+    <configuration name="APP_MVC_Phase1" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="com.app.project.Main" />
+      <module name="APP-Project" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TenantServicesTest.tenantToStringTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="APP-Project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.app.project.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.app.project.service" />
+      <option name="MAIN_CLASS_NAME" value="com.app.project.service.TenantServicesTest" />
+      <option name="METHOD_NAME" value="tenantToStringTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.APP_MVC_Phase1" />
+      <item itemvalue="JUnit.TenantServicesTest.tenantToStringTest" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.TenantServicesTest.tenantToStringTest" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -39,7 +163,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1677613090693</updated>
+      <workItem from="1677613091912" duration="8717000" />
+      <workItem from="1677734774226" duration="37186000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
 </project>
