@@ -13,7 +13,7 @@ public class TenantServices {
 
     public TenantServices() {
         this.tenantRepository = TenantRepository.getInstance();
-        this.propertyServices=new PropertyServices();
+        this.propertyServices = new PropertyServices();
     }
 
     public List<Tenant> findMany(List<UUID> userIds) {

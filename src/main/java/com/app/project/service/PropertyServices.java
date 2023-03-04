@@ -25,14 +25,17 @@ public class PropertyServices {
     public ArrayList<Property> getAll() {
         return this.propertiesRepository.getAll();
     }
+
     public ArrayList<Property> findVacant() {
         return this.propertiesRepository.findVacant();
     }
+
     public ArrayList<Property> findRented() {
         return this.propertiesRepository.findRented();
     }
-    public void assignATenant(Tenant tenant){
-        Property property=this.propertiesRepository.findByKey(tenant.getOccupiedPropertyId());
+
+    public void assignATenant(Tenant tenant) {
+        Property property = this.propertiesRepository.findByKey(tenant.getOccupiedPropertyId());
         property.addTenantToProperty(tenant);
         this.propertiesRepository.upsert(property);
     }

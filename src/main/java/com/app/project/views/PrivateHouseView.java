@@ -1,7 +1,6 @@
 package com.app.project.views;
 
 import com.app.project.controller.PrivateHouseController;
-import com.app.project.entity.Condo;
 import com.app.project.entity.PrivateHouse;
 import com.app.project.entity.Property;
 
@@ -18,6 +17,7 @@ public class PrivateHouseView extends RentalPropertyView {
         super(scanner);
         this.scanner = scanner;
     }
+
     public void setController(PrivateHouseController controller) {
         this.controller = controller;
     }

@@ -7,8 +7,8 @@ import java.util.UUID;
 public class User {
     protected String firstName;
     protected String lastName;
-    private UUID ID;
     protected Contact contact;
+    private UUID ID;
 
     public User() {
         this.ID = Helper.generateUniqueIdentifier();

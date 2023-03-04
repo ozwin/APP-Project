@@ -7,13 +7,13 @@ import com.app.project.service.PropertyServices;
 
 import java.util.ArrayList;
 
-public  class RentalPropertyController implements IPropertyController {
+public class RentalPropertyController implements IPropertyController {
     private PropertyServices propertyServices;
     private IPropertyView view;
 
     public RentalPropertyController(IPropertyView view) {
         this.view = view;
-        this.propertyServices=new PropertyServices();
+        this.propertyServices = new PropertyServices();
     }
 
     public void add(Property property) {
@@ -23,6 +23,7 @@ public  class RentalPropertyController implements IPropertyController {
     public void addPropertyView() {
         view.add();
     }
+
     public void displayAll() {
         ArrayList<Property> properties = propertyServices.getAll();
         for (Property property : properties
@@ -32,17 +33,19 @@ public  class RentalPropertyController implements IPropertyController {
             view.displayProperty(property);
         }
     }
+
     @Override
     public void displayVacantUnits() {
-        ArrayList<Property> properties=this.propertyServices.findVacant();
+        ArrayList<Property> properties = this.propertyServices.findVacant();
         view.displayProperties(properties);
     }
 
     @Override
     public void displayRentedUnits() {
-        ArrayList<Property> properties=this.propertyServices.findRented();
+        ArrayList<Property> properties = this.propertyServices.findRented();
         view.displayProperties(properties);
     }
+
     @Override
     public void displayProperty(Property property) {
         view.displayProperty(property);

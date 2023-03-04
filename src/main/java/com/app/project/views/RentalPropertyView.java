@@ -17,6 +17,16 @@ public class RentalPropertyView implements IPropertyView {
         this.scanner = scanner;
     }
 
+    private static Address getAddress(Scanner scanner) {
+        System.out.println("Enter Street Name");
+        String streetName = scanner.nextLine();
+        System.out.println("Enter City");
+        String city = scanner.nextLine();
+        System.out.println("Enter Postal Code");
+        String postalCode = scanner.nextLine();
+        return new Address(streetName, city, postalCode);
+    }
+
     public Property generatePropertyInformation(String type) {
         try {
             Address propertyAddress = getAddress(scanner);
@@ -35,7 +45,6 @@ public class RentalPropertyView implements IPropertyView {
         }
     }
 
-
     public void displayProperty(Property property) {
         System.out.println("********************************");
         System.out.println("Apartment Details");
@@ -46,16 +55,6 @@ public class RentalPropertyView implements IPropertyView {
     @Override
     public void add() {
 
-    }
-
-    private static Address getAddress(Scanner scanner) {
-        System.out.println("Enter Street Name");
-        String streetName = scanner.nextLine();
-        System.out.println("Enter City");
-        String city = scanner.nextLine();
-        System.out.println("Enter Postal Code");
-        String postalCode = scanner.nextLine();
-        return new Address(streetName, city, postalCode);
     }
 
 }

@@ -28,8 +28,9 @@ public class Address {
     public String getPostalCode() {
         return this.postalCode;
     }
-    public String toString(){
-        return "Street Name: "+this.getStreetName()+"\nCity: "+this.getCity()+"\nPostal Code "+this.getPostalCode();
+
+    public String toString() {
+        return "Street Name: " + this.getStreetName() + "\nCity: " + this.getCity() + "\nPostal Code " + this.getPostalCode();
     }
 
 

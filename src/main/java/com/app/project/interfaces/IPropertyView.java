@@ -6,6 +6,8 @@ import java.util.ArrayList;
 
 public interface IPropertyView {
     void displayProperty(Property property);
+
     void displayProperties(ArrayList<Property> properties);
+
     void add();
 }

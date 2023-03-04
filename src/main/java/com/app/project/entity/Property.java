@@ -8,10 +8,10 @@ import java.util.List;
 import java.util.UUID;
 
 abstract public class Property implements IProperty {
-    private UUID ID;
     protected Address address;
     protected List<ProspectiveTenant> waitingList;
     protected List<UUID> tenants;
+    private UUID ID;
 
     public Property() {
         this.ID = Helper.generateUniqueIdentifier();
@@ -40,12 +40,15 @@ abstract public class Property implements IProperty {
         builder.append(address.toString());
         return builder.toString();
     }
+
     public void addTenantToProperty(Tenant tenant) {
         this.tenants.add(tenant.getUserID());
     }
-    public boolean isVacant(){
+
+    public boolean isVacant() {
         return this.tenants.isEmpty();
     }
+
     @Override
     public boolean equals(Object obj) {
         if (obj == this) {
@@ -54,8 +57,8 @@ abstract public class Property implements IProperty {
         if (obj == null || obj.getClass() != this.getClass()) {
             return false;
         }
-        Property property=(Property) obj;
-        if(property.getPropertyId().equals(this.getPropertyId()))
+        Property property = (Property) obj;
+        if (property.getPropertyId().equals(this.getPropertyId()))
             return true;
         return false;
     }

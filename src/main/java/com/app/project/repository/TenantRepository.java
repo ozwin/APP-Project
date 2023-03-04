@@ -1,6 +1,5 @@
 package com.app.project.repository;
 
-import com.app.project.entity.Property;
 import com.app.project.entity.Tenant;
 
 import java.util.ArrayList;
@@ -21,18 +20,21 @@ public class TenantRepository {
             tenantRepository = new TenantRepository();
         return tenantRepository;
     }
-    public void add(Tenant tenant){
+
+    public void add(Tenant tenant) {
         this.tenants.add(tenant);
     }
 
     public ArrayList<Tenant> getAll() {
         return this.tenants;
     }
+
     public Tenant findByKey(UUID userID) {
         return this.tenants.stream().filter(t -> t.getUserID().equals(userID)).findFirst().orElse(null);
     }
-    public List<Tenant> findMany(List<UUID> userIDs){
-       return this.tenants.stream().filter(t->userIDs.contains(t.getUserID())).collect(Collectors.toCollection(ArrayList::new));
+
+    public List<Tenant> findMany(List<UUID> userIDs) {
+        return this.tenants.stream().filter(t -> userIDs.contains(t.getUserID())).collect(Collectors.toCollection(ArrayList::new));
     }
 
 }
