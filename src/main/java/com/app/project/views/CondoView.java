@@ -6,7 +6,7 @@ import com.app.project.entity.Property;
 
 import java.util.Scanner;
 
-public class CondoView extends RentalPropertyView {
+public class CondoView extends PropertyView {
     private Condo model;
     private CondoController controller;
     private Scanner scanner;

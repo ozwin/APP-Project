@@ -2,6 +2,7 @@ package com.app.project.service;
 
 import com.app.project.entity.Property;
 import com.app.project.entity.Tenant;
+import com.app.project.interfaces.IProperty;
 import com.app.project.repository.PropertiesRepository;
 
 import java.util.ArrayList;
@@ -14,29 +15,29 @@ public class PropertyServices {
         this.propertiesRepository = PropertiesRepository.getInstance();
     }
 
-    public void add(Property property) {
+    public void add(IProperty property) {
         this.propertiesRepository.insert(property);
     }
 
-    public Property getByKey(UUID key) {
+    public IProperty getByKey(UUID key) {
         return this.propertiesRepository.findByKey(key);
     }
 
-    public ArrayList<Property> getAll() {
+    public ArrayList<IProperty> getAll() {
         return this.propertiesRepository.getAll();
     }
 
-    public ArrayList<Property> findVacant() {
+    public ArrayList<IProperty> findVacant() {
         return this.propertiesRepository.findVacant();
     }
 
-    public ArrayList<Property> findRented() {
+    public ArrayList<IProperty> findRented() {
         return this.propertiesRepository.findRented();
     }
 
     public void assignATenant(Tenant tenant) {
-        Property property = this.propertiesRepository.findByKey(tenant.getOccupiedPropertyId());
-        property.addTenantToProperty(tenant);
+            IProperty property = this.propertiesRepository.findByKey(tenant.getOccupiedPropertyId());
+            property.addTenantToProperty(tenant);
         this.propertiesRepository.upsert(property);
     }
 

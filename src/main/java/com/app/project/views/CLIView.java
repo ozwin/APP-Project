@@ -8,7 +8,8 @@ import com.app.project.util.ScannerSingleton;
 import java.util.Scanner;
 
 public class CLIView {
-    private IPropertyController controller = ControllerFactory.getController("");
+    private IPropertyController controller= ControllerFactory.getController("");
+
     private final TenantController tenantController = new TenantController(new TenantView(ScannerSingleton.getInstance().scanner));
 
     public void run() {

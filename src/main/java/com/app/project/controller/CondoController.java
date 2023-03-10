@@ -3,7 +3,7 @@ package com.app.project.controller;
 import com.app.project.entity.Condo;
 import com.app.project.views.CondoView;
 
-public class CondoController extends RentalPropertyController {
+public class CondoController extends PropertyController {
     CondoView view;
 
     public CondoController(CondoView view) {

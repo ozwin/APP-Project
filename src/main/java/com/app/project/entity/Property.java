@@ -3,20 +3,20 @@ package com.app.project.entity;
 import com.app.project.interfaces.IProperty;
 import com.app.project.util.Helper;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.UUID;
+import java.util.*;
 
-abstract public class Property implements IProperty {
+abstract public class Property extends Observable implements IProperty {
     protected Address address;
     protected List<ProspectiveTenant> waitingList;
     protected List<UUID> tenants;
     private UUID ID;
+    protected List<Observer> observers;
 
     public Property() {
         this.ID = Helper.generateUniqueIdentifier();
         this.waitingList = new ArrayList<ProspectiveTenant>();
         this.tenants = new ArrayList<UUID>();
+        this.observers = new ArrayList<>();
     }
 
     public Property(Address address) {
@@ -24,6 +24,7 @@ abstract public class Property implements IProperty {
         this.address = address;
         this.waitingList = new ArrayList<ProspectiveTenant>();
         this.tenants = new ArrayList<UUID>();
+        this.observers = new ArrayList<>();
     }
 
     public UUID getPropertyId() {
@@ -61,6 +62,20 @@ abstract public class Property implements IProperty {
         if (property.getPropertyId().equals(this.getPropertyId()))
             return true;
         return false;
+    }
+    public void addObserver(Observer observer) {
+        observers.add(observer);
+    }
+
+    public void removeObserver(Observer observer) {
+        observers.remove(observer);
+    }
+
+    @Override
+    public void notifyObservers() {
+        for (Observer observer : observers) {
+            observer.update(this, null);
+        }
     }
 
 }

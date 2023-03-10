@@ -1,19 +1,21 @@
 package com.app.project.views;
 
-import com.app.project.controller.RentalPropertyController;
 import com.app.project.entity.Address;
 import com.app.project.entity.Property;
+import com.app.project.interfaces.IProperty;
+import com.app.project.interfaces.IPropertyController;
 import com.app.project.interfaces.IPropertyView;
 import com.app.project.util.RentalPropertyFactory;
 
 import java.util.ArrayList;
+import java.util.Observable;
+import java.util.Observer;
 import java.util.Scanner;
 
-public class RentalPropertyView implements IPropertyView {
-    private RentalPropertyController controller;
+public class PropertyView implements IPropertyView, Observer {
+    private IPropertyController controller;
     private Scanner scanner;
-
-    public RentalPropertyView(Scanner scanner) {
+    public PropertyView(Scanner scanner) {
         this.scanner = scanner;
     }
 
@@ -26,7 +28,6 @@ public class RentalPropertyView implements IPropertyView {
         String postalCode = scanner.nextLine();
         return new Address(streetName, city, postalCode);
     }
-
     public Property generatePropertyInformation(String type) {
         try {
             Address propertyAddress = getAddress(scanner);
@@ -38,18 +39,11 @@ public class RentalPropertyView implements IPropertyView {
         return null;
     }
 
-    public void displayProperties(ArrayList<Property> properties) {
-        for (Property property : properties
+    public void displayProperties(ArrayList<IProperty> properties) {
+        for (IProperty property : properties
         ) {
             this.displayProperty(property);
         }
-    }
-
-    public void displayProperty(Property property) {
-        System.out.println("********************************");
-        System.out.println("Apartment Details");
-        System.out.println(property);
-        System.out.println("********************************");
     }
 
     @Override
@@ -57,4 +51,16 @@ public class RentalPropertyView implements IPropertyView {
 
     }
 
+    public void displayProperty(IProperty property) {
+        System.out.println("********************************");
+        System.out.println("Apartment Details");
+        System.out.println(property);
+        System.out.println("********************************");
+    }
+
+    @Override
+    public void update(Observable o, Object arg) {
+    //
+        System.out.println("Saved successfully, refresh the list ");
+    }
 }

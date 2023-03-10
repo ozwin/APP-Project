@@ -3,13 +3,14 @@ package com.app.project.util;
 import com.app.project.controller.ApartmentController;
 import com.app.project.controller.CondoController;
 import com.app.project.controller.PrivateHouseController;
-import com.app.project.controller.RentalPropertyController;
+import com.app.project.controller.PropertyController;
 import com.app.project.interfaces.IPropertyController;
 import com.app.project.views.ApartmentView;
 import com.app.project.views.CondoView;
 import com.app.project.views.PrivateHouseView;
-import com.app.project.views.RentalPropertyView;
+import com.app.project.views.PropertyView;
 
+import javax.management.InstanceNotFoundException;
 import java.util.Locale;
 
 public class ControllerFactory {
@@ -22,7 +23,7 @@ public class ControllerFactory {
             case "HOUSE":
                 return new PrivateHouseController(new PrivateHouseView(ScannerSingleton.getInstance().scanner));
             default:
-                return new RentalPropertyController(new RentalPropertyView(ScannerSingleton.getInstance().scanner));
+                return new PropertyController(new PropertyView(ScannerSingleton.getInstance().scanner));
         }
     }
 }
