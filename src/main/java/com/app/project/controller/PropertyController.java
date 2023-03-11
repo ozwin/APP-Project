@@ -3,6 +3,7 @@ package com.app.project.controller;
 import com.app.project.interfaces.IProperty;
 import com.app.project.interfaces.IPropertyController;
 import com.app.project.interfaces.IPropertyView;
+import com.app.project.repository.PropertiesRepository;
 import com.app.project.service.PropertyServices;
 
 import java.util.ArrayList;
@@ -13,7 +14,7 @@ public  class PropertyController implements IPropertyController {
 
     public PropertyController(IPropertyView view) {
         this.view = view;
-        this.propertyServices = new PropertyServices();
+        this.propertyServices = new PropertyServices(PropertiesRepository.getInstance());
     }
 
     public void add(IProperty property) {

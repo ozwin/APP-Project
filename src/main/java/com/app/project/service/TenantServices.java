@@ -1,6 +1,7 @@
 package com.app.project.service;
 
 import com.app.project.entity.Tenant;
+import com.app.project.repository.PropertiesRepository;
 import com.app.project.repository.TenantRepository;
 
 import java.util.ArrayList;
@@ -13,7 +14,7 @@ public class TenantServices {
 
     public TenantServices() {
         this.tenantRepository = TenantRepository.getInstance();
-        this.propertyServices = new PropertyServices();
+        this.propertyServices = new PropertyServices(PropertiesRepository.getInstance());
     }
 
     public List<Tenant> findMany(List<UUID> userIds) {

@@ -1,13 +1,14 @@
 package com.app.project.repository;
 
 import com.app.project.entity.Tenant;
+import com.app.project.interfaces.IRepository;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
-public class TenantRepository {
+public class TenantRepository implements IRepository {
     private static ArrayList<Tenant> tenants;
     private static TenantRepository tenantRepository;
 

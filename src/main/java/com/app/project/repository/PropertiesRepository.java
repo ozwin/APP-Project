@@ -2,17 +2,18 @@ package com.app.project.repository;
 
 import com.app.project.entity.Property;
 import com.app.project.interfaces.IProperty;
+import com.app.project.interfaces.IRepository;
 
 import java.util.ArrayList;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
-public class PropertiesRepository {
-    private static ArrayList<IProperty> properties;
+public class PropertiesRepository implements IRepository {
+    private ArrayList<IProperty> properties=new ArrayList<IProperty>();
     private static PropertiesRepository propertiesRepository;
 
     private PropertiesRepository() {
-        properties = new ArrayList<IProperty>();
+
     }
 
     public static synchronized PropertiesRepository getInstance() {
