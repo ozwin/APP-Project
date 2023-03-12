@@ -12,7 +12,7 @@ public class TenantRepository implements IRepository {
     private static ArrayList<Tenant> tenants;
     private static TenantRepository tenantRepository;
 
-    private TenantRepository() {
+    public TenantRepository() {
         tenants = new ArrayList<Tenant>();
     }
 

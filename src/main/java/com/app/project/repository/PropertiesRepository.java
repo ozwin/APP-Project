@@ -1,5 +1,6 @@
 package com.app.project.repository;
 
+import com.app.project.entity.Apartment;
 import com.app.project.entity.Property;
 import com.app.project.interfaces.IProperty;
 import com.app.project.interfaces.IRepository;

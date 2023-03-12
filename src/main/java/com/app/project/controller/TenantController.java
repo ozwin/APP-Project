@@ -1,6 +1,9 @@
 package com.app.project.controller;
 
 import com.app.project.entity.Tenant;
+import com.app.project.repository.PropertiesRepository;
+import com.app.project.repository.TenantRepository;
+import com.app.project.service.PropertyServices;
 import com.app.project.service.TenantServices;
 import com.app.project.views.TenantView;
 
@@ -11,7 +14,7 @@ public class TenantController {
     private TenantView view;
 
     public TenantController(TenantView view) {
-        this.tenantServices = new TenantServices();//can be injected using IOC framework
+        this.tenantServices = new TenantServices(TenantRepository.getInstance(),new PropertyServices(PropertiesRepository.getInstance()));//can be injected using IOC framework
         this.view = view;
         this.view.setController(this);
     }

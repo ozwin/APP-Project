@@ -82,7 +82,7 @@ class PropertyServicesTest {
     void findVacantTestSuccess() {
         Apartment apartment=new Apartment(2,2,200,new Address("St Catherine","Montreal","H3H1K4"));
         Condo condo=new Condo("23","2",new Address("St Catherine","Montreal","H3H1K4"));
-        doAnswer((i)-> {return null;}).when(repository).upsert(apartment);
+        doNothing().when(repository).upsert(apartment);
         ArrayList<IProperty> vacantProperties=new ArrayList<IProperty>();
         vacantProperties.add(condo);
         when(repository.findByKey(apartment.getPropertyId())).thenReturn(apartment);

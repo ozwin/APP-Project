@@ -15,6 +15,9 @@ public class Apartment extends Property {
     public Apartment(Address address) {
         super(address);
     }
+    public Apartment(){
+
+    }
 
     public int getNumberOfBedrooms() {
         return this.numberOfBedrooms;

@@ -3,13 +3,15 @@ package com.app.project.datasource;
 import com.app.project.entity.*;
 import com.app.project.interfaces.IProperty;
 import com.app.project.repository.PropertiesRepository;
+import com.app.project.repository.TenantRepository;
+import com.app.project.service.PropertyServices;
 import com.app.project.service.TenantServices;
 
 import java.util.ArrayList;
 
 public class DataStore {
     public static final PropertiesRepository propertiesRepository = PropertiesRepository.getInstance();
-    public static final TenantServices tenantServices = new TenantServices();
+    public static final TenantServices tenantServices = new TenantServices(TenantRepository.getInstance(),new PropertyServices(PropertiesRepository.getInstance()));
 
 
     public static void initializeDataBase() {
