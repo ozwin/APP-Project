@@ -8,6 +8,7 @@ import com.app.project.service.TenantServices;
 import com.app.project.views.TenantView;
 
 import java.util.ArrayList;
+import java.util.UUID;
 
 public class TenantController {
     private TenantServices tenantServices;
@@ -18,7 +19,9 @@ public class TenantController {
         this.view = view;
         this.view.setController(this);
     }
-
+    public Tenant getTenant(UUID tenantID){
+        return this.tenantServices.getTenant(tenantID);
+    }
     public void addTenant(Tenant tenant) {
         this.tenantServices.add(tenant);
     }

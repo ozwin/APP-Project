@@ -5,43 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9f24fdae-1a2b-4e38-a0f4-471413627a31" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/project/controller/LeaseController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/project/entity/Lease.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/project/repository/LeaseRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/project/service/LeaseServices.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/project/views/LeaseView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/controller/ApartmentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/controller/ApartmentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/controller/CLIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/controller/CLIController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/controller/RentalPropertyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/controller/RentalPropertyController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/controller/PropertyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/controller/PropertyController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/controller/TenantController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/controller/TenantController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/datasource/DataStore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/datasource/DataStore.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/entity/Address.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/entity/Address.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/entity/Apartment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/entity/Apartment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/entity/Condo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/entity/Condo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/entity/Contact.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/entity/Contact.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/entity/Property.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/entity/Property.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/entity/ProspectiveTenant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/entity/ProspectiveTenant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/entity/ProspectiveTenant.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/entity/Tenant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/entity/Tenant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/interfaces/IProperty.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/interfaces/IProperty.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/interfaces/IPropertyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/interfaces/IPropertyController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/interfaces/IPropertyView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/interfaces/IPropertyView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/repository/TenantRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/repository/TenantRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/service/PropertyServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/service/PropertyServices.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/service/TenantServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/service/TenantServices.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/util/ControllerFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/util/ControllerFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/util/Helper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/util/Helper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/util/RentalPropertyFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/util/RentalPropertyFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/util/ScannerSingleton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/util/ScannerSingleton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/views/ApartmentView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/views/ApartmentView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/views/CLIView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/views/CLIView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/views/PrivateHouseView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/views/PrivateHouseView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/views/RentalPropertyView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/views/RentalPropertyView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/views/TenantView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/views/TenantView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/app/project/controller/ApartmentControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/app/project/controller/ApartmentControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/app/project/controller/TenantControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/app/project/controller/TenantControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/app/project/repository/PropertiesRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/app/project/repository/PropertiesRepositoryTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/app/project/repository/TenantRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/app/project/repository/TenantRepositoryTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/app/project/service/PropertyServicesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/app/project/service/PropertyServicesTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/app/project/service/TenantServicesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/app/project/service/TenantServicesTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,23 +33,21 @@
       <list>
         <option value="package-info" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
-  </component>
-  <component name="MavenImportPreferences">
-    <option name="importingSettings">
-      <MavenImportingSettings>
-        <option name="workspaceImportEnabled" value="true" />
-      </MavenImportingSettings>
-    </option>
   </component>
   <component name="ProjectId" id="2MNfiYf1TwB9ulfYgH6SUPlC1wq" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -163,5 +141,16 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

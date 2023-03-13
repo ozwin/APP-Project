@@ -21,8 +21,11 @@ public class TenantServices {
     public List<Tenant> findMany(List<UUID> userIds) {
         return this.tenantRepository.findMany(userIds);
     }
-
+    public Tenant getTenant(UUID userID){
+        return this.tenantRepository.findByKey(userID);
+    }
     public void add(Tenant tenant) {
+        // here we are assigning tenant a property and registering them into the database.
         this.propertyServices.assignATenant(tenant);
         this.tenantRepository.add(tenant);
     }

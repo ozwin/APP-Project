@@ -4,9 +4,12 @@ import java.util.UUID;
 
 public class Tenant extends User {
     UUID occupiedPropertyId; //is it possible to occupy multiple properties?
-
     public Tenant(String firstName, String lastName, Contact contact, UUID occupiedPropertyId) {
         super(firstName, lastName, contact);
+        this.occupiedPropertyId = occupiedPropertyId;
+    }
+
+    public void setOccupiedPropertyId(UUID occupiedPropertyId) {
         this.occupiedPropertyId = occupiedPropertyId;
     }
 

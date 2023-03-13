@@ -1,15 +1,18 @@
 package com.app.project.views;
 
+import com.app.project.controller.LeaseController;
 import com.app.project.controller.TenantController;
+import com.app.project.entity.Lease;
 import com.app.project.interfaces.IPropertyController;
 import com.app.project.util.ControllerFactory;
 import com.app.project.util.ScannerSingleton;
 
 import java.util.Scanner;
+import java.util.UUID;
 
 public class CLIView {
     private IPropertyController controller= ControllerFactory.getController("");
-
+    private LeaseController leaseController = new LeaseController(new LeaseView(ScannerSingleton.getInstance().scanner));
     private final TenantController tenantController = new TenantController(new TenantView(ScannerSingleton.getInstance().scanner));
 
     public void run() {
@@ -38,7 +41,26 @@ public class CLIView {
                     case 4 -> tenantController.displayAllTenants();
                     case 5 -> controller.displayVacantUnits();
                     case 6 -> controller.displayRentedUnits();
-                    case 7 -> {
+                    case 7 ->{
+                        // enter the ID of the unit to rent it to the future tenants.
+                        leaseController.setController();
+                        System.out.println("Enter the property ID");
+                        String propertyID = scanner.nextLine();
+                        controller.moveTenants(UUID.fromString(propertyID));
+                        leaseController.addLeaseView(UUID.fromString(propertyID));
+
+                    }
+                    case 8->{
+                        // display all leases
+                        leaseController.displayAllLeases();
+                    }
+                    case 9 ->{
+                        // vacate a property
+                        System.out.println("Enter the property ID");
+                        String propertyID = scanner.nextLine();
+
+                    }
+                    case 10 -> {
                         System.out.println("Exiting Application");
                         System.exit(0);
                     }
