@@ -13,11 +13,14 @@ abstract public class Property extends Observable implements IProperty {
     private UUID ID;
     protected List<Observer> observers;
 
+
+
     public Property() {
         this.ID = Helper.generateUniqueIdentifier();
         this.waitingList = new ArrayList<>();
         this.tenants = new ArrayList<>();
         this.observers = new ArrayList<>();
+        this.futureTenants = new ArrayList<>();
     }
 
     public Property(Address address) {
@@ -26,6 +29,7 @@ abstract public class Property extends Observable implements IProperty {
         this.waitingList = new ArrayList<>();
         this.tenants = new ArrayList<>();
         this.observers = new ArrayList<>();
+        this.futureTenants = new ArrayList<>();
     }
 
     public UUID getPropertyId() {

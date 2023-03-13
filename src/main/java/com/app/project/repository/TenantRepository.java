@@ -13,7 +13,7 @@ public class TenantRepository implements IRepository {
     private static TenantRepository tenantRepository;
 
     public TenantRepository() {
-        tenants = new ArrayList<Tenant>();
+        tenants = new ArrayList<>();
     }
 
     public static synchronized TenantRepository getInstance() {
@@ -31,7 +31,7 @@ public class TenantRepository implements IRepository {
     }
 
     public Tenant findByKey(UUID userID) {
-        return this.tenants.stream().filter(t -> t.getUserID().equals(userID)).findFirst().orElse(null);
+        return tenants.stream().filter(t -> t.getUserID().equals(userID)).findFirst().orElse(null);
     }
 
     public List<Tenant> findMany(List<UUID> userIDs) {

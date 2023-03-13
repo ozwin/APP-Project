@@ -15,11 +15,12 @@ public class LeaseView {
         this.scanner = scanner;
     }
 
-    public void add(UUID property, List<UUID> tenants){
+    public void add(UUID property, List<UUID> tenants, List<String> names){
         System.out.println("Enter the duration of the lease");
         int duration = scanner.nextInt();
         Lease lease = new Lease(tenants, property);
         lease.setLeaseDuration(duration);
+        lease.setTenantNames(names);
         controller.addLease(lease);
     }
 

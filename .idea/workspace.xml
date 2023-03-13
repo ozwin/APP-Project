@@ -5,23 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9f24fdae-1a2b-4e38-a0f4-471413627a31" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/project/controller/LeaseController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/project/entity/Lease.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/project/repository/LeaseRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/project/service/LeaseServices.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/project/views/LeaseView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/project/service/NotificationServices.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/controller/PropertyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/controller/PropertyController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/controller/TenantController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/controller/TenantController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/controller/LeaseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/controller/LeaseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/entity/Lease.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/entity/Lease.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/entity/Property.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/entity/Property.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/entity/ProspectiveTenant.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/entity/Tenant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/entity/Tenant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/interfaces/IProperty.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/interfaces/IProperty.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/interfaces/IPropertyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/interfaces/IPropertyController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/repository/LeaseRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/repository/LeaseRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/repository/PropertiesRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/repository/PropertiesRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/repository/TenantRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/repository/TenantRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/service/LeaseServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/service/LeaseServices.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/service/PropertyServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/service/PropertyServices.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/service/TenantServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/service/TenantServices.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/views/CLIView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/views/CLIView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/views/LeaseView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/views/LeaseView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +34,9 @@
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="Git.Rebase.Settings">
+    <option name="NEW_BASE" value="origin/master" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -57,30 +57,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.includeInheritedMembers&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/ozwin/Downloads/Digital-Phonebook-master&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.includeInheritedMembers": "true",
+    "last_opened_file_path": "C:/Users/ozwin/Downloads/Digital-Phonebook-master",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -152,5 +152,20 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/app/project/Main.java</url>
+          <line>7</line>
+          <properties class="com.app.project.Main" method="main">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

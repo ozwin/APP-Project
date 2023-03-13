@@ -1,7 +1,5 @@
 package com.app.project.repository;
 
-import com.app.project.entity.Apartment;
-import com.app.project.entity.Property;
 import com.app.project.interfaces.IProperty;
 import com.app.project.interfaces.IRepository;
 
@@ -10,7 +8,7 @@ import java.util.UUID;
 import java.util.stream.Collectors;
 
 public class PropertiesRepository implements IRepository {
-    private ArrayList<IProperty> properties=new ArrayList<IProperty>();
+    private ArrayList<IProperty> properties=new ArrayList<>();
     private static PropertiesRepository propertiesRepository;
 
     private PropertiesRepository() {
@@ -28,7 +26,14 @@ public class PropertiesRepository implements IRepository {
     }
 
     public IProperty findByKey(UUID propertyId) {
-        return this.properties.stream().filter(r -> r.getPropertyId().equals(propertyId)).findFirst().orElse(null);
+        for (IProperty p:
+             properties) {
+            if (p.getPropertyId().equals(propertyId)){
+                return p;
+            }
+        }
+        return properties.get(0);
+//        return this.properties.stream().filter(r -> r.getPropertyId().equals(propertyId)).findFirst().orElse(null);
     }
 
     public boolean insert(IProperty property) {

@@ -29,7 +29,7 @@ public class LeaseController {
     }
     public void addLeaseView(UUID uuid){
         List<UUID> tenants = leaseServices.getTenants(uuid);
-        leaseView.add(uuid, tenants);
+        leaseView.add(uuid, tenants, leaseServices.getTenantNames(uuid));
     }
     public void displayAllLeases(){
         ArrayList<Lease> leases = this.leaseServices.getAllLeases();

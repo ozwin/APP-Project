@@ -9,7 +9,8 @@ public class LeaseRepository {
     private static ArrayList<Lease> leases;
     private static LeaseRepository leaseRepository;
 
-    public static LeaseRepository getInstance() {
+    public static synchronized LeaseRepository getInstance() {
+        leaseRepository = new LeaseRepository();
         return leaseRepository;
     }
 
@@ -21,12 +22,12 @@ public class LeaseRepository {
         leases.add(l);
     }
 
-    public void removeLease(UUID leaseID){
-        leases.remove(findLease(leaseID));
+    public void removeLease(UUID prpopertyID){
+        leases.remove(findLease(prpopertyID));
     }
 
-    public Lease findLease(UUID leaseID){
-        return leases.stream().filter(r -> r.getLeaseID().equals(leaseID)).findFirst().orElse(null);
+    public Lease findLease(UUID propertyID){
+        return leases.stream().filter(r -> r.getPropertyID().equals(propertyID)).findFirst().orElse(null);
     }
 
     public ArrayList<Lease> getLeases(){return leases;}

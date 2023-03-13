@@ -21,7 +21,7 @@ public class CLIView {
                 System.out.println("Enter your choice");
                 //inject this dependency instead of creation
                 Scanner scanner = ScannerSingleton.getInstance().scanner;
-                System.out.println("1. Add Property 2.Show Properties 3. Add a tenant 4. display all tenants 5. display vacant 6.display rented 7. Exit");
+                System.out.println("1. Add Property 2. Add a tenant 3. Rent a Unit 4.Display Properties 5. display all tenants 6. display vacant 7.display rented 8. Display All Leases 9. Vacate A unit 10. Exit");
                 int input = Integer.parseInt(scanner.nextLine());
                 switch (input) {
 //                use enums here
@@ -33,23 +33,23 @@ public class CLIView {
                         controller.addPropertyView();
                     }
                     case 2 ->
-                        //display all properties
-                            controller.displayAll();
-                    case 3 ->
                         //add a tenant to a property
                             tenantController.addTenantView();
-                    case 4 -> tenantController.displayAllTenants();
-                    case 5 -> controller.displayVacantUnits();
-                    case 6 -> controller.displayRentedUnits();
-                    case 7 ->{
+                    case 3 ->{
                         // enter the ID of the unit to rent it to the future tenants.
-                        leaseController.setController();
                         System.out.println("Enter the property ID");
-                        String propertyID = scanner.nextLine();
+                        String propertyID = scanner.next();
+                        leaseController.setController();
                         controller.moveTenants(UUID.fromString(propertyID));
                         leaseController.addLeaseView(UUID.fromString(propertyID));
 
                     }
+                    case 4 ->
+                        //display all properties
+                            controller.displayAll();
+                    case 5 -> tenantController.displayAllTenants();
+                    case 6 -> controller.displayVacantUnits();
+                    case 7 -> controller.displayRentedUnits();
                     case 8->{
                         // display all leases
                         leaseController.displayAllLeases();
@@ -58,7 +58,7 @@ public class CLIView {
                         // vacate a property
                         System.out.println("Enter the property ID");
                         String propertyID = scanner.nextLine();
-
+                        controller.removeTenants(UUID.fromString(propertyID));
                     }
                     case 10 -> {
                         System.out.println("Exiting Application");
@@ -66,7 +66,7 @@ public class CLIView {
                     }
                 }
             } catch (Exception ex) {
-                System.out.println("Sorry there was some issue with your input or something terrible happened, please retry");
+                System.out.println("Sorry there was some issue with your input or something terrible happened, please retry" );
             }
         }
     }
