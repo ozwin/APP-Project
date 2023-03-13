@@ -53,8 +53,8 @@ public  class PropertyController implements IPropertyController {
         view.displayProperties(properties);
     }
 
-    public void moveTenants(UUID propertyID){
-        this.propertyServices.moveTenantToProperty(propertyID);
+    public void moveTenants(UUID propertyID, UUID userID){
+        this.propertyServices.moveTenantToProperty(propertyID, userID);
     }
 
     public void removeTenants(UUID propertyID){

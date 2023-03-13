@@ -9,7 +9,7 @@ public interface IProperty {
     UUID getPropertyId();
     boolean isVacant();
     void addTenantToProperty(Tenant tenant);
-    void moveTenant();
+    void moveTenant(UUID userID);
 
     List<UUID> getTenants();
 

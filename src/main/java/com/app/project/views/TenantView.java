@@ -37,6 +37,22 @@ public class TenantView {
         Tenant tenant = new Tenant(firstName, lastName, contact, propertyID);
         this.controller.addTenant(tenant);
     }
+    public UUID addToProperty(UUID propertyID){
+//      are we supposed to consider the case where user is already in the system as a prospective client
+//        System.out.println("Enter the number of tenants");
+        System.out.println("Enter first name");
+        String firstName = scanner.nextLine();
+        System.out.println("Enter last name");
+        String lastName = scanner.nextLine();
+        System.out.println("Enter phone number");
+        String phoneNumber = scanner.nextLine();
+        System.out.println("Enter email");
+        String email = scanner.nextLine();
+        Contact contact = new Contact(email, phoneNumber);
+        Tenant tenant = new Tenant(firstName, lastName, contact, propertyID);
+        this.controller.addTenant(tenant);
+        return tenant.getUserID();
+    }
 
     public void displayAll(ArrayList<Tenant> tenants) {
         for (Tenant tenant : tenants

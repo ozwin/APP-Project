@@ -16,7 +16,7 @@ public interface IPropertyController {
     void addPropertyView();
 
     void add(IProperty property);
-    void moveTenants(UUID propertyID);
+    void moveTenants(UUID propertyID, UUID userID);
 
     void removeTenants(UUID propertyID);
 }

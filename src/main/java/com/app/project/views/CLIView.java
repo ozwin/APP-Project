@@ -36,11 +36,20 @@ public class CLIView {
                         //add a tenant to a property
                             tenantController.addTenantView();
                     case 3 ->{
-                        // enter the ID of the unit to rent it to the future tenants.
+                        System.out.println("Are you a in a waiting list for any of the properties: y or n");
+                        String in = scanner.nextLine();
                         System.out.println("Enter the property ID");
                         String propertyID = scanner.next();
+                        if(in.equals("y")){
+                            leaseController.setController();
+                            System.out.println("Enter your user ID: ");
+                            String userID = scanner.next();
+                            controller.moveTenants(UUID.fromString(propertyID), UUID.fromString(userID));
+                        }else{
+                            tenantController.addTenantView();
+                            tenantController.addTenantToProperty(UUID.fromString(propertyID), controller);
+                        }
                         leaseController.setController();
-                        controller.moveTenants(UUID.fromString(propertyID));
                         leaseController.addLeaseView(UUID.fromString(propertyID));
 
                     }

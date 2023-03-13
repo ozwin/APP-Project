@@ -1,6 +1,8 @@
 package com.app.project.controller;
 
 import com.app.project.entity.Tenant;
+import com.app.project.interfaces.IProperty;
+import com.app.project.interfaces.IPropertyController;
 import com.app.project.repository.PropertiesRepository;
 import com.app.project.repository.TenantRepository;
 import com.app.project.service.PropertyServices;
@@ -28,6 +30,10 @@ public class TenantController {
 
     public void addTenantView() {
         view.add();
+    }
+    public void addTenantToProperty(UUID propertyID, IPropertyController controller){
+        UUID userid = view.addToProperty(propertyID);
+        controller.moveTenants(propertyID, userid);
     }
 
     public void displayAllTenants() {

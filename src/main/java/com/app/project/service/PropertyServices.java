@@ -56,9 +56,9 @@ public class PropertyServices {
         this.propertiesRepository.upsert(property);
     }
 
-    public void moveTenantToProperty(UUID propertyID) {
+    public void moveTenantToProperty(UUID propertyID, UUID userID) {
         IProperty property = this.propertiesRepository.findByKey(propertyID);
-        property.moveTenant();
+        property.moveTenant(userID);
     }
 
     public void removeTenants(UUID propertyID) {

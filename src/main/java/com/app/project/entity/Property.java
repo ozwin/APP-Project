@@ -8,19 +8,16 @@ import java.util.*;
 abstract public class Property extends Observable implements IProperty {
     protected Address address;
     protected List<UUID> waitingList;
-    protected List<UUID> futureTenants;
+
     protected List<UUID> tenants;
     private UUID ID;
     protected List<Observer> observers;
-
-
 
     public Property() {
         this.ID = Helper.generateUniqueIdentifier();
         this.waitingList = new ArrayList<>();
         this.tenants = new ArrayList<>();
         this.observers = new ArrayList<>();
-        this.futureTenants = new ArrayList<>();
     }
 
     public Property(Address address) {
@@ -29,7 +26,6 @@ abstract public class Property extends Observable implements IProperty {
         this.waitingList = new ArrayList<>();
         this.tenants = new ArrayList<>();
         this.observers = new ArrayList<>();
-        this.futureTenants = new ArrayList<>();
     }
 
     public UUID getPropertyId() {
@@ -49,13 +45,7 @@ abstract public class Property extends Observable implements IProperty {
 
     public void addTenantToProperty(Tenant tenant) {
         //checking if the property is vacant or not
-        if (isVacant()){
-            // we registered the tenant in the database
-            this.futureTenants.add(tenant.getUserID());
-        }else{
-            //add them to the wait list.
-            this.waitingList.add(tenant.getUserID());
-        }
+        this.waitingList.add(tenant.getUserID());
     }
     public List<UUID> getTenants(){return this.tenants;}
 
@@ -90,10 +80,14 @@ abstract public class Property extends Observable implements IProperty {
             observer.update(this, null);
         }
     }
-    public void moveTenant(){
-        // remove from future tenants and add to current tenants.
-        tenants.addAll(futureTenants);
-        futureTenants.clear();
+    public void moveTenant(UUID userID){
+        // checks if the user is in the waiting list
+        if (waitingList.contains(userID)){
+            tenants.add(userID);
+             waitingList.remove(userID);
+        }else{
+            tenants.add(userID);
+        }
     }
     public List<UUID> removeTenants(){
         tenants.clear();
