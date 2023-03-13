@@ -39,10 +39,8 @@ public class CLIView {
                         // enter the ID of the unit to rent it to the future tenants.
                         System.out.println("Enter the property ID");
                         String propertyID = scanner.next();
-                        leaseController.setController();
                         controller.moveTenants(UUID.fromString(propertyID));
                         leaseController.addLeaseView(UUID.fromString(propertyID));
-
                     }
                     case 4 ->
                         //display all properties

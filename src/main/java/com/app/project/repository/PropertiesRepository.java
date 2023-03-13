@@ -26,14 +26,7 @@ public class PropertiesRepository implements IRepository {
     }
 
     public IProperty findByKey(UUID propertyId) {
-        for (IProperty p:
-             properties) {
-            if (p.getPropertyId().equals(propertyId)){
-                return p;
-            }
-        }
-        return properties.get(0);
-//        return this.properties.stream().filter(r -> r.getPropertyId().equals(propertyId)).findFirst().orElse(null);
+        return this.properties.stream().filter(r -> r.getPropertyId().equals(propertyId)).findFirst().orElse(null);
     }
 
     public boolean insert(IProperty property) {

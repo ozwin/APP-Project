@@ -33,12 +33,7 @@ public  class PropertyController implements IPropertyController {
 
     public void displayAll() {
         ArrayList<IProperty> properties = propertyServices.getAll();
-        for (IProperty property : properties
-        ) {
-//            System.out.println(property.getClass());
-//            Should we print individual glass based on their respective views?
-            view.displayProperty(property);
-        }
+        view.displayProperties(properties);
     }
 
     @Override

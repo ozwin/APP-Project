@@ -1,16 +1,18 @@
 package com.app.project.repository;
 
 import com.app.project.entity.Lease;
+import com.app.project.interfaces.IRepository;
 
 import java.util.ArrayList;
 import java.util.UUID;
 
-public class LeaseRepository {
+public class LeaseRepository  implements IRepository {
     private static ArrayList<Lease> leases;
     private static LeaseRepository leaseRepository;
 
     public static synchronized LeaseRepository getInstance() {
-        leaseRepository = new LeaseRepository();
+        if (leaseRepository == null)
+            leaseRepository = new LeaseRepository();
         return leaseRepository;
     }
 
@@ -18,17 +20,16 @@ public class LeaseRepository {
         leases = new ArrayList<>();
     }
 
-    public void addLease(Lease l){
-        leases.add(l);
+    public void add(Lease lease){
+        leases.add(lease);
     }
 
-    public void removeLease(UUID prpopertyID){
-        leases.remove(findLease(prpopertyID));
+    public void remove(UUID propertyID){
+        leases.remove(findByKey(propertyID));
     }
 
-    public Lease findLease(UUID propertyID){
+    public Lease findByKey(UUID propertyID){
         return leases.stream().filter(r -> r.getPropertyID().equals(propertyID)).findFirst().orElse(null);
     }
-
     public ArrayList<Lease> getLeases(){return leases;}
 }
