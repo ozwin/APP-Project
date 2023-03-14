@@ -39,6 +39,7 @@ class LeaseServicesTest {
     void setUp() {
         Apartment apartment = new Apartment(2, 2, 200, new Address("St Catherine", "Montreal", "H3H1K4"));
         Tenant tenant = new Tenant("Ozwin", "Lobo", new Contact("XXX@xx.com", "98989"), UUID.randomUUID());
+        apartment.addTenant(tenant);
         doNothing().when(tenantRepository).add(tenant);
         ArrayList<UUID> userIds=new ArrayList<UUID>();
         userIds.add(tenant.getUserID());
@@ -71,16 +72,16 @@ class LeaseServicesTest {
         Tenant tenant = new Tenant("Srikar", "Akella", new Contact("ABC@gmail.com", "9120344"), UUID.randomUUID());
         tenants.add(tenant.getUserID());
         doNothing().when(tenantRepository).add(tenant);
-        assertEquals(tenants, leaseServices.getTenants(propertyServices.getAll().get(0).getPropertyId()));
+        List<UUID> output=leaseServices.getTenants(propertyServices.getAll().get(0).getPropertyId());
+        assertEquals(tenants,output );
     }
 
     @Test
     void getTenantNames() {
-        List<String> tenants = leaseServices.getTenantNames(propertyServices.getAll().get(0).getPropertyId());
-        Tenant tenant = new Tenant("Srikar", "Akella", new Contact("ABC@gmail.com", "9120344"), UUID.randomUUID());
-        tenants.add(tenant.fullName());
-        doNothing().when(tenantRepository).add(tenant);
-        assertEquals(tenants, leaseServices.getTenantNames(propertyServices.getAll().get(0).getPropertyId()));
+        List<String> tenants = new ArrayList<String>();
+        tenants.add("Ozwin Lobo");
+        List<String> output= leaseServices.getTenantNames(propertyServices.getAll().get(0).getPropertyId());
+        assertEquals(tenants, output);
     }
 
     @Test
@@ -125,10 +126,9 @@ class LeaseServicesTest {
     }
 
     @Test
-    void getPropertiesWithPendingRentSucessTest() {
+    void getPropertiesWithPendingRentSuccessTest() {
         ArrayList<IProperty> properties=propertyServices.getAll();
         ArrayList<IProperty> output=leaseServices.getPropertiesWithPendingRent();
         assertEquals(properties,output);
-
     }
 }

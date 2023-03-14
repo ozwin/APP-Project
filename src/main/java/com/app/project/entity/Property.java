@@ -45,7 +45,6 @@ abstract public class Property extends Observable implements IProperty {
     }
 
     public void addTenantToProperty(Tenant tenant) {
-        //checking if the property is vacant or not
         this.waitingList.add(tenant.getUserID());
     }
 
@@ -84,6 +83,9 @@ abstract public class Property extends Observable implements IProperty {
         for (Observer observer : observers) {
             observer.update(this, null);
         }
+    }
+    public void addTenant(Tenant tenant){
+        this.tenants.add(tenant.getUserID());
     }
 
     public void moveTenant(UUID userID) {
