@@ -1,13 +1,11 @@
 package com.app.project.service;
 
 import com.app.project.entity.*;
+import com.app.project.interfaces.IProperty;
 import com.app.project.repository.LeaseRepository;
 import com.app.project.repository.PropertiesRepository;
 import com.app.project.repository.TenantRepository;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import org.mockito.Mockito;
 
 import java.util.ArrayList;
@@ -46,11 +44,20 @@ class LeaseServicesTest {
         Lease lease=new Lease(userIds,apartment.getPropertyId());
         lease.setLeaseDuration(12);
         lease.setAgreedMonthlyRent(2000);
+        ArrayList<Lease> leases=new ArrayList<Lease>();
+        leases.add(lease);
         apartment.setLeaseId(lease.getLeaseID());
+        ArrayList<IProperty> properties=new ArrayList<IProperty>();
+        properties.add(apartment);
         when(tenantRepository.findByKey(any())).thenReturn(tenant);
         when(propertiesRepository.findByKey(any())).thenReturn(apartment);
         when(tenantRepository.findByKey(any())).thenReturn(tenant);
+        when(leaseRepository.findLease(any())).thenReturn(lease);
+        when(leaseRepository.getLeases()).thenReturn(leases);
+        when(propertiesRepository.findMany(any())).thenReturn(properties);
+        when(propertiesRepository.getAll()).thenReturn(properties);
         doNothing().when(propertiesRepository).upsert(any());
+        doNothing().when(leaseRepository).upsert(any());
     }
 
     @AfterEach
@@ -78,11 +85,15 @@ class LeaseServicesTest {
     }
 
     @Test
-    void recordPayment() {
-
+    void recordPaymentSucessTest()  {
+        Assertions.assertThrows(Exception.class,()->leaseServices.recordPayment(UUID.randomUUID(),2000));
     }
 
     @Test
-    void getPropertiesWithPendingRent() {
+    void getPropertiesWithPendingRentSucessTest() {
+        ArrayList<IProperty> properties=propertyServices.getAll();
+        ArrayList<IProperty> output=leaseServices.getPropertiesWithPendingRent();
+        assertEquals(properties,output);
+
     }
 }

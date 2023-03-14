@@ -26,7 +26,7 @@ public class Tenant extends User implements Observer {
 
     @Override
     public String toString() {
-        return String.format("Occupied Property Id: %s \n %s", getOccupiedPropertyId().toString(), super.toString());
+        return String.format("Property Interested/Occupied : %s \n %s", getOccupiedPropertyId().toString(), super.toString());
     }
 
     @Override

@@ -22,7 +22,9 @@ public class Lease {
         this.occupiedTenants.addAll(tenants);
         this.propertyID = propertyID;
         this.signedOn = LocalDate.now();
+        this.rentHistory=new ArrayList<LocalDate>();
     }
+
 
     public void setLeaseDuration(int months) {
         this.leaseDuration = months;
