@@ -10,8 +10,8 @@ abstract public class Property extends Observable implements IProperty {
     protected List<UUID> waitingList;
 
     protected List<UUID> tenants;
-    private UUID ID;
     protected List<Observer> observers;
+    private UUID ID;
 
     public Property() {
         this.ID = Helper.generateUniqueIdentifier();
@@ -47,7 +47,10 @@ abstract public class Property extends Observable implements IProperty {
         //checking if the property is vacant or not
         this.waitingList.add(tenant.getUserID());
     }
-    public List<UUID> getTenants(){return this.tenants;}
+
+    public List<UUID> getTenants() {
+        return this.tenants;
+    }
 
     public boolean isVacant() {
         return this.tenants.isEmpty();
@@ -66,6 +69,7 @@ abstract public class Property extends Observable implements IProperty {
             return true;
         return false;
     }
+
     public void addObserver(Observer observer) {
         observers.add(observer);
     }
@@ -80,16 +84,18 @@ abstract public class Property extends Observable implements IProperty {
             observer.update(this, null);
         }
     }
-    public void moveTenant(UUID userID){
+
+    public void moveTenant(UUID userID) {
         // checks if the user is in the waiting list
-        if (waitingList.contains(userID)){
+        if (waitingList.contains(userID)) {
             tenants.add(userID);
-             waitingList.remove(userID);
-        }else{
+            waitingList.remove(userID);
+        } else {
             tenants.add(userID);
         }
     }
-    public List<UUID> removeTenants(){
+
+    public List<UUID> removeTenants() {
         tenants.clear();
         // clear the lease
         // call a notify method on all waiting list

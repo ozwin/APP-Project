@@ -2,6 +2,7 @@ package com.app.project.repository;
 
 import com.app.project.entity.Tenant;
 import com.app.project.interfaces.IRepository;
+import com.app.project.service.NotificationServices;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,6 +10,7 @@ import java.util.UUID;
 import java.util.stream.Collectors;
 
 public class TenantRepository implements IRepository {
+    private static final NotificationServices notificationServices = new NotificationServices();
     private static ArrayList<Tenant> tenants;
     private static TenantRepository tenantRepository;
 
@@ -37,5 +39,6 @@ public class TenantRepository implements IRepository {
     public List<Tenant> findMany(List<UUID> userIDs) {
         return this.tenants.stream().filter(t -> userIDs.contains(t.getUserID())).collect(Collectors.toCollection(ArrayList::new));
     }
+
 
 }

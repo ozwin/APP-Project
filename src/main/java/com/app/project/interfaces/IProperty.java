@@ -7,8 +7,11 @@ import java.util.UUID;
 
 public interface IProperty {
     UUID getPropertyId();
+
     boolean isVacant();
+
     void addTenantToProperty(Tenant tenant);
+
     void moveTenant(UUID userID);
 
     List<UUID> getTenants();

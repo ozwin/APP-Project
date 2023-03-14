@@ -8,8 +8,8 @@ import java.util.UUID;
 import java.util.stream.Collectors;
 
 public class PropertiesRepository implements IRepository {
-    private ArrayList<IProperty> properties=new ArrayList<>();
     private static PropertiesRepository propertiesRepository;
+    private ArrayList<IProperty> properties = new ArrayList<>();
 
     private PropertiesRepository() {
 
@@ -26,9 +26,9 @@ public class PropertiesRepository implements IRepository {
     }
 
     public IProperty findByKey(UUID propertyId) {
-        for (IProperty p:
-             properties) {
-            if (p.getPropertyId().equals(propertyId)){
+        for (IProperty p :
+                properties) {
+            if (p.getPropertyId().equals(propertyId)) {
                 return p;
             }
         }

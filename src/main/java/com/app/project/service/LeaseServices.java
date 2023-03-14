@@ -15,30 +15,37 @@ public class LeaseServices {
     private PropertiesRepository propertiesRepository;
 
     private TenantRepository tenantRepository;
-    public LeaseServices(){
+
+    public LeaseServices() {
         this.leaseRepository = LeaseRepository.getInstance();
         this.propertiesRepository = PropertiesRepository.getInstance();
         this.tenantRepository = TenantRepository.getInstance();
     }
-    public List<UUID> getTenants(UUID propertyID){
+
+    public List<UUID> getTenants(UUID propertyID) {
         return this.propertiesRepository.findByKey(propertyID).getTenants();
     }
-    public List<String> getTenantNames(UUID propertyID){
+
+    public List<String> getTenantNames(UUID propertyID) {
         List<UUID> propertyTenants = this.propertiesRepository.findByKey(propertyID).getTenants();
         List<String> occupants = new ArrayList<>();
-        for (UUID tenant:
+        for (UUID tenant :
                 propertyTenants) {
             Tenant t = this.tenantRepository.findByKey(tenant);
             occupants.add(t.fullName());
         }
         return occupants;
     }
-    public void addLease(Lease lease){
+
+    public void addLease(Lease lease) {
         leaseRepository.addLease(lease);
     }
-    public void removeLease(UUID leaseID){
+
+    public void removeLease(UUID leaseID) {
         leaseRepository.removeLease(leaseID);
     }
 
-    public ArrayList<Lease> getAllLeases(){return this.leaseRepository.getLeases();}
+    public ArrayList<Lease> getAllLeases() {
+        return this.leaseRepository.getLeases();
+    }
 }

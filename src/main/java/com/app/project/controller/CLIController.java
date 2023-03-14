@@ -1,14 +1,15 @@
 package com.app.project.controller;
 
-import com.app.project.views.ApartmentView;
 import com.app.project.views.CLIView;
 
 public class CLIController {
     private CLIView view;
+
     public CLIController(CLIView view) {
-        this.view=view;
+        this.view = view;
     }
-    public void execute(){
+
+    public void execute() {
         view.run();
     }
 }

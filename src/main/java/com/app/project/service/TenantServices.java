@@ -2,7 +2,6 @@ package com.app.project.service;
 
 import com.app.project.entity.Tenant;
 import com.app.project.interfaces.IRepository;
-import com.app.project.repository.PropertiesRepository;
 import com.app.project.repository.TenantRepository;
 
 import java.util.ArrayList;
@@ -12,25 +11,35 @@ import java.util.UUID;
 public class TenantServices {
     private TenantRepository tenantRepository;
     private PropertyServices propertyServices;
+    private NotificationServices notificationServices;
 
-    public TenantServices(IRepository repository,PropertyServices propertyServices) {
-        this.tenantRepository = (TenantRepository)repository;
+
+    public TenantServices(IRepository repository, PropertyServices propertyServices) {
+        this.tenantRepository = (TenantRepository) repository;
         this.propertyServices = propertyServices;
+        this.notificationServices = new NotificationServices();
     }
 
     public List<Tenant> findMany(List<UUID> userIds) {
         return this.tenantRepository.findMany(userIds);
     }
-    public Tenant getTenant(UUID userID){
+
+    public Tenant getTenant(UUID userID) {
         return this.tenantRepository.findByKey(userID);
     }
+
     public void add(Tenant tenant) {
         // here we are assigning tenant a property and registering them into the database.
         this.propertyServices.assignATenant(tenant);
         this.tenantRepository.add(tenant);
     }
 
-    public Tenant get(UUID tenantId){
+    public void addAndRent(Tenant tenant) {
+        add(tenant);
+        this.propertyServices.moveTenantToProperty(tenant.getOccupiedPropertyId(), tenant.getUserID());
+    }
+
+    public Tenant get(UUID tenantId) {
         return tenantRepository.findByKey(tenantId);
     }
 

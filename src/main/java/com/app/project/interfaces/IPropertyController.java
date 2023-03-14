@@ -1,7 +1,5 @@
 package com.app.project.interfaces;
 
-import com.app.project.entity.Property;
-
 import java.util.UUID;
 
 public interface IPropertyController {
@@ -16,6 +14,7 @@ public interface IPropertyController {
     void addPropertyView();
 
     void add(IProperty property);
+
     void moveTenants(UUID propertyID, UUID userID);
 
     void removeTenants(UUID propertyID);

@@ -9,26 +9,28 @@ public class LeaseRepository {
     private static ArrayList<Lease> leases;
     private static LeaseRepository leaseRepository;
 
+    private LeaseRepository() {
+        leases = new ArrayList<>();
+    }
+
     public static synchronized LeaseRepository getInstance() {
         leaseRepository = new LeaseRepository();
         return leaseRepository;
     }
 
-    private LeaseRepository(){
-        leases = new ArrayList<>();
-    }
-
-    public void addLease(Lease l){
+    public void addLease(Lease l) {
         leases.add(l);
     }
 
-    public void removeLease(UUID prpopertyID){
+    public void removeLease(UUID prpopertyID) {
         leases.remove(findLease(prpopertyID));
     }
 
-    public Lease findLease(UUID propertyID){
+    public Lease findLease(UUID propertyID) {
         return leases.stream().filter(r -> r.getPropertyID().equals(propertyID)).findFirst().orElse(null);
     }
 
-    public ArrayList<Lease> getLeases(){return leases;}
+    public ArrayList<Lease> getLeases() {
+        return leases;
+    }
 }

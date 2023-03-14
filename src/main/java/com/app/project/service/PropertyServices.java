@@ -1,6 +1,5 @@
 package com.app.project.service;
 
-import com.app.project.entity.Property;
 import com.app.project.entity.Tenant;
 import com.app.project.interfaces.IProperty;
 import com.app.project.repository.LeaseRepository;
@@ -17,15 +16,17 @@ public class PropertyServices {
     private TenantRepository tenantRepository;
 
     private LeaseRepository leaseRepository;
+
     public PropertyServices() {
         this.propertiesRepository = PropertiesRepository.getInstance();
-        notificationServices = new NotificationServices();
+        this.notificationServices = new NotificationServices();
         this.tenantRepository = TenantRepository.getInstance();
         this.leaseRepository = LeaseRepository.getInstance();
     }
-    public PropertyServices(PropertiesRepository repository){
+
+    public PropertyServices(PropertiesRepository repository) {
         this.propertiesRepository = repository;
-        notificationServices = new NotificationServices();
+        this.notificationServices = new NotificationServices();
         this.tenantRepository = TenantRepository.getInstance();
         this.leaseRepository = LeaseRepository.getInstance();
     }
@@ -51,8 +52,8 @@ public class PropertyServices {
     }
 
     public void assignATenant(Tenant tenant) {
-            IProperty property = this.propertiesRepository.findByKey(tenant.getOccupiedPropertyId());
-            property.addTenantToProperty(tenant);
+        IProperty property = this.propertiesRepository.findByKey(tenant.getOccupiedPropertyId());
+        property.addTenantToProperty(tenant);
         this.propertiesRepository.upsert(property);
     }
 
@@ -65,8 +66,8 @@ public class PropertyServices {
         IProperty property = this.propertiesRepository.findByKey(propertyID);
         List<UUID> notifiers = property.removeTenants();
         leaseRepository.removeLease(propertyID);
-        for (UUID user:
-             notifiers) {
+        for (UUID user :
+                notifiers) {
             Tenant u = this.tenantRepository.findByKey(user);
             notificationServices.sendMessage("The Apartment " + property, u.toString());
         }

@@ -9,7 +9,7 @@ import com.app.project.service.PropertyServices;
 import java.util.ArrayList;
 import java.util.UUID;
 
-public  class PropertyController implements IPropertyController {
+public class PropertyController implements IPropertyController {
     private PropertyServices propertyServices;
     private IPropertyView view;
 
@@ -53,11 +53,11 @@ public  class PropertyController implements IPropertyController {
         view.displayProperties(properties);
     }
 
-    public void moveTenants(UUID propertyID, UUID userID){
+    public void moveTenants(UUID propertyID, UUID userID) {
         this.propertyServices.moveTenantToProperty(propertyID, userID);
     }
 
-    public void removeTenants(UUID propertyID){
+    public void removeTenants(UUID propertyID) {
         this.propertyServices.removeTenants(propertyID);
     }
 

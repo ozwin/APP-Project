@@ -9,8 +9,8 @@ import java.util.Scanner;
 import java.util.UUID;
 
 public class TenantView {
+    private final Scanner scanner;
     private TenantController controller;
-    private Scanner scanner;
 
     public TenantView(Scanner scanner) {
         this.scanner = scanner;
@@ -24,34 +24,13 @@ public class TenantView {
         System.out.println("Enter Apartment/Condo/Private House Id:");
         UUID propertyID = UUID.fromString(scanner.nextLine().trim());
 //      are we supposed to consider the case where user is already in the system as a prospective client
-//        System.out.println("Enter the number of tenants");
-        System.out.println("Enter first name");
-        String firstName = scanner.nextLine();
-        System.out.println("Enter last name");
-        String lastName = scanner.nextLine();
-        System.out.println("Enter phone number");
-        String phoneNumber = scanner.nextLine();
-        System.out.println("Enter email");
-        String email = scanner.nextLine();
-        Contact contact = new Contact(email, phoneNumber);
-        Tenant tenant = new Tenant(firstName, lastName, contact, propertyID);
+        Tenant tenant = generateTenant(propertyID);
         this.controller.addTenant(tenant);
     }
-    public UUID addToProperty(UUID propertyID){
-//      are we supposed to consider the case where user is already in the system as a prospective client
-//        System.out.println("Enter the number of tenants");
-        System.out.println("Enter first name");
-        String firstName = scanner.nextLine();
-        System.out.println("Enter last name");
-        String lastName = scanner.nextLine();
-        System.out.println("Enter phone number");
-        String phoneNumber = scanner.nextLine();
-        System.out.println("Enter email");
-        String email = scanner.nextLine();
-        Contact contact = new Contact(email, phoneNumber);
-        Tenant tenant = new Tenant(firstName, lastName, contact, propertyID);
-        this.controller.addTenant(tenant);
-        return tenant.getUserID();
+
+    public void addToProperty(UUID propertyID) {
+        Tenant tenant = generateTenant(propertyID);
+        this.controller.addAndRent(tenant);
     }
 
     public void displayAll(ArrayList<Tenant> tenants) {
@@ -59,5 +38,18 @@ public class TenantView {
         ) {
             System.out.println(tenant);
         }
+    }
+
+    private Tenant generateTenant(UUID propertyID) {
+        System.out.println("Enter first name");
+        String firstName = scanner.nextLine();
+        System.out.println("Enter last name");
+        String lastName = scanner.nextLine();
+        System.out.println("Enter phone number");
+        String phoneNumber = scanner.nextLine();
+        System.out.println("Enter email");
+        String email = scanner.nextLine();
+        Contact contact = new Contact(email, phoneNumber);
+        return new Tenant(firstName, lastName, contact, propertyID);
     }
 }

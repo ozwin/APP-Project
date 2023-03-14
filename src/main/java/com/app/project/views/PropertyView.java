@@ -15,6 +15,7 @@ import java.util.Scanner;
 public class PropertyView implements IPropertyView, Observer {
     private IPropertyController controller;
     private Scanner scanner;
+
     public PropertyView(Scanner scanner) {
         this.scanner = scanner;
     }
@@ -28,6 +29,7 @@ public class PropertyView implements IPropertyView, Observer {
         String postalCode = scanner.nextLine();
         return new Address(streetName, city, postalCode);
     }
+
     public Property generatePropertyInformation(String type) {
         try {
             Address propertyAddress = getAddress(scanner);
@@ -60,7 +62,6 @@ public class PropertyView implements IPropertyView, Observer {
 
     @Override
     public void update(Observable o, Object arg) {
-    //
         System.out.println("Saved successfully, refresh the list ");
     }
 }

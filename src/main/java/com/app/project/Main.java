@@ -9,7 +9,7 @@ public class Main {
         System.out.println("Hello world!");
 //        initialize with some mock data
         DataStore.initializeDataBase();
-        CLIController controller=new CLIController(new CLIView());
+        CLIController controller = new CLIController(new CLIView());
         controller.execute();
     }
 }
