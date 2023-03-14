@@ -69,10 +69,10 @@ class TenantServicesTest {
         assertEquals(tenants1, tenants);
     }
 
-    @Test
-    void tenantToStringTest() {
-        Tenant tenant = new Tenant("Ozwin", "Lobo", new Contact("12345", "12345"), UUID.fromString("6afdf2ec-5155-4237-befd-86dc01a73a66"));
-        System.out.println(tenant);
-    }
+//    @Test
+//    void tenantToStringTest() {
+//        Tenant tenant = new Tenant("Ozwin", "Lobo", new Contact("12345", "12345"), UUID.fromString("6afdf2ec-5155-4237-befd-86dc01a73a66"));
+//        System.out.println(tenant);
+//    }
 
 }

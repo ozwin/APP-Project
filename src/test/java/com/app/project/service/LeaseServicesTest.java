@@ -115,8 +115,12 @@ class LeaseServicesTest {
     }
 
     @Test
-    void recordPaymentSucessTest()  {
-        Assertions.assertThrows(Exception.class,()->leaseServices.recordPayment(UUID.randomUUID(),2000));
+    void recordPaymentFailureTest()  {
+        Assertions.assertThrows(Exception.class,()->leaseServices.recordPayment(UUID.randomUUID(),20));
+    }
+    @Test
+    void  recordPaymentSuccessTest()  {
+        Assertions.assertDoesNotThrow(()->leaseServices.recordPayment(UUID.randomUUID(),20000));
     }
 
     @Test
