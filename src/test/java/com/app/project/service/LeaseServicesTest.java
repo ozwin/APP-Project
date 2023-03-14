@@ -9,6 +9,7 @@ import org.junit.jupiter.api.*;
 import org.mockito.Mockito;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -44,10 +45,10 @@ class LeaseServicesTest {
         Lease lease=new Lease(userIds,apartment.getPropertyId());
         lease.setLeaseDuration(12);
         lease.setAgreedMonthlyRent(2000);
-        ArrayList<Lease> leases=new ArrayList<Lease>();
+        ArrayList<Lease> leases=new ArrayList<>();
         leases.add(lease);
         apartment.setLeaseId(lease.getLeaseID());
-        ArrayList<IProperty> properties=new ArrayList<IProperty>();
+        ArrayList<IProperty> properties=new ArrayList<>();
         properties.add(apartment);
         when(tenantRepository.findByKey(any())).thenReturn(tenant);
         when(propertiesRepository.findByKey(any())).thenReturn(apartment);
@@ -66,14 +67,33 @@ class LeaseServicesTest {
 
     @Test
     void getTenants() {
+        List<UUID> tenants = leaseServices.getTenants(propertyServices.getAll().get(0).getPropertyId());
+        Tenant tenant = new Tenant("Srikar", "Akella", new Contact("ABC@gmail.com", "9120344"), UUID.randomUUID());
+        tenants.add(tenant.getUserID());
+        doNothing().when(tenantRepository).add(tenant);
+        assertEquals(tenants, leaseServices.getTenants(propertyServices.getAll().get(0).getPropertyId()));
     }
 
     @Test
     void getTenantNames() {
+        List<String> tenants = new ArrayList<>();
+        Tenant tenant = new Tenant("Srikar", "Akella", new Contact("ABC@gmail.com", "9120344"), UUID.randomUUID());
+        tenants.add(tenant.fullName());
+        doNothing().when(tenantRepository).add(tenant);
+        assertEquals(tenants, leaseServices.getTenantNames(propertyServices.getAll().get(0).getPropertyId()));
     }
 
     @Test
     void addLease() {
+        List<UUID> tenants = new ArrayList<>();
+        UUID tenant = UUID.randomUUID();
+        tenants.add(tenant);
+        Lease lease = new Lease(tenants, propertiesRepository.getAll().get(0).getPropertyId());
+        lease.setLeaseDuration(10);
+        lease.setAgreedMonthlyRent(2000);
+        doNothing().when(leaseRepository).addLease(lease);
+        UUID tenant2 = tenantServices.getTenant(tenant).getUserID();
+        assertEquals(tenant, tenant2);
     }
 
     @Test
@@ -82,6 +102,16 @@ class LeaseServicesTest {
 
     @Test
     void getAllLeases() {
+        ArrayList<Lease> leases = new ArrayList<>();
+        List<UUID> tenants = new ArrayList<>();
+        UUID tenant = UUID.randomUUID();
+        tenants.add(tenant);
+        Lease lease = new Lease(tenants, propertiesRepository.getAll().get(0).getPropertyId());
+        lease.setLeaseDuration(10);
+        lease.setAgreedMonthlyRent(2000);
+        leases.add(lease);
+        doNothing().when(leaseRepository).addLease(lease);
+        assertEquals(leases, leaseRepository.getLeases());
     }
 
     @Test

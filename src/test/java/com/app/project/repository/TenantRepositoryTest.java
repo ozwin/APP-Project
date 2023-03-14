@@ -28,6 +28,7 @@ class TenantRepositoryTest {
 
     @Test
     void findByKey() {
+
     }
 
     @Test
