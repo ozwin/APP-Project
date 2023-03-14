@@ -1,6 +1,7 @@
 package com.app.project.repository;
 
 import com.app.project.entity.Lease;
+import com.app.project.interfaces.IRepository;
 
 import java.util.ArrayList;
 import java.util.UUID;
@@ -8,7 +9,7 @@ import java.util.UUID;
 /**
  * The repository of the Leases where all the leases are stored.
  */
-public class LeaseRepository {
+public class LeaseRepository implements IRepository  {
     private static ArrayList<Lease> leases;
     private static LeaseRepository leaseRepository;
 
