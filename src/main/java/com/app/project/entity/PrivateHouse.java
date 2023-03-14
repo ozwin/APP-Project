@@ -1,5 +1,8 @@
 package com.app.project.entity;
 
+/**
+ * Describes the behaviour of an Private House.
+ */
 public class PrivateHouse extends Property {
     String streetNumber;
 

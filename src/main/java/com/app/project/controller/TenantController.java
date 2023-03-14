@@ -10,6 +10,9 @@ import com.app.project.views.TenantView;
 import java.util.ArrayList;
 import java.util.UUID;
 
+/**
+ * This class consists of implementations for Tenant.
+ */
 public class TenantController {
     private TenantServices tenantServices;
     private TenantView view;
@@ -20,26 +23,49 @@ public class TenantController {
         this.view.setController(this);
     }
 
+    /**
+     * Fina a tenant by his ID.
+     * @param tenantID
+     * @return
+     */
     public Tenant getTenant(UUID tenantID) {
         return this.tenantServices.getTenant(tenantID);
     }
 
+    /**
+     * Add a tenant into the system.
+     * @param tenant
+     */
     public void addTenant(Tenant tenant) {
         this.tenantServices.add(tenant);
     }
 
+    /**
+     * Calls the view to add the tenant.
+     */
     public void addTenantView() {
         view.add();
     }
 
+    /**
+     * Add a tenant to a property.
+     * @param propertyID
+     */
     public void addTenantToProperty(UUID propertyID) {
         view.addToProperty(propertyID);
     }
 
+    /**
+     * Add and rent a unit.
+     * @param tenant
+     */
     public void addAndRent(Tenant tenant) {
         tenantServices.addAndRent(tenant);
     }
 
+    /**
+     * Display all the tenants.
+     */
     public void displayAllTenants() {
         ArrayList<Tenant> tenants = this.tenantServices.getAll();
         view.displayAll(tenants);

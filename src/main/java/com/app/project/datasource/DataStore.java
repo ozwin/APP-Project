@@ -6,6 +6,9 @@ import com.app.project.entity.Condo;
 import com.app.project.entity.PrivateHouse;
 import com.app.project.repository.PropertiesRepository;
 
+/**
+ * Basic class for intialisation of the Data.
+ */
 public class DataStore {
     public static final PropertiesRepository propertiesRepository = PropertiesRepository.getInstance();
 //    public static final TenantServices tenantServices = new TenantServices(TenantRepository.getInstance(),new PropertyServices(PropertiesRepository.getInstance()));

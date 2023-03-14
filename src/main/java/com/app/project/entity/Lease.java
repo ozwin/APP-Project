@@ -7,7 +7,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
+/**
+ * Describes the structure of a lease
+ */
 public class Lease {
+
     UUID leaseID;
     List<UUID> occupiedTenants = new ArrayList<>();
     UUID propertyID;
@@ -25,11 +29,18 @@ public class Lease {
         this.rentHistory=new ArrayList<LocalDate>();
     }
 
-
+    /**
+     * Assign a lease duration.
+     * @param months
+     */
     public void setLeaseDuration(int months) {
         this.leaseDuration = months;
     }
 
+    /**
+     * Assign tenants to the lease.
+     * @param names
+     */
     public void setTenantNames(List<String> names) {
         tenantNames.addAll(names);
     }
@@ -43,6 +54,10 @@ public class Lease {
         return leaseID;
     }
 
+    /**
+     * Return true if the rent is paid for this month.
+     * @return
+     */
     public boolean isRentPaidForThisMonth() {
         if (rentHistory.size() == 0)
             return false;

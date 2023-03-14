@@ -10,6 +10,9 @@ import com.app.project.repository.TenantRepository;
 import java.util.ArrayList;
 import java.util.UUID;
 
+/**
+ * This class contains various services of property.
+ */
 public class PropertyServices {
     private PropertiesRepository propertiesRepository;
     private NotificationServices notificationServices;
@@ -64,7 +67,6 @@ public class PropertyServices {
 
     public void removeTenants(UUID propertyID) {
         Property property = (Property) this.propertiesRepository.findByKey(propertyID);
-        leaseRepository.removeLease(propertyID);
         for (UUID user :
                 property.getWaitingList()) {
             Tenant tenant = this.tenantRepository.findByKey(user);

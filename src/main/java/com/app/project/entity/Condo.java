@@ -1,5 +1,7 @@
 package com.app.project.entity;
-
+/**
+ * Describes the behaviour of a Condo
+ */
 public class Condo extends Property {
     String streetNumber;
     String unitNumber;

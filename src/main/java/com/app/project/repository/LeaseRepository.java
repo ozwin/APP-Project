@@ -5,6 +5,9 @@ import com.app.project.entity.Lease;
 import java.util.ArrayList;
 import java.util.UUID;
 
+/**
+ * The repository of the Leases where all the leases are stored.
+ */
 public class LeaseRepository {
     private static ArrayList<Lease> leases;
     private static LeaseRepository leaseRepository;
@@ -18,18 +21,35 @@ public class LeaseRepository {
         return leaseRepository;
     }
 
+    /**
+     * Adds a lease
+     * @param l
+     */
     public void addLease(Lease l) {
         leases.add(l);
     }
 
+    /**
+     * Removes a lease
+     * @param prpopertyID
+     */
     public void removeLease(UUID prpopertyID) {
         leases.remove(findLease(prpopertyID));
     }
 
+    /**
+     * Finds a lease
+     * @param propertyID
+     * @return
+     */
     public Lease findLease(UUID propertyID) {
         return leases.stream().filter(r -> r.getPropertyID().equals(propertyID)).findFirst().orElse(null);
     }
 
+    /**
+     * Returns the leases in form of a list.
+     * @return
+     */
     public ArrayList<Lease> getLeases() {
         return leases;
     }

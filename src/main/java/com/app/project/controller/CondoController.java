@@ -3,6 +3,9 @@ package com.app.project.controller;
 import com.app.project.entity.Condo;
 import com.app.project.views.CondoView;
 
+/**
+ * This class consists implementation of Condo properties.
+ */
 public class CondoController extends PropertyController {
     CondoView view;
 

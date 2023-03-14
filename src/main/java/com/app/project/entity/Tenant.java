@@ -5,9 +5,11 @@ import com.app.project.service.NotificationServices;
 import java.util.Observable;
 import java.util.Observer;
 import java.util.UUID;
-
+/**
+ * Describes the behaviour of a Tenant
+ */
 public class Tenant extends User implements Observer {
-    UUID occupiedPropertyId; //is it possible to occupy multiple properties?
+    UUID occupiedPropertyId;
     private NotificationServices notificationServices = new NotificationServices();
 
     public Tenant(String firstName, String lastName, Contact contact, UUID occupiedPropertyId) {

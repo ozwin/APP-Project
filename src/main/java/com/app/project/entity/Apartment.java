@@ -1,5 +1,8 @@
 package com.app.project.entity;
 
+/**
+ * Describes the behaviour of an Apartment
+ */
 public class Apartment extends Property {
     protected int numberOfBedrooms;
     protected int numberOfBathrooms;

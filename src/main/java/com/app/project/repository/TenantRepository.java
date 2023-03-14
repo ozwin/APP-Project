@@ -9,6 +9,9 @@ import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
+/**
+ * The repository to store Tenants in the database.
+ */
 public class TenantRepository implements IRepository {
     private static final NotificationServices notificationServices = new NotificationServices();
     private static ArrayList<Tenant> tenants;
@@ -24,14 +27,27 @@ public class TenantRepository implements IRepository {
         return tenantRepository;
     }
 
+    /**
+     * Add a tenant.
+     * @param tenant
+     */
     public void add(Tenant tenant) {
         this.tenants.add(tenant);
     }
 
+    /**
+     * Get all the tenants.
+     * @return
+     */
     public ArrayList<Tenant> getAll() {
         return this.tenants;
     }
 
+    /**
+     * Find the tenant by the ID.
+     * @param userID
+     * @return
+     */
     public Tenant findByKey(UUID userID) {
         return tenants.stream().filter(t -> t.getUserID().equals(userID)).findFirst().orElse(null);
     }

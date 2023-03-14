@@ -5,6 +5,9 @@ import com.app.project.util.Helper;
 
 import java.util.*;
 
+/**
+ * Describes the behaviour of a property.
+ */
 abstract public class Property extends Observable implements IProperty {
     protected Address address;
     protected List<UUID> waitingList;
@@ -44,6 +47,10 @@ abstract public class Property extends Observable implements IProperty {
         return builder.toString();
     }
 
+    /**
+     * Adds a tenant to the property.
+     * @param tenant
+     */
     public void addTenantToProperty(Tenant tenant) {
         //checking if the property is vacant or not
         this.waitingList.add(tenant.getUserID());
@@ -86,8 +93,11 @@ abstract public class Property extends Observable implements IProperty {
         }
     }
 
+    /**
+     * Checks if the tenant is already in the waitlist, if yes remove from it and make him tenant.
+     * @param userID
+     */
     public void moveTenant(UUID userID) {
-        // checks if the user is in the waiting list
         if (waitingList.contains(userID)) {
             tenants.add(userID);
             waitingList.remove(userID);

@@ -13,6 +13,9 @@ import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
+/**
+ * This class all the services performed to generate leases.
+ */
 public class LeaseServices {
     private LeaseRepository leaseRepository;
     private PropertiesRepository propertiesRepository;

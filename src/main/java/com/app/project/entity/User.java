@@ -3,7 +3,9 @@ package com.app.project.entity;
 import com.app.project.util.Helper;
 
 import java.util.UUID;
-
+/**
+ * Describes the properties of a User.
+ */
 public class User {
     protected String firstName;
     protected String lastName;

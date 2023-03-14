@@ -7,7 +7,9 @@ import com.app.project.repository.TenantRepository;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
-
+/**
+ * This class all the services performed to tenant leases.
+ */
 public class TenantServices {
     private TenantRepository tenantRepository;
     private PropertyServices propertyServices;

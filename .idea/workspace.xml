@@ -5,8 +5,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9f24fdae-1a2b-4e38-a0f4-471413627a31" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/controller/ApartmentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/controller/ApartmentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/controller/CLIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/controller/CLIController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/controller/CondoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/controller/CondoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/controller/LeaseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/controller/LeaseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/controller/PrivateHouseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/controller/PrivateHouseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/controller/PropertyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/controller/PropertyController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/controller/TenantController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/controller/TenantController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/datasource/DataStore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/datasource/DataStore.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/entity/Apartment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/entity/Apartment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/entity/Condo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/entity/Condo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/entity/Lease.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/entity/Lease.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/entity/PrivateHouse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/entity/PrivateHouse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/entity/Property.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/entity/Property.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/entity/Tenant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/entity/Tenant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/repository/LeaseRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/repository/LeaseRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/repository/PropertiesRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/repository/PropertiesRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/repository/TenantRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/repository/TenantRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/service/LeaseServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/service/LeaseServices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/service/PropertyServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/service/PropertyServices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/service/TenantServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/service/TenantServices.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/app/project/service/LeaseServicesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/app/project/service/LeaseServicesTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/app/project/service/TenantServicesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/app/project/service/TenantServicesTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +110,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TenantServicesTest.tenantToStringTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="LeaseServicesTest.addLease" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="APP-Project" />
       <extension name="coverage">
         <pattern>
@@ -97,8 +119,72 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.app.project.service" />
-      <option name="MAIN_CLASS_NAME" value="com.app.project.service.TenantServicesTest" />
-      <option name="METHOD_NAME" value="tenantToStringTest" />
+      <option name="MAIN_CLASS_NAME" value="com.app.project.service.LeaseServicesTest" />
+      <option name="METHOD_NAME" value="addLease" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LeaseServicesTest.getAllLeases" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="APP-Project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.app.project.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.app.project.service" />
+      <option name="MAIN_CLASS_NAME" value="com.app.project.service.LeaseServicesTest" />
+      <option name="METHOD_NAME" value="getAllLeases" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LeaseServicesTest.getTenantNames" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="APP-Project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.app.project.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.app.project.service" />
+      <option name="MAIN_CLASS_NAME" value="com.app.project.service.LeaseServicesTest" />
+      <option name="METHOD_NAME" value="getTenantNames" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LeaseServicesTest.getTenants" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="APP-Project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.app.project.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.app.project.service" />
+      <option name="MAIN_CLASS_NAME" value="com.app.project.service.LeaseServicesTest" />
+      <option name="METHOD_NAME" value="getTenants" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LeaseServicesTest.removeLease" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="APP-Project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.app.project.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.app.project.service" />
+      <option name="MAIN_CLASS_NAME" value="com.app.project.service.LeaseServicesTest" />
+      <option name="METHOD_NAME" value="removeLease" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -106,11 +192,19 @@
     </configuration>
     <list>
       <item itemvalue="Application.APP_MVC_Phase1" />
-      <item itemvalue="JUnit.TenantServicesTest.tenantToStringTest" />
+      <item itemvalue="JUnit.LeaseServicesTest.addLease" />
+      <item itemvalue="JUnit.LeaseServicesTest.getAllLeases" />
+      <item itemvalue="JUnit.LeaseServicesTest.getTenantNames" />
+      <item itemvalue="JUnit.LeaseServicesTest.getTenants" />
+      <item itemvalue="JUnit.LeaseServicesTest.removeLease" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.TenantServicesTest.tenantToStringTest" />
+        <item itemvalue="JUnit.LeaseServicesTest.removeLease" />
+        <item itemvalue="JUnit.LeaseServicesTest.getTenantNames" />
+        <item itemvalue="JUnit.LeaseServicesTest.getAllLeases" />
+        <item itemvalue="JUnit.LeaseServicesTest.addLease" />
+        <item itemvalue="JUnit.LeaseServicesTest.getTenants" />
       </list>
     </recent_temporary>
   </component>
@@ -153,6 +247,24 @@
             <option name="WATCH_EXIT" value="false" />
           </properties>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/com/app/project/service/LeaseServicesTest.java</url>
+          <line>96</line>
+          <properties class="com.app.project.service.LeaseServicesTest" method="removeLease">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/com/app/project/service/LeaseServicesTest.java</url>
+          <line>77</line>
+          <properties class="com.app.project.service.LeaseServicesTest" method="getTenantNames">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
