@@ -4,6 +4,7 @@ import com.app.project.interfaces.IProperty;
 import com.app.project.interfaces.IRepository;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
@@ -59,5 +60,9 @@ public class PropertiesRepository implements IRepository {
             this.properties.set(index, property);
         else
             this.properties.add(property);
+    }
+
+    public ArrayList<IProperty> findMany(List<UUID> propertyIds) {
+        return this.properties.stream().filter(t -> propertyIds.contains(t.getPropertyId())).collect(Collectors.toCollection(ArrayList::new));
     }
 }

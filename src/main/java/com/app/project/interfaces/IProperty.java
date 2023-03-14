@@ -16,5 +16,5 @@ public interface IProperty {
 
     List<UUID> getTenants();
 
-    List<UUID> removeTenants();
+    void removeTenants();
 }

@@ -12,6 +12,7 @@ abstract public class Property extends Observable implements IProperty {
     protected List<UUID> tenants;
     protected List<Observer> observers;
     private UUID ID;
+    private UUID leaseId;
 
     public Property() {
         this.ID = Helper.generateUniqueIdentifier();
@@ -95,11 +96,19 @@ abstract public class Property extends Observable implements IProperty {
         }
     }
 
-    public List<UUID> removeTenants() {
+    public void removeTenants() {
         tenants.clear();
-        // clear the lease
-        // call a notify method on all waiting list
+    }
+
+    public List<UUID> getWaitingList() {
         return waitingList;
     }
 
+    public UUID getLeaseId() {
+        return leaseId;
+    }
+
+    public void setLeaseId(UUID leaseId) {
+        this.leaseId = leaseId;
+    }
 }

@@ -33,4 +33,13 @@ public class LeaseRepository {
     public ArrayList<Lease> getLeases() {
         return leases;
     }
+
+    public void upsert(Lease lease) {
+        int index = this.leases.indexOf(lease);
+        if (index >= 0)
+            this.leases.set(index, lease);
+        else
+            this.leases.add(lease);
+    }
+
 }

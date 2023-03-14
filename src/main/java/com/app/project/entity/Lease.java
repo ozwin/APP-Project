@@ -54,6 +54,10 @@ public class Lease {
         return false;
     }
 
+    public void recordPayment() {
+        this.rentHistory.add(LocalDate.now());
+    }
+
     public double getAgreedMonthlyRent() {
         return this.agreedMonthlyRent;
     }
@@ -64,5 +68,19 @@ public class Lease {
 
     public UUID getPropertyID() {
         return propertyID;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
+        }
+        if (obj == null || obj.getClass() != this.getClass()) {
+            return false;
+        }
+        Lease lease = (Lease) obj;
+        if (lease.getLeaseID().equals(this.getLeaseID()))
+            return true;
+        return false;
     }
 }

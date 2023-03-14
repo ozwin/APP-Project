@@ -21,8 +21,8 @@ public class CLIView {
                 System.out.println("Enter your choice");
                 //inject this dependency instead of creation
                 Scanner scanner = ScannerSingleton.getInstance().scanner;
-                System.out.println("1. Add Property 2. Add a tenant 3. Rent a Unit 4.Display Properties 5. display tenants 6. display vacant units 7.display rented units 8. Display All Leases 9. Vacate A unit 10. Exit");
-                int input = Integer.parseInt(scanner.nextLine());
+                System.out.println("1. Add Property \n2. Add a tenant \n3. Rent a Unit \n4.Display Properties \n5. display tenants \n6. display vacant units \n7.display rented units \n8. Display All Leases \n9. Vacate A unit  \n10.Pay Rent \n11.Display Properties with pending rent \n12. Exit");
+                int input = Integer.parseInt(scanner.nextLine().trim());
                 switch (input) {
 //                use enums here
                     case 1 -> {
@@ -68,9 +68,20 @@ public class CLIView {
                         String propertyID = scanner.nextLine();
                         controller.removeTenants(UUID.fromString(propertyID));
                     }
-                    case 10 -> {
+                    case 12 -> {
                         System.out.println("Exiting Application");
                         System.exit(0);
+                    }
+                    case 10 -> {
+                        System.out.println("Enter the property Id for which you want to pay rent");
+                        UUID propertyId = UUID.fromString(scanner.nextLine().trim());
+                        System.out.println("Enter the amount to be paid");
+                        double rent = Double.parseDouble(scanner.nextLine());
+                        leaseController.recordPayment(propertyId, rent);
+                    }
+                    case 11 -> {
+                        System.out.println("Properties that are yet to pay");
+                        leaseController.findPropertiesWithPendingPayment();
                     }
                 }
             } catch (Exception ex) {

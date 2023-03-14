@@ -30,10 +30,6 @@ class PropertyServicesTest {
     void setUp() {
     }
 
-    @Test
-    void givenValueExistsInCache_whenGetProduct_thenDAOIsNotCalled() {
-    }
-
 
     @AfterEach
     void tearDown() {

@@ -1,5 +1,6 @@
 package com.app.project.service;
 
+import com.app.project.entity.Property;
 import com.app.project.entity.Tenant;
 import com.app.project.interfaces.IProperty;
 import com.app.project.repository.LeaseRepository;
@@ -7,7 +8,6 @@ import com.app.project.repository.PropertiesRepository;
 import com.app.project.repository.TenantRepository;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.UUID;
 
 public class PropertyServices {
@@ -63,14 +63,14 @@ public class PropertyServices {
     }
 
     public void removeTenants(UUID propertyID) {
-        IProperty property = this.propertiesRepository.findByKey(propertyID);
-        List<UUID> notifiers = property.removeTenants();
+        Property property = (Property) this.propertiesRepository.findByKey(propertyID);
         leaseRepository.removeLease(propertyID);
         for (UUID user :
-                notifiers) {
-            Tenant u = this.tenantRepository.findByKey(user);
-            notificationServices.sendMessage("The Apartment " + property, u.toString());
+                property.getWaitingList()) {
+            Tenant tenant = this.tenantRepository.findByKey(user);
+            notificationServices.sendMessage("The below property is available now! " + property, tenant.fullName());
         }
     }
+
 
 }
