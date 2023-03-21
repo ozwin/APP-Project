@@ -78,14 +78,10 @@ class LeaseServicesTest {
 
     @Test
     void getTenantNames() {
-<<<<<<< HEAD
-
-=======
         List<String> tenants = new ArrayList<String>();
         tenants.add("Ozwin Lobo");
         List<String> output= leaseServices.getTenantNames(propertyServices.getAll().get(0).getPropertyId());
         assertEquals(tenants, output);
->>>>>>> dcdb9c43acca083af4b124ba9ab6706b3ff05c2e
     }
 
     @Test
