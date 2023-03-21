@@ -21,7 +21,7 @@ public class CLIView {
                 System.out.println("Enter your choice");
                 //inject this dependency instead of creation
                 Scanner scanner = ScannerSingleton.getInstance().scanner;
-                System.out.println("1. Add Property \n2. Add a tenant \n3. Rent a Unit \n4.Display Properties \n5. display tenants \n6. display vacant units \n7.display rented units \n8. Display All Leases \n9. Vacate A unit  \n10.Pay Rent \n11.Display Properties with pending rent \n12. Exit");
+                System.out.println("1. Add Property \n2. Add a tenant \n3. Rent a Unit \n4. Display Properties \n5. display tenants \n6. display vacant units \n7. display rented units \n8. Display All Leases \n9. Vacate A unit  \n10. Pay Rent \n11. Display Properties with pending rent \n12. Exit");
                 int input = Integer.parseInt(scanner.nextLine().trim());
                 switch (input) {
 //                use enums here
@@ -36,20 +36,24 @@ public class CLIView {
                         //add a tenant to a property
                             tenantController.addTenantView();
                     case 3 -> {
-                        System.out.println("Enter the property ID");
-                        UUID propertyID = UUID.fromString(scanner.nextLine().trim());
-                        System.out.println("Are you a in a waiting list for this property? Enter Y or N");
-                        String choice = scanner.nextLine().trim();
-                        if (choice.equals("Y")) {
-                            System.out.println("Enter your tenant ID: ");
-                            UUID userID = UUID.fromString(scanner.nextLine().trim());
-                            controller.moveTenants(propertyID, userID);
-                        } else if (choice.equals("N")) {
-                            tenantController.addTenantToProperty(propertyID);
-                        } else {
-                            throw new InvalidKeyException("Please enter a valid choice");
+                        try {
+                            System.out.println("Enter the property ID");
+                            UUID propertyID = UUID.fromString(scanner.nextLine().trim());
+                            System.out.println("Are you a in a waiting list for this property? Enter Y or N");
+                            String choice = scanner.nextLine().trim();
+                            if (choice.equals("Y")) {
+                                System.out.println("Enter your tenant ID: ");
+                                UUID userID = UUID.fromString(scanner.nextLine().trim());
+                                controller.moveTenants(propertyID, userID);
+                            } else if (choice.equals("N")) {
+                                tenantController.addTenantToProperty(propertyID);
+                            } else {
+                                throw new InvalidKeyException("Please enter a valid choice");
+                            }
+                            leaseController.addLeaseView(propertyID);
+                        } catch (Exception ex) {
+                            System.out.println(ex.getMessage());
                         }
-                        leaseController.addLeaseView(propertyID);
 
                     }
                     case 4 ->

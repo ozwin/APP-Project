@@ -84,7 +84,7 @@ public class PropertyController implements IPropertyController {
      * @param propertyID
      * @param userID
      */
-    public void moveTenants(UUID propertyID, UUID userID) {
+    public void moveTenants(UUID propertyID, UUID userID) throws Exception {
         this.propertyServices.moveTenantToProperty(propertyID, userID);
     }
 

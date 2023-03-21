@@ -60,9 +60,9 @@ public class PropertyServices {
         this.propertiesRepository.upsert(property);
     }
 
-    public void moveTenantToProperty(UUID propertyID, UUID userID) {
-        IProperty property = this.propertiesRepository.findByKey(propertyID);
-        property.moveTenant(userID);
+    public void moveTenantToProperty(UUID propertyID, UUID userID) throws Exception {
+            IProperty property = this.propertiesRepository.findByKey(propertyID);
+            property.moveTenant(userID);
     }
 
     public void removeTenants(UUID propertyID) {

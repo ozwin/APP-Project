@@ -36,7 +36,7 @@ public class TenantServices {
         this.tenantRepository.add(tenant);
     }
 
-    public void addAndRent(Tenant tenant) {
+    public void addAndRent(Tenant tenant) throws Exception {
         add(tenant);
         this.propertyServices.moveTenantToProperty(tenant.getOccupiedPropertyId(), tenant.getUserID());
     }

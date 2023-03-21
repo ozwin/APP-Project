@@ -25,6 +25,7 @@ public class TenantController {
 
     /**
      * Fina a tenant by his ID.
+     *
      * @param tenantID
      * @return
      */
@@ -34,6 +35,7 @@ public class TenantController {
 
     /**
      * Add a tenant into the system.
+     *
      * @param tenant
      */
     public void addTenant(Tenant tenant) {
@@ -49,6 +51,7 @@ public class TenantController {
 
     /**
      * Add a tenant to a property.
+     *
      * @param propertyID
      */
     public void addTenantToProperty(UUID propertyID) {
@@ -57,10 +60,15 @@ public class TenantController {
 
     /**
      * Add and rent a unit.
+     *
      * @param tenant
      */
     public void addAndRent(Tenant tenant) {
-        tenantServices.addAndRent(tenant);
+        try {
+            tenantServices.addAndRent(tenant);
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
     }
 
     /**

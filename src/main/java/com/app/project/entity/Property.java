@@ -99,7 +99,9 @@ abstract public class Property extends Observable implements IProperty {
      * Checks if the tenant is already in the waitlist, if yes remove from it and make him tenant.
      * @param userID
      */
-    public void moveTenant(UUID userID) {
+    public void moveTenant(UUID userID) throws Exception {
+        if(tenants.size()>0)
+            throw new Exception("This property is already occupied and not available fo renting at the moment");
         if (waitingList.contains(userID)) {
             tenants.add(userID);
             waitingList.remove(userID);
@@ -122,5 +124,10 @@ abstract public class Property extends Observable implements IProperty {
 
     public void setLeaseId(UUID leaseId) {
         this.leaseId = leaseId;
+    }
+
+    @Override
+    public UUID getID() {
+        return ID;
     }
 }

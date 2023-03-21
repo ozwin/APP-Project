@@ -15,7 +15,7 @@ public interface IPropertyController {
 
     void add(IProperty property);
 
-    void moveTenants(UUID propertyID, UUID userID);
+    void moveTenants(UUID propertyID, UUID userID) throws Exception;
 
     void removeTenants(UUID propertyID);
 }
