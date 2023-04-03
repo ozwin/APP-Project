@@ -1,5 +1,6 @@
 package com.app.project.entity;
 
+import com.app.project.interfaces.IEntity;
 import com.app.project.util.Helper;
 
 import java.time.LocalDate;
@@ -10,9 +11,9 @@ import java.util.UUID;
 /**
  * Describes the structure of a lease
  */
-public class Lease {
+public class Lease implements IEntity<UUID> {
 
-    UUID leaseID;
+    UUID ID;
     List<UUID> occupiedTenants = new ArrayList<>();
     UUID propertyID;
     List<String> tenantNames = new ArrayList<>();
@@ -47,11 +48,11 @@ public class Lease {
 
     @Override
     public String toString() {
-        return "The lease is : " + leaseID + "\n" + "The tenants : " + String.join(",", tenantNames) + "For a duration of: " + leaseDuration;
+        return "The lease is : " + ID + "\n" + "The tenants : " + String.join(",", tenantNames) + "For a duration of: " + leaseDuration;
     }
 
     public UUID getLeaseID() {
-        return leaseID;
+        return ID;
     }
 
     /**
@@ -99,5 +100,9 @@ public class Lease {
         if (lease.getLeaseID().equals(this.getLeaseID()))
             return true;
         return false;
+    }
+    @Override
+    public UUID getID() {
+        return this.ID;
     }
 }

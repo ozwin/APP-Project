@@ -11,7 +11,7 @@ import java.util.stream.Collectors;
 /**
  * The repository where are the properties are stored.
  */
-public class PropertiesRepository implements IRepository {
+public class PropertiesRepository extends Repository {
     private static PropertiesRepository propertiesRepository;
     private ArrayList<IProperty> properties = new ArrayList<>();
 

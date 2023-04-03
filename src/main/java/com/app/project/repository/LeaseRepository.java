@@ -9,7 +9,7 @@ import java.util.UUID;
 /**
  * The repository of the Leases where all the leases are stored.
  */
-public class LeaseRepository implements IRepository  {
+public class LeaseRepository extends Repository<Lease,UUID>  {
     private static ArrayList<Lease> leases;
     private static LeaseRepository leaseRepository;
 

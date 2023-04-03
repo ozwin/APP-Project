@@ -12,7 +12,7 @@ import java.util.stream.Collectors;
 /**
  * The repository to store Tenants in the database.
  */
-public class TenantRepository implements IRepository {
+public class TenantRepository extends Repository {
     private static final NotificationServices notificationServices = new NotificationServices();
     private static ArrayList<Tenant> tenants;
     private static TenantRepository tenantRepository;
