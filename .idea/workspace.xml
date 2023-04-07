@@ -7,33 +7,19 @@
     <list default="true" id="9f24fdae-1a2b-4e38-a0f4-471413627a31" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/controller/ApartmentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/controller/ApartmentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/controller/CLIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/controller/CLIController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/controller/CondoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/controller/CondoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/controller/LeaseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/controller/LeaseController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/controller/PrivateHouseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/controller/PrivateHouseController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/controller/PropertyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/controller/PropertyController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/controller/TenantController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/controller/TenantController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/datasource/DataStore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/datasource/DataStore.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/entity/Apartment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/entity/Apartment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/entity/Condo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/entity/Condo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/entity/Lease.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/entity/Lease.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/entity/PrivateHouse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/entity/PrivateHouse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/entity/Property.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/entity/Property.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/entity/Tenant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/entity/Tenant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/repository/LeaseRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/repository/LeaseRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/repository/PropertiesRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/repository/PropertiesRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/repository/TenantRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/repository/TenantRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/service/LeaseServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/service/LeaseServices.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/service/PropertyServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/service/PropertyServices.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/service/TenantServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/service/TenantServices.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/app/project/service/LeaseServicesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/app/project/service/LeaseServicesTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/javafxcontroller/AddPropertyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/javafxcontroller/AddPropertyController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/javafxcontroller/PropertyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/javafxcontroller/PropertyController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/views/javafx/MainView.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/AddProperty.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/AddProperty.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/DisplayProperties.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/DisplayProperties.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -41,6 +27,7 @@
         <option value="package-info" />
         <option value="Interface" />
         <option value="JUnit5 Test Class" />
+        <option value="FxmlFile" />
         <option value="Class" />
       </list>
     </option>
@@ -59,6 +46,13 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
   <component name="ProjectId" id="2MNfiYf1TwB9ulfYgH6SUPlC1wq" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -67,34 +61,49 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Downloaded.Files.Path.Enabled": "false",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.includeInheritedMembers": "true",
-    "last_opened_file_path": "C:/Users/ozwin/Downloads/Digital-Phonebook-master",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.includeInheritedMembers&quot;: &quot;true&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;18&quot;,
+    &quot;js.buildTools.gulp.gulp_package_dir&quot;: &quot;&quot;,
+    &quot;last_directory_selection&quot;: &quot;C:/Personal/APP-Project/src/main/java/com/app/project&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Personal/APP-Project/src/main/resources/com.app.project&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
+      &quot;TEXT&quot;
+    ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Personal\APP-Project\src\main\resources\com.app.project" />
+    </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Personal\APP-Project\src\main\resources" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="com.app.project.controller" />
@@ -102,10 +111,18 @@
       <recent name="com.app.project.service" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.APP_MVC_Phase1">
+  <component name="RunManager" selected="Application.APP_MVC_Phase2">
     <configuration name="APP_MVC_Phase1" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="com.app.project.Main" />
       <module name="APP-Project" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="APP_MVC_Phase2" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="com.app.project.App" />
+      <module name="APP-Project" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Program Files\Java\javafx-sdk-19.0.2.1\lib&quot; --add-modules javafx.controls,javafx.fxml" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -158,22 +175,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LeaseServicesTest.getTenants" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="APP-Project" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.app.project.service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.app.project.service" />
-      <option name="MAIN_CLASS_NAME" value="com.app.project.service.LeaseServicesTest" />
-      <option name="METHOD_NAME" value="getTenants" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="LeaseServicesTest.removeLease" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="APP-Project" />
       <extension name="coverage">
@@ -190,13 +191,46 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="APP-Project" type="MavenRunConfiguration" factoryName="Maven" nameIsGenerated="true">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list />
+            </option>
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+      <method v="2" />
+    </configuration>
     <list>
+      <item itemvalue="Application.APP_MVC_Phase2" />
       <item itemvalue="Application.APP_MVC_Phase1" />
       <item itemvalue="JUnit.LeaseServicesTest.addLease" />
       <item itemvalue="JUnit.LeaseServicesTest.getAllLeases" />
       <item itemvalue="JUnit.LeaseServicesTest.getTenantNames" />
-      <item itemvalue="JUnit.LeaseServicesTest.getTenants" />
       <item itemvalue="JUnit.LeaseServicesTest.removeLease" />
+      <item itemvalue="Maven.APP-Project" />
     </list>
     <recent_temporary>
       <list>
@@ -204,7 +238,6 @@
         <item itemvalue="JUnit.LeaseServicesTest.getTenantNames" />
         <item itemvalue="JUnit.LeaseServicesTest.getAllLeases" />
         <item itemvalue="JUnit.LeaseServicesTest.addLease" />
-        <item itemvalue="JUnit.LeaseServicesTest.getTenants" />
       </list>
     </recent_temporary>
   </component>
@@ -219,6 +252,11 @@
       <workItem from="1677613091912" duration="8717000" />
       <workItem from="1677734774226" duration="40490000" />
       <workItem from="1677874097788" duration="769000" />
+      <workItem from="1680640992574" duration="3909000" />
+      <workItem from="1680738578821" duration="1589000" />
+      <workItem from="1680740181258" duration="15569000" />
+      <workItem from="1680881566162" duration="1646000" />
+      <workItem from="1680883243015" duration="5593000" />
     </task>
     <servers />
   </component>
@@ -240,18 +278,9 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/com/app/project/Main.java</url>
-          <line>7</line>
-          <properties class="com.app.project.Main" method="main">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/test/java/com/app/project/service/LeaseServicesTest.java</url>
           <line>96</line>
-          <properties class="com.app.project.service.LeaseServicesTest" method="removeLease">
+          <properties class="com.app.project.service.LeaseServicesTest">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
@@ -260,11 +289,26 @@
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/test/java/com/app/project/service/LeaseServicesTest.java</url>
           <line>77</line>
-          <properties class="com.app.project.service.LeaseServicesTest" method="getTenantNames">
+          <properties class="com.app.project.service.LeaseServicesTest">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
           <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/app/project/javafxcontroller/AddPropertyController.java</url>
+          <line>102</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/app/project/javafxcontroller/AddPropertyController.java</url>
+          <line>103</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/app/project/javafxcontroller/AddPropertyController.java</url>
+          <line>60</line>
+          <option name="timeStamp" value="13" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
