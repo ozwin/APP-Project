@@ -61,7 +61,4 @@ public class PropertyController  implements Initializable{
         stage.show();
         App.stage.close();
     }
-    public void refresh(){
-        displayAllProperties();
-    }
 }

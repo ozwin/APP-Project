@@ -2,15 +2,13 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.control.ToggleGroup?>
 
-<VBox alignment="CENTER" spacing="10" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.app.project.javafxcontroller.PropertyController">
+<VBox alignment="CENTER" prefHeight="500" prefWidth="1000.0" spacing="10" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.app.project.javafxcontroller.PropertyController">
 <children>
-    <ListView fx:id="propertyListView" prefHeight="200.0" prefWidth="300.0" />
+    <ListView fx:id="propertyListView" prefHeight="500.0" prefWidth="300.0" />
     <Button onAction="#handleAddNewProperty" text="Add New Property" />
 </children>
 <stylesheets>
 <!--    <URL value="@style.css" />-->
 </stylesheets>
 </VBox>
-
