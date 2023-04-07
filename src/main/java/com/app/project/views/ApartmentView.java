@@ -2,7 +2,7 @@ package com.app.project.views;
 
 import com.app.project.controller.ApartmentController;
 import com.app.project.entity.Apartment;
-import com.app.project.entity.Property;
+import com.app.project.interfaces.IProperty;
 
 import java.util.Scanner;
 
@@ -30,7 +30,7 @@ public class ApartmentView extends PropertyView {
     }
 
     public void add() {
-        Property property = this.generatePropertyInformation("apartment");
+        IProperty property = this.generatePropertyInformation("apartment");
         //add apartment specific information
         Apartment apartment = (Apartment) property;
         System.out.println("Enter Number of Bedrooms");

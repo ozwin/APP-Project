@@ -2,7 +2,7 @@ package com.app.project.views;
 
 import com.app.project.controller.CondoController;
 import com.app.project.entity.Condo;
-import com.app.project.entity.Property;
+import com.app.project.interfaces.IProperty;
 
 import java.util.Scanner;
 
@@ -21,7 +21,7 @@ public class CondoView extends PropertyView {
     }
 
     public void add() {
-        Property property = this.generatePropertyInformation("condo");
+        IProperty property = this.generatePropertyInformation("condo");
         //add apartment specific information
         Condo condo = (Condo) property;
         System.out.println("Enter Street Number :");

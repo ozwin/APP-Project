@@ -23,6 +23,8 @@ public class PropertyController implements IPropertyController {
         this.propertyServices = new PropertyServices(PropertiesRepository.getInstance());
         this.leaseServices = new LeaseServices();
     }
+    public PropertyController(){
+    }
 
     /**
      * Adds a property into the system

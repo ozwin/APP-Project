@@ -23,7 +23,7 @@ public class Lease implements IEntity<UUID> {
     private ArrayList<LocalDate> rentHistory;
 
     public Lease(List<UUID> tenants, UUID propertyID) {
-        leaseID = Helper.generateUniqueIdentifier();
+        ID = Helper.generateUniqueIdentifier();
         this.occupiedTenants.addAll(tenants);
         this.propertyID = propertyID;
         this.signedOn = LocalDate.now();

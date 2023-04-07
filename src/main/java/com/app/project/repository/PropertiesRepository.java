@@ -1,7 +1,6 @@
 package com.app.project.repository;
 
 import com.app.project.interfaces.IProperty;
-import com.app.project.interfaces.IRepository;
 
 import java.util.ArrayList;
 import java.util.List;

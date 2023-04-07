@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.app.project.javafxcontroller.AddPropertyController">
+    <children>
+        <HBox alignment="CENTER" spacing="10">
+            <RadioButton fx:id="type1RadioButton" selected="true" text="Apartment" />
+            <RadioButton fx:id="type2RadioButton" text="Condo" />
+            <RadioButton fx:id="type3RadioButton" text="Private House" />
+        </HBox>
+        <HBox alignment="CENTER" spacing="60">
+            <Label fx:id="detailsLabel" />
+        </HBox>
+        <TextField fx:id="streetName" layoutX="6.0" layoutY="42.0" promptText="Street Name" visible="true" />
+        <TextField fx:id="city" layoutX="175.0" layoutY="42.0" promptText="City" visible="true" />
+        <TextField fx:id="postalCode" layoutX="349.0" layoutY="42.0" promptText="Postal Code" visible="true" />
+        <!--only apartment specific-->
+        <TextField fx:id="bedrooms" layoutX="6.0" layoutY="94.0" promptText="Bedrooms" visible="true" />
+        <TextField fx:id="bathrooms" layoutX="175.0" layoutY="94.0" promptText="No of Bathrooms" visible="true" />
+        <TextField fx:id="squarefoot" layoutX="360.0" layoutY="94.0" promptText="Square foot" visible="true" />
+        <!--for condo and private house-->
+        <TextField fx:id="streetNumber" layoutX="6.0" layoutY="94.0" promptText="Street Number" visible="false" />
+        <!--     only for condo-->
+        <TextField fx:id="unitNumber" layoutX="175.0" layoutY="94.0" promptText="Unit Number" visible="false" />
+      <Button layoutX="285.0" layoutY="187.0" mnemonicParsing="false" onAction="#addProperty" prefHeight="25.0" prefWidth="140.0" text="Save" />
+      <Button fx:id="closebutton" layoutX="101.0" layoutY="187.0" mnemonicParsing="false" onAction="#cancel" prefHeight="25.0" prefWidth="140.0" text="Cancel" />
+        
+    </children>
+</AnchorPane>

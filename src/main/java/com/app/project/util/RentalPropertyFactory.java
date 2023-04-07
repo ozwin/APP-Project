@@ -1,11 +1,12 @@
 package com.app.project.util;
 
 import com.app.project.entity.*;
+import com.app.project.interfaces.IProperty;
 
 import java.util.Locale;
 
 public class RentalPropertyFactory {
-    public Property getPropertyObject(String type, Address address) throws Exception {
+    public static IProperty getPropertyObject(String type, Address address) {
 
         switch (type.trim().toUpperCase(Locale.ROOT)) {
             case "APARTMENT":
@@ -13,9 +14,10 @@ public class RentalPropertyFactory {
             case "CONDO":
                 return new Condo(address);
             case "HOUSE":
+            case "PRIVATE HOUSE":
                 return new PrivateHouse(address);
             default:
-                throw new Exception("PLease specify a property type");
+                return new Apartment(address);
         }
 
 //        case "PRIVATE":

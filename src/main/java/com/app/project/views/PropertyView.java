@@ -1,7 +1,6 @@
 package com.app.project.views;
 
 import com.app.project.entity.Address;
-import com.app.project.entity.Property;
 import com.app.project.interfaces.IProperty;
 import com.app.project.interfaces.IPropertyController;
 import com.app.project.interfaces.IPropertyView;
@@ -30,10 +29,10 @@ public class PropertyView implements IPropertyView, Observer {
         return new Address(streetName, city, postalCode);
     }
 
-    public Property generatePropertyInformation(String type) {
+    public IProperty generatePropertyInformation(String type) {
         try {
             Address propertyAddress = getAddress(scanner);
-            Property property = new RentalPropertyFactory().getPropertyObject(type, propertyAddress);
+            IProperty property = new RentalPropertyFactory().getPropertyObject(type, propertyAddress);
             return property;
         } catch (Exception ex) {
             System.out.println("Some error happened");

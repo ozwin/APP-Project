@@ -2,7 +2,7 @@ package com.app.project.views;
 
 import com.app.project.controller.PrivateHouseController;
 import com.app.project.entity.PrivateHouse;
-import com.app.project.entity.Property;
+import com.app.project.interfaces.IProperty;
 
 import java.util.Scanner;
 
@@ -24,7 +24,7 @@ public class PrivateHouseView extends PropertyView {
 
     @Override
     public void add() {
-        Property property = this.generatePropertyInformation("private");
+        IProperty property = this.generatePropertyInformation("private");
         //add apartment specific information
         PrivateHouse condo = (PrivateHouse) property;
         System.out.println("Enter Street Number :");
