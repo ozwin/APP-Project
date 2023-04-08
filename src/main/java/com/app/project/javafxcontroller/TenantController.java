@@ -46,6 +46,7 @@ public class TenantController implements Initializable{
                 setText(item.toString()); // TODO 1 : check this full name
             }
         });
+        App.navigate();
     }
 
     @Override

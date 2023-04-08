@@ -19,6 +19,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class PropertyController  implements Initializable{
@@ -44,6 +45,7 @@ public class PropertyController  implements Initializable{
                 setText(item.getAddress().toString());
             }
         });
+        App.navigate();
     }
 
     @Override
@@ -54,7 +56,7 @@ public class PropertyController  implements Initializable{
     }
     @FXML
     private void handleAddNewProperty(ActionEvent ae) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/AddProperty.fxml"));
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/AddProperty.fxml")));
         Stage stage = new Stage();
         stage.setTitle("Add property View");
         stage.setScene(new Scene(root));

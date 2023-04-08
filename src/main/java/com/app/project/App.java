@@ -30,8 +30,7 @@ public class App extends Application {
 //        IPropertyController controller = ControllerFactory.getController("");
 //        controller.displayAll();
         this.stage=primaryStage;
-//        Parent root = FXMLLoader.load(getClass().getResource("/DisplayProperties.fxml")); //TODO 3: Welcome page
-        Parent root = FXMLLoader.load(getClass().getResource("/DisplayTenants.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/WelcomePage.fxml"));
         Scene scene = new Scene(root);
         this.scene = scene;
         stage.setScene(scene);

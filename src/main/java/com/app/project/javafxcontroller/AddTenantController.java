@@ -79,7 +79,7 @@ public class AddTenantController implements Initializable {
     public void cancel() {
         Stage stage = (Stage) closebutton.getScene().getWindow();
         stage.close();
-        navigate();
+        App.navigate();
         //navigate to main screen
     }
 }
