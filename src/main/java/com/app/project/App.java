@@ -9,6 +9,7 @@ import javafx.stage.Stage;
 
 public class App extends Application {
     public static Stage stage;
+    public static Scene scene;
     public static void main(String[] args) {
         launch(args);
     }
@@ -29,10 +30,21 @@ public class App extends Application {
 //        IPropertyController controller = ControllerFactory.getController("");
 //        controller.displayAll();
         this.stage=primaryStage;
-        Parent root = FXMLLoader.load(getClass().getResource("/DisplayProperties.fxml"));
+//        Parent root = FXMLLoader.load(getClass().getResource("/DisplayProperties.fxml")); //TODO 3: Welcome page
+        Parent root = FXMLLoader.load(getClass().getResource("/DisplayTenants.fxml"));
         Scene scene = new Scene(root);
+        this.scene = scene;
         stage.setScene(scene);
         stage.show();
 
+    }
+    public static void navigate(){
+//        let's make this utility function or something
+        try {
+            App.stage.setScene(scene);
+            App.stage.show();
+        }catch (Exception ex){
+
+        }
     }
 }

@@ -11,10 +11,7 @@ import com.app.project.service.PropertyServices;
 import com.app.project.util.RentalPropertyFactory;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 
@@ -125,8 +122,6 @@ public class AddPropertyController implements Initializable {
                 ((Apartment) property).setSquareFoot(Float.parseFloat(squarefootText));
             }
             case "Condo" -> {
-                unitNumber.setVisible(true);
-                streetNumber.setVisible(true);
                 ((Condo) property).setUnitNumber(unitNumberText);
                 ((Condo) property).setStreetNumber(streetNumberText);
 
@@ -136,23 +131,13 @@ public class AddPropertyController implements Initializable {
             }
         }
         propertyServices.add(property);
-        navigate();
+        App.navigate();
     }
-    public void navigate(){
-//        let's make this utility function or something
-        try {
-            Parent root = FXMLLoader.load(getClass().getResource("/DisplayProperties.fxml"));
-            Scene scene = new Scene(root);
-            App.stage.setScene(scene);
-            App.stage.show();
-        }catch (Exception ex){
 
-        }
-    }
     public void cancel() {
         Stage stage = (Stage) closebutton.getScene().getWindow();
         stage.close();
-        navigate();
+        App.navigate();
         //navigate to main screen
     }
 }
