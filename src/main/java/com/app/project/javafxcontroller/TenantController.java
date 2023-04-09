@@ -14,6 +14,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.stage.Stage;
@@ -24,6 +25,8 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class TenantController implements Initializable{
+    @FXML
+    private Button closebtn;
     private TenantServices tenantServices=new TenantServices(TenantRepository.getInstance(), new PropertyServices(PropertiesRepository.getInstance()));
     @FXML private ListView<Tenant> tenantListView;
     private ObservableList<Tenant> tenantObservableList;
@@ -63,5 +66,11 @@ public class TenantController implements Initializable{
         stage.setScene(new Scene(root));
         stage.show();
         App.stage.close();
+    }
+    @FXML
+    private void back(){
+        Stage stage = (Stage) closebtn.getScene().getWindow();
+        stage.close();
+        App.navigate();
     }
 }

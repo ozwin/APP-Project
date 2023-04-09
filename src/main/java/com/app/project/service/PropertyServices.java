@@ -73,6 +73,4 @@ public class PropertyServices {
             notificationServices.sendMessage("The below property is available now! " + property, tenant.fullName());
         }
     }
-
-
 }

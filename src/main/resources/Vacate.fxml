@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.app.project.javafxcontroller.VacateController">
+   <children>
+      <Text layoutX="244.0" layoutY="109.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter the Property ID" />
+      <TextField fx:id="property" layoutX="220.0" layoutY="127.0" />
+      <Button fx:id="backbutton" layoutX="115.0" layoutY="260.0" mnemonicParsing="false" text="Back" onAction="#cancel"/>
+      <Button fx:id="submit" layoutX="380.0" layoutY="261.0" mnemonicParsing="false" text="Submit" onAction="#removeTenants"/>
+   </children>
+</AnchorPane>

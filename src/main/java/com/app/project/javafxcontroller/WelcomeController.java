@@ -61,13 +61,13 @@ public class WelcomeController {
         App.stage.close();
     }
 
-    public void rentUnit(ActionEvent actionEvent) {
-//        Parent root = FXMLLoader.load(getClass().getResource("/AddProperty.fxml"));
-//        Stage stage = new Stage();
-//        stage.setTitle("Add property View");
-//        stage.setScene(new Scene(root));
-//        stage.show();
-//        App.stage.close();
+    public void rentUnit(ActionEvent actionEvent) throws IOException{
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/RentAUnit.fxml")));
+        Stage stage = new Stage();
+        stage.setTitle("Add property View");
+        stage.setScene(new Scene(root));
+        stage.show();
+        App.stage.close();
     }
 
     public void displayProperties(ActionEvent actionEvent) throws IOException {
@@ -89,7 +89,7 @@ public class WelcomeController {
     }
 
     public void displayVacantUnits(ActionEvent actionEvent) throws IOException {
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("DisplayVacantUnits.fxml")));
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/DisplayVacantUnits.fxml")));
         Stage stage = new Stage();
         stage.setTitle("Display Vacant Units View");
         stage.setScene(new Scene(root));
@@ -115,13 +115,13 @@ public class WelcomeController {
         App.stage.close();
     }
 
-    public void vacateUnit(ActionEvent actionEvent) {
-//        Parent root = FXMLLoader.load(getClass().getResource("/AddProperty.fxml"));
-//        Stage stage = new Stage();
-//        stage.setTitle("Add property View");
-//        stage.setScene(new Scene(root));
-//        stage.show();
-//        App.stage.close();
+    public void vacateUnit(ActionEvent actionEvent) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/Vacate.fxml"));
+        Stage stage = new Stage();
+        stage.setTitle("Add property View");
+        stage.setScene(new Scene(root));
+        stage.show();
+        App.stage.close();
     }
 
     public void payRent(ActionEvent actionEvent) {

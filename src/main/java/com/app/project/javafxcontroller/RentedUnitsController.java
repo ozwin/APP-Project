@@ -8,8 +8,10 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
+import javafx.stage.Stage;
 
 import java.net.URL;
 import java.util.ArrayList;
@@ -19,7 +21,8 @@ public class RentedUnitsController implements Initializable{
     private PropertyServices propertyServices=new PropertyServices(PropertiesRepository.getInstance());
     @FXML private ListView<Property> rentedUnitsListView;
     private ObservableList<Property> rentedUnitsObservableList;
-
+    @FXML
+    private Button closebtn;
     public void initialize() {
         rentedUnitsObservableList = FXCollections.observableArrayList();
         rentedUnitsListView.setItems(rentedUnitsObservableList);
@@ -56,4 +59,10 @@ public class RentedUnitsController implements Initializable{
 //        stage.show();
 //        App.stage.close();
 //    }
+@FXML
+private void back(){
+    Stage stage = (Stage) closebtn.getScene().getWindow();
+    stage.close();
+    App.navigate();
+}
 }

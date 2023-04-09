@@ -21,7 +21,10 @@ public class TenantServices {
         this.propertyServices = propertyServices;
         this.notificationServices = new NotificationServices();
     }
-
+    public TenantServices(PropertyServices propertyServices){
+        this.tenantRepository = TenantRepository.getInstance();
+        this.propertyServices = propertyServices;
+    }
     public List<Tenant> findMany(List<UUID> userIds) {
         return this.tenantRepository.findMany(userIds);
     }

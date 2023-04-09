@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.app.project.javafxcontroller.RentAUnitController">
+    <children>
+        <Text fx:id="question" layoutX="206.0" layoutY="71.0" text="Enter the property ID." wrappingWidth="157.8408203125" />
+        <Button fx:id="closebutton" layoutX="38.0" layoutY="332.0" mnemonicParsing="false" onAction="#cancel" prefHeight="25.0" prefWidth="140.0" text="Back" />
+      <TextField fx:id="propertyID" layoutX="195.0" layoutY="99.0" />
+      <Text layoutX="195.0" layoutY="171.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Are you  in a waiting list?" wrappingWidth="196.32568359375" />
+      <Button fx:id="yesbtn" layoutX="187.0" layoutY="193.0" mnemonicParsing="false" onAction="#next" text="Yes" />
+      <Button fx:id="nobtn" layoutX="300.0" layoutY="193.0" mnemonicParsing="false" text="No" onAction="#addTenant"/>
+      <TextField fx:id="userID" layoutX="187.0" layoutY="241.0" promptText="Enter your user ID." visible="false" />
+      <Button fx:id="submitbtn" layoutX="289.0" layoutY="267.0" mnemonicParsing="false" text="Submit" visible="false" onAction="#moveTenants"/>
+
+    </children>
+</AnchorPane>

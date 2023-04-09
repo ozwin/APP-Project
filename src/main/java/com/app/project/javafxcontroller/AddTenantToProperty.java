@@ -18,13 +18,12 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.Objects;
 import java.util.ResourceBundle;
-import java.util.UUID;
 
-public class AddTenantController implements Initializable {
-
+public class AddTenantToProperty implements Initializable {
     @FXML
     private Label detailsLabel;
     @FXML
@@ -38,9 +37,8 @@ public class AddTenantController implements Initializable {
     @FXML
     private TextField phone;
     @FXML
-    private TextField propertyID;
-    @FXML
     private Button closebutton;
+
     private TenantServices tenantServices = new TenantServices(TenantRepository.getInstance(), new PropertyServices(PropertiesRepository.getInstance()));
 
     @Override
@@ -50,32 +48,24 @@ public class AddTenantController implements Initializable {
         email.setText("");
         fax.setText("");
         phone.setText("");
-        propertyID.setText("");
     }
 
-    public void addTenant(ActionEvent ae) {
+    public void addTenant(ActionEvent ae) throws Exception {
         String firstNameText = firstName.getText();
         String lastNameText = lastName.getText();
         String emailText = email.getText();
         String faxText = fax.getText();
         String phoneText = phone.getText();
-        String propertyIDText = propertyID.getText();
-        Tenant tenant = new Tenant(firstNameText, lastNameText, new Contact(emailText, faxText, phoneText), UUID.fromString(propertyIDText));
-        tenantServices.add(tenant);
-//        navigate();
-        cancel();
+        Tenant tenant = new Tenant(firstNameText, lastNameText, new Contact(emailText, faxText, phoneText), RentAUnitController.getProperty());
+        tenantServices.addAndRent(tenant);
+        navigate();
     }
-    public void navigate(){
+    public void navigate() throws IOException {
 //        let's make this utility function or something
-        try {
-            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/DisplayTenants.fxml")));
-            Scene scene = new Scene(root);
-            App.stage.setScene(scene);
-            App.stage.setTitle("Display Tenants");
-            App.stage.show();
-        }catch (Exception ex){
-
-        }
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/LeaseData.fxml")));
+        Scene scene = new Scene(root);
+        App.stage.setScene(scene);
+        App.stage.show();
     }
     public void cancel() {
         Stage stage = (Stage) closebutton.getScene().getWindow();

@@ -11,10 +11,10 @@ import java.util.Observable;
 import java.util.Observer;
 import java.util.Scanner;
 
-public class PropertyView implements IPropertyView, Observer {
+public class PropertyView implements IPropertyView, Observer, Runnable {
     private IPropertyController controller;
     private Scanner scanner;
-
+    private ArrayList<IProperty> properties;
     public PropertyView(Scanner scanner) {
         this.scanner = scanner;
     }
@@ -41,12 +41,14 @@ public class PropertyView implements IPropertyView, Observer {
     }
 
     public void displayProperties(ArrayList<IProperty> properties) {
-        for (IProperty property : properties
-        ) {
-            this.displayProperty(property);
-        }
+        threadHelper(properties);
+        Runnable thread = new PropertyView(new Scanner(System.in));
+        Thread thread1 = new Thread(thread);
+        thread1.start();
     }
-
+    private void threadHelper(ArrayList<IProperty> properties){
+        this.properties = properties;
+    }
     @Override
     public void add() {
 
@@ -62,5 +64,13 @@ public class PropertyView implements IPropertyView, Observer {
     @Override
     public void update(Observable o, Object arg) {
         System.out.println("Saved successfully, refresh the list ");
+    }
+
+    @Override
+    public void run() {
+        for (IProperty property : properties
+        ) {
+            this.displayProperty(property);
+        }
     }
 }
