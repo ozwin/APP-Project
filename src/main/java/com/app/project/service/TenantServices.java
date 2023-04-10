@@ -14,17 +14,9 @@ import java.util.UUID;
 public class TenantServices {
     private TenantRepository tenantRepository;
     private PropertyServices propertyServices;
-    private NotificationServices notificationServices;
-
 
     public TenantServices(IRepository repository, PropertyServices propertyServices) {
         this.tenantRepository = (TenantRepository) repository;
-        this.propertyServices = propertyServices;
-        this.notificationServices = new NotificationServices();
-    }
-
-    public TenantServices(PropertyServices propertyServices) {
-        this.tenantRepository = TenantRepository.getInstance();
         this.propertyServices = propertyServices;
     }
 

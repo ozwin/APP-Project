@@ -2,6 +2,7 @@ package com.app.project.javafxcontroller;
 
 import com.app.project.App;
 import com.app.project.entity.Contact;
+import com.app.project.entity.Property;
 import com.app.project.entity.Tenant;
 import com.app.project.repository.PropertiesRepository;
 import com.app.project.repository.TenantRepository;
@@ -13,12 +14,11 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
 
 import java.net.URL;
+import java.util.List;
 import java.util.Objects;
 import java.util.ResourceBundle;
 import java.util.UUID;
@@ -37,10 +37,13 @@ public class AddTenantController implements Initializable {
     private TextField fax;
     @FXML
     private TextField phone;
-    @FXML
-    private TextField propertyID;
+
+    private String propertyID;
     @FXML
     private Button closebutton;
+    @FXML
+    private ComboBox<Item> comboBox = new ComboBox<>();
+    private PropertyServices propertyServices;
     private TenantServices tenantServices = new TenantServices(TenantRepository.getInstance(), new PropertyServices(PropertiesRepository.getInstance()));
 
     @Override
@@ -50,7 +53,38 @@ public class AddTenantController implements Initializable {
         email.setText("");
         fax.setText("");
         phone.setText("");
-        propertyID.setText("");
+        propertyServices = new PropertyServices(PropertiesRepository.getInstance());
+        List<Item> properties = ((List<Property>) (List<?>) propertyServices.getAll()).stream().map(x -> new Item(x.getAddress().toString(), x.getPropertyId().toString())).toList();
+        comboBox.getItems().addAll(properties);
+        comboBox.setCellFactory(listView -> new ListCell<Item>() {
+            @Override
+            protected void updateItem(Item item, boolean empty) {
+                super.updateItem(item, empty);
+                if (empty || item == null) {
+                    setText(null);
+                } else {
+                    setText(item.getDisplayText());
+                }
+            }
+        });
+        comboBox.setButtonCell(new ListCell<Item>() {
+            @Override
+            protected void updateItem(Item item, boolean empty) {
+                super.updateItem(item, empty);
+                if (empty || item == null) {
+                    setText(null);
+                } else {
+                    setText(item.getDisplayText());
+                }
+            }
+        });
+        comboBox.valueProperty().addListener((observable, oldValue, newValue) -> {
+            if (newValue != null) {
+                propertyID = newValue.getValue();
+            }
+        });
+        comboBox.setValue(properties.get(0));
+        propertyID = properties.get(0).value;
     }
 
     public void addTenant(ActionEvent ae) {
@@ -59,8 +93,7 @@ public class AddTenantController implements Initializable {
         String emailText = email.getText();
         String faxText = fax.getText();
         String phoneText = phone.getText();
-        String propertyIDText = propertyID.getText();
-        Tenant tenant = new Tenant(firstNameText, lastNameText, new Contact(emailText, faxText, phoneText), UUID.fromString(propertyIDText));
+        Tenant tenant = new Tenant(firstNameText, lastNameText, new Contact(emailText, faxText, phoneText), UUID.fromString(propertyID));
         tenantServices.addTenant(tenant);
 //        navigate();
         cancel();
@@ -84,5 +117,28 @@ public class AddTenantController implements Initializable {
         stage.close();
         App.navigate();
         //navigate to main screen
+    }
+
+    static class Item {
+        private String displayText;
+        private String value;
+
+        public Item(String displayText, String value) {
+            this.displayText = displayText;
+            this.value = value;
+        }
+
+        public String getDisplayText() {
+            return displayText;
+        }
+
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return displayText;
+        }
     }
 }
