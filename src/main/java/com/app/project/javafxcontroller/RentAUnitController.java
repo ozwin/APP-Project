@@ -9,6 +9,7 @@ import com.app.project.repository.TenantRepository;
 import com.app.project.service.LeaseServices;
 import com.app.project.service.PropertyServices;
 import com.app.project.service.TenantServices;
+import com.app.project.util.Helper;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -67,6 +68,8 @@ public class RentAUnitController implements Initializable {
         propertyServices = new PropertyServices(PropertiesRepository.getInstance());
         tenantServices = new TenantServices(TenantRepository.getInstance(), propertyServices);
         leaseServices = new LeaseServices();
+        Helper.setNumericInputFilter(duration);
+        Helper.setNumericInputFilter(monthlyRent);
         List<Item> properties = ((List<Property>) (List<?>) propertyServices.getAll()).stream().map(x -> new Item(x.getAddress().toString(), x.getPropertyId().toString())).toList();
         comboBox.getItems().addAll(properties);
         comboBox.setCellFactory(listView -> new ListCell<Item>() {
@@ -130,9 +133,11 @@ public class RentAUnitController implements Initializable {
 
             }
         });
+        if(properties.size()>0){
+            comboBox.setValue(properties.get(0));
+            propertyID = properties.get(0).value;
+        }
 
-        comboBox.setValue(properties.get(0));
-        propertyID = properties.get(0).value;
     }
 
     public void cancel() {
@@ -166,8 +171,8 @@ public class RentAUnitController implements Initializable {
         Lease lease = new Lease(new ArrayList<UUID>() {{
             add(userUUID);
         }}, propertyId);
-        lease.setLeaseDuration(Integer.parseInt(duration.getText()));
-        lease.setAgreedMonthlyRent(Integer.parseInt(monthlyRent.getText()));
+        lease.setLeaseDuration(Integer.parseInt(duration.getText().trim()));
+        lease.setAgreedMonthlyRent(Integer.parseInt(monthlyRent.getText().trim()));
         lease.setTenantNames(new ArrayList<String>() {{
             add(tenant.fullName());
         }});
@@ -216,4 +221,7 @@ public class RentAUnitController implements Initializable {
         tenantCombobox.getItems().addAll(userList);
         if (userList.size() > 0) userID = userList.get(0).value;
     }
+
+
+
 }

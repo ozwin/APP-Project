@@ -15,7 +15,8 @@ public class LeaseRepository extends Repository<Lease, UUID> {
     }
 
     public static synchronized LeaseRepository getInstance() {
-        leaseRepository = new LeaseRepository();
+        if (leaseRepository == null)
+            leaseRepository = new LeaseRepository();
         return leaseRepository;
     }
 

@@ -8,6 +8,7 @@ import com.app.project.entity.PrivateHouse;
 import com.app.project.interfaces.IProperty;
 import com.app.project.repository.PropertiesRepository;
 import com.app.project.service.PropertyServices;
+import com.app.project.util.Helper;
 import com.app.project.util.RentalPropertyFactory;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -93,6 +94,10 @@ public class AddPropertyController implements Initializable {
         bathrooms.setText("");
         unitNumber.setText("");
         squarefoot.setText("");
+        Helper.setNumericInputFilter(bedrooms);
+        Helper.setNumericInputFilter(bathrooms);
+        Helper.setNumericInputFilter(squarefoot);
+
         toggleGroup.selectedToggleProperty().addListener((observable, oldValue, newValue) -> {
             if (newValue != null) {
                 RadioButton selectedRadioButton = (RadioButton) toggleGroup.getSelectedToggle();
