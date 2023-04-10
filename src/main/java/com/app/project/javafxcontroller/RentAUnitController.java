@@ -151,6 +151,7 @@ public class RentAUnitController implements Initializable {
         userLabel.setVisible(true);
         rentLabel.setVisible(true);
         durationLabel.setVisible(true);
+        tenantCombobox.setVisible(true);
         if (propertyID.trim().length() > 0)
             setUserListForProperty(propertyID);
 
@@ -171,6 +172,7 @@ public class RentAUnitController implements Initializable {
             add(tenant.fullName());
         }});
         leaseServices.addLease(lease);
+        App.navigate();
     }
 
     public void addTenant() throws IOException {
@@ -210,6 +212,7 @@ public class RentAUnitController implements Initializable {
     private void setUserListForProperty(String propertyID) {
         List<Tenant> waitingListUsers = tenantServices.findMany(((Property) propertyServices.getByKey(UUID.fromString(propertyID))).getWaitingList());
         List<Item> userList = waitingListUsers.stream().map(x -> new Item(x.fullName(), x.getID().toString())).toList();
+        tenantCombobox.getItems().clear();
         tenantCombobox.getItems().addAll(userList);
         if (userList.size() > 0) userID = userList.get(0).value;
     }

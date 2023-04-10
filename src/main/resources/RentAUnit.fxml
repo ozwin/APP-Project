@@ -9,7 +9,7 @@
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.app.project.javafxcontroller.RentAUnitController">
     <children>
         <Text fx:id="question" layoutX="137.0" layoutY="84.0" text="Choose a property you want to rent" textAlignment="CENTER" wrappingWidth="296.8408203125" />
-        <TextField fx:id="duration" layoutX="218.0" layoutY="254.0" promptText="Number of months" visible="true" />
+        <TextField fx:id="duration" layoutX="218.0" layoutY="254.0" promptText="Number of months" visible="false" />
         <TextField fx:id="monthlyRent" layoutX="416.0" layoutY="254.0" promptText="Multiples of 100" visible="false" />
         <Button fx:id="closebutton" cancelButton="true" contentDisplay="RIGHT" graphicTextGap="8.0" layoutX="38.0" layoutY="332.0" mnemonicParsing="false" onAction="#cancel" prefHeight="25.0" prefWidth="140.0" text="Cancel" textAlignment="RIGHT" textFill="#4c13eb">
          <effect>
@@ -35,7 +35,7 @@
       <Label fx:id="durationLabel" layoutX="218.0" layoutY="229.0" prefHeight="17.0" prefWidth="149.0" text="Lease duration in months" visible="false" />
       <Label fx:id="rentLabel" layoutX="416.0" layoutY="229.0" prefHeight="17.0" prefWidth="131.0" text="Rent on monthly basis" visible="false" />
       <ComboBox fx:id="comboBox" editable="true" layoutX="132.0" layoutY="96.0" prefHeight="25.0" prefWidth="306.0" promptText="Select a property" />
-        <ComboBox fx:id="tenantCombobox" editable="true" layoutX="24.0" layoutY="254.0" prefHeight="25.0" prefWidth="168.0" promptText="Select a user" />
+        <ComboBox fx:id="tenantCombobox" editable="true" layoutX="24.0" layoutY="254.0" prefHeight="25.0" prefWidth="168.0" promptText="Select a user" visible="false" />
 
     </children>
 </AnchorPane>
