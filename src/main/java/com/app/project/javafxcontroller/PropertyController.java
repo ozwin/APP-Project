@@ -53,7 +53,7 @@ public class PropertyController implements Initializable {
                     propertyId.setCellValueFactory(cellData -> new SimpleStringProperty( cellData.getValue().getID().toString()));
                     rented.setCellValueFactory(cellData -> new SimpleStringProperty( cellData.getValue().isVacant()?"Available":"Not Available"));
                     tableView.setItems(propertyObservableList);
-                    App.navigate();
+//                    App.navigate();
                 });
             }
         });
@@ -70,7 +70,7 @@ public class PropertyController implements Initializable {
     private void handleAddNewProperty(ActionEvent ae) throws IOException {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/AddProperty.fxml")));
         Stage stage = new Stage();
-        stage.setTitle("Add property View");
+        stage.setTitle("Add property");
         stage.setScene(new Scene(root));
         stage.show();
         App.stage.close();

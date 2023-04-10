@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Text?>
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19"
-            fx:controller="com.app.project.javafxcontroller.AddLeaseController">
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.app.project.javafxcontroller.AddLeaseController">
     <children>
-        <Text fx:id="question" layoutX="196.0" layoutY="73.0" text="Enter the duration of the lease"
-              wrappingWidth="157.8408203125"/>
-        <Button fx:id="closebutton" layoutX="38.0" layoutY="332.0" mnemonicParsing="false" onAction="#cancel"
-                prefHeight="25.0" prefWidth="140.0" text="Back"/>
-        <TextField fx:id="duration" layoutX="195.0" layoutY="109.0"/>
-        <Text fx:id="question1" layoutX="197.0" layoutY="196.0" text="Enter the agreed rent"
-              wrappingWidth="157.8408203125"/>
-        <TextField fx:id="rent" layoutX="195.0" layoutY="215.0"/>
-        <Button layoutX="423.0" layoutY="333.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="89.0" text="Submit"
-                onAction="#submit"/>
+        <Label layoutX="200.0" layoutY="33.0" prefHeight="44.0" prefWidth="306.0" text="Add Lease Form">
+            <font>
+                <Font name="Baskerville Old Face" size="24.0" />
+            </font>
+        </Label>
+        <Text fx:id="question" layoutX="200.0" layoutY="117.0" text="Enter the duration of the lease" wrappingWidth="157.8408203125" />
+        <Button fx:id="closebutton" layoutX="82.0" layoutY="295.0" mnemonicParsing="false" onAction="#cancel" prefHeight="25.0" prefWidth="140.0" text="Back" />
+        <TextField fx:id="duration" layoutX="199.0" layoutY="154.0" />
+        <Text fx:id="question1" layoutX="201.0" layoutY="213.0" text="Enter the agreed rent" wrappingWidth="157.8408203125" />
+        <TextField fx:id="rent" layoutX="199.0" layoutY="232.0" />
+        <Button layoutX="399.0" layoutY="295.0" mnemonicParsing="false" onAction="#submit" prefHeight="26.0" prefWidth="89.0" text="Submit" />
     </children>
 </AnchorPane>

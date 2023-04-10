@@ -48,7 +48,7 @@ public class TenantController implements Initializable {
             @Override
             protected void updateItem(Tenant item, boolean empty) {
                 super.updateItem(item, empty);
-                setText(item.toString()); // TODO 1 : check this full name
+                setText(item.toString());
             }
         });
         App.navigate();
@@ -65,7 +65,7 @@ public class TenantController implements Initializable {
     private void handleAddNewTenant(ActionEvent ae) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/AddTenant.fxml"));
         Stage stage = new Stage();
-        stage.setTitle("Add tenant View");
+        stage.setTitle("Add a Tenant");
         stage.setScene(new Scene(root));
         stage.show();
         App.stage.close();

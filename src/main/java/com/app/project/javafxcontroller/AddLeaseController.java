@@ -38,12 +38,19 @@ public class AddLeaseController implements Initializable {
     }
 
     public void submit() throws IOException {
-        UUID propertyID = RentAUnitController.getProperty();
-        Lease lease = new Lease(leaseServices.getTenants(propertyID), propertyID);
-        lease.setAgreedMonthlyRent(Double.parseDouble(rent.getText()));
-        lease.setLeaseDuration(Integer.parseInt(duration.getText()));
-        leaseServices.addLease(lease);
-        displayNext();
+        try{
+            UUID propertyID = RentAUnitController.getProperty();
+            Lease lease = new Lease(leaseServices.getTenants(propertyID), propertyID);
+            lease.setAgreedMonthlyRent(Double.parseDouble(rent.getText()));
+            lease.setLeaseDuration(Integer.parseInt(duration.getText()));
+            leaseServices.addLease(lease);
+            displayNext();
+        }
+        catch(Exception e)
+        {
+            App.errorpage();
+        }
+
     }
 
     public void cancel() {

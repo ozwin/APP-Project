@@ -66,6 +66,7 @@ public class AddTenantToProperty implements Initializable {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/LeaseData.fxml")));
         Scene scene = new Scene(root);
         App.stage.setScene(scene);
+        App.stage.setTitle("Lease Data");
         App.stage.show();
     }
 

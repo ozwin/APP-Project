@@ -1,34 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="400.0" prefWidth="600.0"
-            xmlns="http://javafx.com/javafx/11.0.14-internal" fx:controller="com.app.project.javafxcontroller.AddPropertyController">
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.app.project.javafxcontroller.AddPropertyController">
     <children>
-        <HBox alignment="CENTER" spacing="10">
-            <RadioButton fx:id="type1RadioButton" selected="true" text="Apartment"/>
-            <RadioButton fx:id="type2RadioButton" text="Condo"/>
-            <RadioButton fx:id="type3RadioButton" text="Private House"/>
-        </HBox>
+        <Label layoutX="6.0" layoutY="100.0" prefHeight="17.0" prefWidth="360.0" text="Choose a type of property:">
+            <font>
+                <Font name="Bell MT" size="14.0" />
+            </font></Label>
+        <HBox layoutX="6.0" layoutY="125.0" spacing="10" />
         <HBox alignment="CENTER" spacing="60">
-            <Label fx:id="detailsLabel"/>
+            <Label fx:id="detailsLabel" />
         </HBox>
-        <TextField fx:id="streetName" layoutX="6.0" layoutY="42.0" promptText="Street Name" visible="true"/>
-        <TextField fx:id="city" layoutX="175.0" layoutY="42.0" promptText="City" visible="true"/>
-        <TextField fx:id="postalCode" layoutX="349.0" layoutY="42.0" promptText="Postal Code" visible="true"/>
+        <Label layoutX="200.0" layoutY="33.0" prefHeight="44.0" prefWidth="306.0" text="Add Property Form">
+            <font>
+                <Font name="Baskerville Old Face" size="24.0" />
+            </font>
+        </Label>
+        <Label layoutX="6.0" layoutY="180.0" prefHeight="17.0" prefWidth="133.0" text="Street Name">
+            <font>
+                <Font name="Bell MT" size="13.0" />
+            </font></Label>
+        <TextField fx:id="streetName" layoutX="6.0" layoutY="200.0" promptText="Street Name" visible="true" />
+        <Label layoutX="175.0" layoutY="180.0" prefHeight="17.0" prefWidth="133.0" text="City">
+            <font>
+                <Font name="Bell MT" size="13.0" />
+            </font></Label>
+        <TextField fx:id="city" layoutX="175.0" layoutY="200.0" promptText="City" visible="true" />
+        <Label layoutX="345.0" layoutY="180.0" prefHeight="17.0" prefWidth="133.0" text="Postal Code">
+            <font>
+                <Font name="Bell MT" size="13.0" />
+            </font></Label>
+        <TextField fx:id="postalCode" layoutX="345.0" layoutY="200.0" promptText="Postal Code" visible="true" />
         <!--only apartment specific-->
-        <TextField fx:id="bedrooms" layoutX="6.0" layoutY="94.0" promptText="Bedrooms" visible="true"/>
-        <TextField fx:id="bathrooms" layoutX="175.0" layoutY="94.0" promptText="No of Bathrooms" visible="true"/>
-        <TextField fx:id="squarefoot" layoutX="360.0" layoutY="94.0" promptText="Square foot" visible="true"/>
+        <Label fx:id="bedroomslbl" layoutX="6.0" layoutY="244.0" prefHeight="17.0" prefWidth="133.0" text="Bedrooms">
+            <font>
+                <Font name="Bell MT" size="13.0" />
+            </font></Label>
+        <TextField fx:id="bedrooms" layoutX="6.0" layoutY="264.0" promptText="Bedrooms" visible="true" />
+        <Label fx:id="bathroomslbl" layoutX="175.0" layoutY="244.0" prefHeight="17.0" prefWidth="133.0" text="No of Bathrooms">
+            <font>
+                <Font name="Bell MT" size="13.0" />
+            </font></Label>
+        <TextField fx:id="bathrooms" layoutX="175.0" layoutY="264.0" promptText="No of Bathrooms" visible="true" />
+        <Label layoutX="345.0" layoutY="244.0" prefHeight="17.0" prefWidth="133.0" text="Square ft">
+            <font>
+                <Font name="Bell MT" size="13.0" />
+            </font></Label>
+        <TextField fx:id="squarefoot" layoutX="345.0" layoutY="264.0" promptText="Square foot" visible="true" />
         <!--for condo and private house-->
-        <TextField fx:id="streetNumber" layoutX="6.0" layoutY="94.0" promptText="Street Number" visible="false"/>
+        <Label fx:id="streetNumberlbl" layoutX="6.0" layoutY="244.0" prefHeight="17.0" prefWidth="133.0" text="Street Number" visible="false">
+            <font>
+                <Font name="Bell MT" size="13.0" />
+            </font></Label>
+        <TextField fx:id="streetNumber" layoutX="6.0" layoutY="264.0" promptText="Street Number" visible="false" />
         <!--     only for condo-->
-        <TextField fx:id="unitNumber" layoutX="175.0" layoutY="94.0" promptText="Unit Number" visible="false"/>
-        <Button layoutX="285.0" layoutY="187.0" mnemonicParsing="false" onAction="#addProperty" prefHeight="25.0"
-                prefWidth="140.0" text="Save"/>
-        <Button fx:id="closebutton" layoutX="101.0" layoutY="187.0" mnemonicParsing="false" onAction="#cancel"
-                prefHeight="25.0" prefWidth="140.0" text="Cancel"/>
+        <Label fx:id="unitNumberlbl" layoutX="175.0" layoutY="244.0" prefHeight="17.0" prefWidth="133.0" text="Unit Number" visible="false">
+            <font>
+                <Font name="Bell MT" size="13.0" />
+            </font></Label>
+        <TextField fx:id="unitNumber" layoutX="175.0" layoutY="264.0" promptText="Unit Number" visible="fasle" />
+        <Button layoutX="275.0" layoutY="326.0" mnemonicParsing="false" onAction="#addProperty" prefHeight="25.0" prefWidth="140.0" text="Save" />
+        <Button fx:id="closebutton" layoutX="105.0" layoutY="326.0" mnemonicParsing="false" onAction="#cancel" prefHeight="25.0" prefWidth="140.0" text="Cancel" />
+         <RadioButton fx:id="type1RadioButton" layoutX="6.0" layoutY="137.0" selected="true" text="Apartment" />
+         <RadioButton fx:id="type2RadioButton" layoutX="110.0" layoutY="137.0" text="Condo" />
+         <RadioButton fx:id="type3RadioButton" layoutX="186.0" layoutY="137.0" text="Private House" />
 
     </children>
 </AnchorPane>

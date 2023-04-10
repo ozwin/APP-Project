@@ -15,10 +15,19 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class AddPropertyController implements Initializable {
+    @FXML
+    private Label bedroomslbl;
+    @FXML
+    private Label bathroomslbl;
+    @FXML
+    private Label streetNumberlbl;
+    @FXML
+    private Label unitNumberlbl;
 
     @FXML
     private RadioButton type1RadioButton;
@@ -57,24 +66,33 @@ public class AddPropertyController implements Initializable {
     public void setType(String type) {
         this.type = type;
         bedrooms.setVisible(false);
+        bedroomslbl.setVisible(false);
         bathrooms.setVisible(false);
+        bathroomslbl.setVisible(false);
         squarefoot.setVisible(false);
         unitNumber.setVisible(false);
+        unitNumberlbl.setVisible(false);
         streetNumber.setVisible(false);
+        streetNumberlbl.setVisible(false);
 
         switch (type) {
             case "Apartment" -> {
                 bedrooms.setVisible(true);
+                bedroomslbl.setVisible(true);
                 bathrooms.setVisible(true);
+                bathroomslbl.setVisible(true);
                 squarefoot.setVisible(true);
 
             }
             case "Condo" -> {
                 unitNumber.setVisible(true);
+                unitNumberlbl.setVisible(true);
                 streetNumber.setVisible(true);
+                streetNumberlbl.setVisible(true);
             }
             case "Private House" -> {
                 streetNumber.setVisible(true);
+                streetNumberlbl.setVisible(true);
             }
         }
     }
@@ -102,36 +120,43 @@ public class AddPropertyController implements Initializable {
         });
     }
 
-    public void addProperty(ActionEvent ae) {
-        String streetNameText = streetName.getText();
-        String cityText = city.getText();
-        String postalCodeText = postalCode.getText();
+    public void addProperty(ActionEvent ae) throws IOException {
+        try{
+            String streetNameText = streetName.getText();
+            String cityText = city.getText();
+            String postalCodeText = postalCode.getText();
 
-        String streetNumberText = streetNumber.getText();
-        String unitNumberText = unitNumber.getText();
+            String streetNumberText = streetNumber.getText();
+            String unitNumberText = unitNumber.getText();
 
-        String bedroomsText = bedrooms.getText();
-        String bathroomsText = bathrooms.getText();
-        String squarefootText = squarefoot.getText();
+            String bedroomsText = bedrooms.getText();
+            String bathroomsText = bathrooms.getText();
+            String squarefootText = squarefoot.getText();
 
-        IProperty property = RentalPropertyFactory.getPropertyObject(type.trim().toUpperCase(), new Address(streetNameText, cityText, postalCodeText));
-        switch (type) {
-            case "Apartment" -> {
-                ((Apartment) property).setNumberOfBathrooms(Integer.parseInt(bathroomsText));
-                ((Apartment) property).setNumberOfBedrooms(Integer.parseInt(bedroomsText));
-                ((Apartment) property).setSquareFoot(Float.parseFloat(squarefootText));
+            IProperty property = RentalPropertyFactory.getPropertyObject(type.trim().toUpperCase(), new Address(streetNameText, cityText, postalCodeText));
+            switch (type) {
+                case "Apartment" -> {
+                    ((Apartment) property).setNumberOfBathrooms(Integer.parseInt(bathroomsText));
+                    ((Apartment) property).setNumberOfBedrooms(Integer.parseInt(bedroomsText));
+                    ((Apartment) property).setSquareFoot(Float.parseFloat(squarefootText));
+                }
+                case "Condo" -> {
+                    ((Condo) property).setUnitNumber(unitNumberText);
+                    ((Condo) property).setStreetNumber(streetNumberText);
+
+                }
+                case "Private House" -> {
+                    ((PrivateHouse) property).setStreetNumber(streetNumberText);
+                }
             }
-            case "Condo" -> {
-                ((Condo) property).setUnitNumber(unitNumberText);
-                ((Condo) property).setStreetNumber(streetNumberText);
-
-            }
-            case "Private House" -> {
-                ((PrivateHouse) property).setStreetNumber(streetNumberText);
-            }
+            propertyServices.add(property);
+            App.navigate();
         }
-        propertyServices.add(property);
-        App.navigate();
+        catch (Exception e)
+        {
+            App.errorpage();
+        }
+
     }
 
     public void cancel() {

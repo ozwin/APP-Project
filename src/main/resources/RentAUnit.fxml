@@ -1,41 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
-<?import javafx.scene.effect.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.app.project.javafxcontroller.RentAUnitController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.app.project.javafxcontroller.RentAUnitController">
     <children>
-        <Text fx:id="question" layoutX="137.0" layoutY="84.0" text="Choose a property you want to rent" textAlignment="CENTER" wrappingWidth="296.8408203125" />
-        <TextField fx:id="duration" layoutX="218.0" layoutY="254.0" promptText="Number of months" visible="true" />
+        <Label layoutX="200.0" layoutY="33.0" prefHeight="44.0" prefWidth="306.0" text="Rent a Unit Form">
+            <font>
+                <Font name="Baskerville Old Face" size="24.0" />
+            </font>
+        </Label>
+        <Text fx:id="question" layoutX="145.0" layoutY="126.0" text="Choose a property you want to rent" textAlignment="CENTER" wrappingWidth="296.8408203125" />
+        <Text layoutX="366.0" layoutY="280.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Number of months" textAlignment="LEFT" wrappingWidth="306.00000000000006" />
+        <TextField fx:id="duration" layoutX="366.0" layoutY="293.0" promptText="Number of months" visible="true" />
         <TextField fx:id="monthlyRent" layoutX="416.0" layoutY="254.0" promptText="Multiples of 100" visible="false" />
-        <Button fx:id="closebutton" cancelButton="true" contentDisplay="RIGHT" graphicTextGap="8.0" layoutX="38.0" layoutY="332.0" mnemonicParsing="false" onAction="#cancel" prefHeight="25.0" prefWidth="140.0" text="Cancel" textAlignment="RIGHT" textFill="#4c13eb">
-         <effect>
-            <InnerShadow>
-               <color>
-                  <Color red="0.8070175647735596" green="0.1419753134250641" blue="0.1419753134250641" />
-               </color>
-            </InnerShadow>
-         </effect></Button>
+<!--        <Button fx:id="closebutton" cancelButton="true" contentDisplay="RIGHT" graphicTextGap="8.0" layoutX="223.0" layoutY="332.0" mnemonicParsing="false" onAction="#cancel" prefHeight="25.0" prefWidth="140.0" text="Cancel" textAlignment="RIGHT" textFill="#4c13eb">-->
+        <Button fx:id="closebutton" cancelButton="true" layoutX="223.0" layoutY="338.0" mnemonicParsing="false" onAction="#cancel" prefHeight="25.0" prefWidth="140.0" text="Cancel" />
+<!--         <effect>-->
+<!--            <InnerShadow>-->
+<!--               <color>-->
+<!--                  <Color red="0.8070175647735596" green="0.1419753134250641" blue="0.1419753134250641" />-->
+<!--               </color>-->
+<!--            </InnerShadow>-->
+<!--         </effect></Button>-->
 
-        <Text layoutX="133.0" layoutY="144.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Are you  in a waiting list?" textAlignment="CENTER" wrappingWidth="306.00000000000006" />
-        <Button fx:id="yesbtn" layoutX="171.0" layoutY="167.0" mnemonicParsing="false" onAction="#next" prefHeight="25.0" prefWidth="69.0" text="Yes" />
-        <Button fx:id="nobtn" layoutX="332.0" layoutY="167.0" mnemonicParsing="false" onAction="#addTenant" prefHeight="25.0" prefWidth="69.0" text="No" />
-        <Button fx:id="submitbtn" defaultButton="true" layoutX="412.0" layoutY="332.0" mnemonicParsing="false" onAction="#moveTenants" prefHeight="25.0" prefWidth="140.0" text="Sign the Lease" textFill="#fb1d05" visible="false" wrapText="true">
-         <effect>
-            <DropShadow>
-               <color>
-                  <Color red="0.33965057134628296" green="0.8508771657943726" blue="0.08403725177049637" />
-               </color>
-            </DropShadow>
-         </effect></Button>
+        <Text layoutX="132.0" layoutY="197.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Are you  in a waiting list?" textAlignment="CENTER" wrappingWidth="306.00000000000006" />
+        <Button fx:id="yesbtn" layoutX="170.0" layoutY="212.0" mnemonicParsing="false" onAction="#next" prefHeight="25.0" prefWidth="69.0" text="Yes" />
+        <Button fx:id="nobtn" layoutX="333.0" layoutY="212.0" mnemonicParsing="false" onAction="#addTenant" prefHeight="25.0" prefWidth="69.0" text="No" />
+<!--        <Button fx:id="submitbtn" defaultButton="true" layoutX="412.0" layoutY="332.0" mnemonicParsing="false" onAction="#moveTenants" prefHeight="25.0" prefWidth="140.0" text="Sign the Lease" textFill="#fb1d05" visible="false" wrapText="true">-->
+        <Button fx:id="submitbtn" defaultButton="true" layoutX="412.0" layoutY="332.0" mnemonicParsing="false" onAction="#moveTenants" prefHeight="25.0" prefWidth="140.0" text="Sign the Lease" visible="false" wrapText="true" />
+<!--         <effect>-->
+<!--            <DropShadow>-->
+<!--               <color>-->
+<!--&lt;!&ndash;                  <Color red="0.33965057134628296" green="0.8508771657943726" blue="0.08403725177049637" />&ndash;&gt;-->
+<!--               </color>-->
+<!--            </DropShadow>-->
+<!--         </effect></Button>-->
       <Label fx:id="userLabel" layoutX="38.0" layoutY="229.0" prefHeight="17.0" prefWidth="140.0" text="Enter you User ID" visible="false" />
       <Label fx:id="durationLabel" layoutX="218.0" layoutY="229.0" prefHeight="17.0" prefWidth="149.0" text="Lease duration in months" visible="false" />
       <Label fx:id="rentLabel" layoutX="416.0" layoutY="229.0" prefHeight="17.0" prefWidth="131.0" text="Rent on monthly basis" visible="false" />
-      <ComboBox fx:id="comboBox" editable="true" layoutX="132.0" layoutY="96.0" prefHeight="25.0" prefWidth="306.0" promptText="Select a property" />
-        <ComboBox fx:id="tenantCombobox" editable="true" layoutX="24.0" layoutY="254.0" prefHeight="25.0" prefWidth="168.0" promptText="Select a user" />
+      <ComboBox fx:id="comboBox" editable="true" layoutX="140.0" layoutY="141.0" prefHeight="25.0" prefWidth="306.0" promptText="Select a property" />
+        <Text layoutX="48.0" layoutY="280.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User" textAlignment="LEFT" wrappingWidth="306.00000000000006" />
+        <ComboBox fx:id="tenantCombobox" editable="true" layoutX="48.0" layoutY="293.0" prefHeight="25.0" prefWidth="168.0" promptText="Select a user" />
 
     </children>
 </AnchorPane>

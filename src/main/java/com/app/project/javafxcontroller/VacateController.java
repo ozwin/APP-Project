@@ -42,6 +42,7 @@ public class VacateController implements Initializable {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/WelcomePage.fxml")));
         Stage stage = new Stage();
         stage.setScene(new Scene(root));
+        stage.setTitle("OSM Real Estate");
         stage.show();
         App.stage.close();
     }

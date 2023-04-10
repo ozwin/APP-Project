@@ -45,7 +45,7 @@ public class WelcomeController {
     public void addProperty(ActionEvent actionEvent) throws IOException {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/AddProperty.fxml")));
         Stage stage = new Stage();
-        stage.setTitle("Add Property View");
+        stage.setTitle("Add Property");
         stage.setScene(new Scene(root));
         stage.show();
         App.stage.close();
@@ -54,7 +54,7 @@ public class WelcomeController {
     public void addTenant(ActionEvent actionEvent) throws IOException {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/AddTenant.fxml")));
         Stage stage = new Stage();
-        stage.setTitle("Add a Tenant View");
+        stage.setTitle("Add a Tenant");
         stage.setScene(new Scene(root));
         stage.show();
         App.stage.close();
@@ -63,7 +63,7 @@ public class WelcomeController {
     public void rentUnit(ActionEvent actionEvent) throws IOException {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/RentAUnit.fxml")));
         Stage stage = new Stage();
-        stage.setTitle("Add property View");
+        stage.setTitle("Rent a Unit");
         stage.setScene(new Scene(root));
         stage.show();
         App.stage.close();
@@ -72,7 +72,7 @@ public class WelcomeController {
     public void displayProperties(ActionEvent actionEvent) throws IOException {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/DisplayProperties.fxml")));
         Stage stage = new Stage();
-        stage.setTitle("Display Properties View");
+        stage.setTitle("Display Properties");
         stage.setScene(new Scene(root));
         stage.show();
         App.stage.close();
@@ -81,7 +81,7 @@ public class WelcomeController {
     public void displayTenants(ActionEvent actionEvent) throws IOException {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/DisplayTenants.fxml")));
         Stage stage = new Stage();
-        stage.setTitle("Display Tenants View");
+        stage.setTitle("Display Tenants");
         stage.setScene(new Scene(root));
         stage.show();
         App.stage.close();
@@ -90,7 +90,7 @@ public class WelcomeController {
     public void displayVacantUnits(ActionEvent actionEvent) throws IOException {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/DisplayVacantUnits.fxml")));
         Stage stage = new Stage();
-        stage.setTitle("Display Vacant Units View");
+        stage.setTitle("Display Vacant Units");
         stage.setScene(new Scene(root));
         stage.show();
         App.stage.close();
@@ -99,7 +99,7 @@ public class WelcomeController {
     public void displayRentedUnits(ActionEvent actionEvent) throws IOException {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/DisplayRentedUnits.fxml")));
         Stage stage = new Stage();
-        stage.setTitle("Diplay Rented Units View");
+        stage.setTitle("Diplay Rented Units");
         stage.setScene(new Scene(root));
         stage.show();
         App.stage.close();
@@ -108,7 +108,7 @@ public class WelcomeController {
     public void displayLeases(ActionEvent actionEvent) throws IOException {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/DisplayLeases.fxml")));
         Stage stage = new Stage();
-        stage.setTitle("Display All Leases View");
+        stage.setTitle("Display All Leases");
         stage.setScene(new Scene(root));
         stage.show();
         App.stage.close();
@@ -117,25 +117,25 @@ public class WelcomeController {
     public void vacateUnit(ActionEvent actionEvent) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/Vacate.fxml"));
         Stage stage = new Stage();
-        stage.setTitle("Add property View");
+        stage.setTitle("Vacate a Unit");
         stage.setScene(new Scene(root));
         stage.show();
         App.stage.close();
     }
 
-    public void payRent(ActionEvent actionEvent) {
-//        Parent root = FXMLLoader.load(getClass().getResource("/AddProperty.fxml"));
-//        Stage stage = new Stage();
-//        stage.setTitle("Add property View");
-//        stage.setScene(new Scene(root));
-//        stage.show();
-//        App.stage.close();
+    public void payRent(ActionEvent actionEvent) throws IOException {
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/PayRent.fxml")));
+        Stage stage = new Stage();
+        stage.setTitle("Pay Rent");
+        stage.setScene(new Scene(root));
+        stage.show();
+        App.stage.close();
     }
 
     public void displayPendingRent(ActionEvent actionEvent) throws IOException {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/DisplayPendingRentProperties.fxml")));
         Stage stage = new Stage();
-        stage.setTitle("Display Rented Properties View");
+        stage.setTitle("Display Pending Rent Properties");
         stage.setScene(new Scene(root));
         stage.show();
         App.stage.close();

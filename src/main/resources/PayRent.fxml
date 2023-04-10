@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.app.project.javafxcontroller.PayRentController">
+    <children>
+        <Label layoutX="200.0" layoutY="33.0" prefHeight="44.0" prefWidth="306.0" text="Pay Rent Form">
+            <font>
+                <Font name="Baskerville Old Face" size="24.0" />
+            </font>
+        </Label>
+        <Text fx:id="question" layoutX="140.0" layoutY="116.0" text="Enter the property Id for which you want to pay rent:" />
+        <Button fx:id="closebutton" layoutX="82.0" layoutY="295.0" mnemonicParsing="false" onAction="#cancel" prefHeight="25.0" prefWidth="140.0" text="Back" />
+        <TextField fx:id="id" layoutX="199.0" layoutY="130.0" promptText="Property ID" />
+        <Text fx:id="question1" layoutX="204.0" layoutY="196.0" text="Enter the amount to be paid:" />
+        <TextField fx:id="rent" layoutX="199.0" layoutY="218.0" promptText="Amount" />
+        <Button layoutX="399.0" layoutY="295.0" mnemonicParsing="false" onAction="#submit" prefHeight="26.0" prefWidth="89.0" text="Submit" />
+    </children>
+</AnchorPane>

@@ -178,7 +178,7 @@ public class RentAUnitController implements Initializable {
         ppid = pid;
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/AddTenantToProperty.fxml")));
         Stage stage = new Stage();
-        stage.setTitle("Add a Tenant View");
+        stage.setTitle("Add a Tenant");
         stage.setScene(new Scene(root));
         stage.show();
         App.stage.close();

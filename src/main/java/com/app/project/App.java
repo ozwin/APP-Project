@@ -7,6 +7,9 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import java.io.IOException;
+import java.util.Objects;
+
 public class App extends Application {
     public static Stage stage;
     public static Scene scene;
@@ -25,26 +28,24 @@ public class App extends Application {
         }
     }
 
+    public static void errorpage() throws IOException {
+//        call this in case of exception
+        Parent root = FXMLLoader.load(Objects.requireNonNull(App.class.getResource("/ErrorPage.fxml")));
+        Stage stage = new Stage();
+        stage.setTitle("ERROR");
+        stage.setScene(new Scene(root));
+        stage.show();
+        App.stage.close();
+    }
+
     public void start(Stage primaryStage) throws Exception {
         DataStore.initializeDataBase();
-//        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("DisplayProperties.fxml"));
-//        Parent root = fxmlLoader.load();
-//        primaryStage.setScene(new Scene(root, 1000, 800));
-//        primaryStage.setTitle("Test");
-//        primaryStage.show();
-
-//        MainView view = new MainView();
-//        Scene scene = new Scene(view, 500, 500);
-//        primaryStage.setTitle("Sample JavaFx MVC APP");
-//        primaryStage.setScene(scene);
-//        primaryStage.show();
-//        IPropertyController controller = ControllerFactory.getController("");
-//        controller.displayAll();
         this.stage = primaryStage;
-        Parent root = FXMLLoader.load(getClass().getResource("/WelcomePage.fxml"));
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/WelcomePage.fxml")));
         Scene scene = new Scene(root);
         this.scene = scene;
         stage.setScene(scene);
+        stage.setTitle("OSM Real Estate");
         stage.show();
 
     }

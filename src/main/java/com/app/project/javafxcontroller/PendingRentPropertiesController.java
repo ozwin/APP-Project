@@ -7,14 +7,17 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
+import javafx.stage.Stage;
 
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class PendingRentPropertiesController implements Initializable {
+    public Button closebtn;
     private LeaseServices leaseServices = new LeaseServices();
     @FXML
     private ListView<IProperty> pendingRentListView;
@@ -48,13 +51,11 @@ public class PendingRentPropertiesController implements Initializable {
         pendingRentListView.setItems(pendingRentObservableList);
         displayAllPendingRentProperties();
     }
-//    @FXML
-//    private void handleAddNewTenant(ActionEvent ae) throws IOException {
-//        Parent root = FXMLLoader.load(getClass().getResource("/AddTenant.fxml"));
-//        Stage stage = new Stage();
-//        stage.setTitle("Add tenant View");
-//        stage.setScene(new Scene(root));
-//        stage.show();
-//        App.stage.close();
-//    }
+
+    @FXML
+    private void back() {
+        Stage stage = (Stage) closebtn.getScene().getWindow();
+        stage.close();
+        App.navigate();
+    }
 }
