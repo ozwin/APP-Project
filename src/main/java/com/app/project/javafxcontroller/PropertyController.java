@@ -5,6 +5,7 @@ import com.app.project.entity.Property;
 import com.app.project.repository.PropertiesRepository;
 import com.app.project.service.PropertyServices;
 import javafx.application.Platform;
+import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -14,8 +15,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.ListCell;
-import javafx.scene.control.ListView;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -28,16 +29,16 @@ public class PropertyController implements Initializable {
     @FXML
     private Button closebtn;
     private PropertyServices propertyServices = new PropertyServices(PropertiesRepository.getInstance());
+
     @FXML
-    private ListView<Property> propertyListView;
+    private TableView<Property> tableView;
+    @FXML
+    private TableColumn<Property, String> address;
+    @FXML
+    private TableColumn<Property, String> propertyId;
+    @FXML
+    private TableColumn<Property, String> rented;
     private ObservableList<Property> propertyObservableList;
-
-    public void initialize() {
-        propertyObservableList = FXCollections.observableArrayList();
-        propertyListView.setItems(propertyObservableList);
-        displayAllProperties();
-
-    }
 
     private void displayAllProperties() {
         // Retrieve all items from the model and add them to the list
@@ -48,18 +49,10 @@ public class PropertyController implements Initializable {
                 ArrayList<Property> properties = (ArrayList<Property>) (ArrayList<?>) propertyServices.getAll();
                 propertyObservableList.addAll(properties);
                 Platform.runLater(() -> {
-                    propertyListView = new ListView<>(propertyObservableList);
-                    for (Property p :
-                            properties) {
-                        System.out.println(p.getPropertyId());
-                    }
-                    propertyListView.setCellFactory(param -> new ListCell<Property>() {
-                        @Override
-                        protected void updateItem(Property item, boolean empty) {
-                            super.updateItem(item, empty);
-                            setText(item.getAddress().toString());
-                        }
-                    });
+                    address.setCellValueFactory(cellData -> new SimpleStringProperty( cellData.getValue().getAddress().toString()));
+                    propertyId.setCellValueFactory(cellData -> new SimpleStringProperty( cellData.getValue().getID().toString()));
+                    rented.setCellValueFactory(cellData -> new SimpleStringProperty( cellData.getValue().isVacant()?"Available":"Not Available"));
+                    tableView.setItems(propertyObservableList);
                     App.navigate();
                 });
             }
@@ -70,7 +63,6 @@ public class PropertyController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         propertyObservableList = FXCollections.observableArrayList();
-        propertyListView.setItems(propertyObservableList);
         displayAllProperties();
     }
 

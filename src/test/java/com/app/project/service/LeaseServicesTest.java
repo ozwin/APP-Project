@@ -55,7 +55,7 @@ class LeaseServicesTest {
         when(tenantRepository.findByKey(any())).thenReturn(tenant);
         when(propertiesRepository.findByKey(any())).thenReturn(apartment);
         when(tenantRepository.findByKey(any())).thenReturn(tenant);
-        when(leaseRepository.findLease(any())).thenReturn(lease);
+        when(leaseRepository.findLeaseByPropertyId(any())).thenReturn(lease);
         when(leaseRepository.findByKey(any())).thenReturn(lease);
         when(leaseRepository.getAll()).thenReturn(leases);
         when(propertiesRepository.findMany(any())).thenReturn(properties);

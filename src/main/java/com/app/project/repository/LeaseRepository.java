@@ -25,7 +25,7 @@ public class LeaseRepository extends Repository<Lease, UUID> {
      * @param propertyID of the property with which lease is assosiated
      */
     public void removeLeaseByPropertyID(UUID propertyID) {
-        delete(findLease(propertyID));
+        delete(findLeaseByPropertyId(propertyID));
     }
 
     /**
@@ -34,7 +34,7 @@ public class LeaseRepository extends Repository<Lease, UUID> {
      * @param propertyID
      * @return
      */
-    public Lease findLease(UUID propertyID) {
+    public Lease findLeaseByPropertyId(UUID propertyID) {
         return datastore.stream().filter(r -> r.getPropertyID().equals(propertyID)).findFirst().orElse(null);
     }
 
