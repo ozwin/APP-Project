@@ -42,7 +42,6 @@ public class WelcomeController {
     private Button displayPendingRent;
 
 
-
     public void addProperty(ActionEvent actionEvent) throws IOException {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/AddProperty.fxml")));
         Stage stage = new Stage();
@@ -61,7 +60,7 @@ public class WelcomeController {
         App.stage.close();
     }
 
-    public void rentUnit(ActionEvent actionEvent) throws IOException{
+    public void rentUnit(ActionEvent actionEvent) throws IOException {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/RentAUnit.fxml")));
         Stage stage = new Stage();
         stage.setTitle("Add property View");

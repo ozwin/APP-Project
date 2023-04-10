@@ -10,8 +10,19 @@ import javafx.stage.Stage;
 public class App extends Application {
     public static Stage stage;
     public static Scene scene;
+
     public static void main(String[] args) {
         launch(args);
+    }
+
+    public static void navigate() {
+//        let's make this utility function or something
+        try {
+            App.stage.setScene(scene);
+            App.stage.show();
+        } catch (Exception ex) {
+
+        }
     }
 
     public void start(Stage primaryStage) throws Exception {
@@ -29,21 +40,12 @@ public class App extends Application {
 //        primaryStage.show();
 //        IPropertyController controller = ControllerFactory.getController("");
 //        controller.displayAll();
-        this.stage=primaryStage;
+        this.stage = primaryStage;
         Parent root = FXMLLoader.load(getClass().getResource("/WelcomePage.fxml"));
         Scene scene = new Scene(root);
         this.scene = scene;
         stage.setScene(scene);
         stage.show();
 
-    }
-    public static void navigate(){
-//        let's make this utility function or something
-        try {
-            App.stage.setScene(scene);
-            App.stage.show();
-        }catch (Exception ex){
-
-        }
     }
 }

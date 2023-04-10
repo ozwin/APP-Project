@@ -16,21 +16,24 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-public class LeaseController implements Initializable{
-    private LeaseServices leaseServices=new LeaseServices();
-    @FXML private ListView<Lease> leaseListView;
+public class LeaseController implements Initializable {
+    private LeaseServices leaseServices = new LeaseServices();
+    @FXML
+    private ListView<Lease> leaseListView;
     private ObservableList<Lease> leaseObservableList;
     @FXML
     private Button closebtn;
+
     public void initialize() {
         leaseObservableList = FXCollections.observableArrayList();
         leaseListView.setItems(leaseObservableList);
         displayAllLeases();
 
     }
+
     private void displayAllLeases() {
         // Retrieve all items from the model and add them to the list
-        ArrayList<Lease> leases =  leaseServices.getAllLeases();
+        ArrayList<Lease> leases = leaseServices.getAllLeases();
         leaseObservableList.addAll(leases);
         leaseListView = new ListView<>(leaseObservableList);
         leaseListView.setCellFactory(param -> new ListCell<Lease>() {
@@ -49,7 +52,8 @@ public class LeaseController implements Initializable{
         leaseListView.setItems(leaseObservableList);
         displayAllLeases();
     }
-//    @FXML
+
+    //    @FXML
 //    private void handleAddNewTenant(ActionEvent ae) throws IOException {
 //        Parent root = FXMLLoader.load(getClass().getResource("/AddTenant.fxml"));
 //        Stage stage = new Stage();
@@ -58,10 +62,10 @@ public class LeaseController implements Initializable{
 //        stage.show();
 //        App.stage.close();
 //    }
-@FXML
-private void back(){
-    Stage stage = (Stage) closebtn.getScene().getWindow();
-    stage.close();
-    App.navigate();
-}
+    @FXML
+    private void back() {
+        Stage stage = (Stage) closebtn.getScene().getWindow();
+        stage.close();
+        App.navigate();
+    }
 }

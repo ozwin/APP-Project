@@ -1,4 +1,5 @@
 package com.app.project.entity;
+
 /**
  * Describes the behaviour of a Condo
  */

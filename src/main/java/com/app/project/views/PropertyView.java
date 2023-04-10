@@ -15,6 +15,7 @@ public class PropertyView implements IPropertyView, Observer, Runnable {
     private IPropertyController controller;
     private Scanner scanner;
     private ArrayList<IProperty> properties;
+
     public PropertyView(Scanner scanner) {
         this.scanner = scanner;
     }
@@ -46,9 +47,11 @@ public class PropertyView implements IPropertyView, Observer, Runnable {
         Thread thread1 = new Thread(thread);
         thread1.start();
     }
-    private void threadHelper(ArrayList<IProperty> properties){
+
+    private void threadHelper(ArrayList<IProperty> properties) {
         this.properties = properties;
     }
+
     @Override
     public void add() {
 

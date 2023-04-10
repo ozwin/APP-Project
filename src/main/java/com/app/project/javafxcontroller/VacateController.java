@@ -27,12 +27,14 @@ public class VacateController implements Initializable {
     Button backbutton;
     private PropertyServices propertyServices;
     private LeaseServices leaseServices;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         property.setText("");
         propertyServices = new PropertyServices();
         leaseServices = new LeaseServices();
     }
+
     public void removeTenants() throws IOException {
         UUID propertyID = UUID.fromString(property.getText());
         propertyServices.removeTenants(propertyID);

@@ -7,7 +7,7 @@ import java.util.UUID;
 /**
  * The repository of the Leases where all the leases are stored.
  */
-public class LeaseRepository extends Repository<Lease,UUID>  {
+public class LeaseRepository extends Repository<Lease, UUID> {
     private static LeaseRepository leaseRepository;
 
     private LeaseRepository() {
@@ -21,6 +21,7 @@ public class LeaseRepository extends Repository<Lease,UUID>  {
 
     /**
      * Removes a lease
+     *
      * @param propertyID of the property with which lease is assosiated
      */
     public void removeLeaseByPropertyID(UUID propertyID) {
@@ -29,13 +30,13 @@ public class LeaseRepository extends Repository<Lease,UUID>  {
 
     /**
      * Finds a lease
+     *
      * @param propertyID
      * @return
      */
     public Lease findLease(UUID propertyID) {
         return datastore.stream().filter(r -> r.getPropertyID().equals(propertyID)).findFirst().orElse(null);
     }
-
 
 
 }

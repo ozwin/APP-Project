@@ -47,7 +47,7 @@ public class AddPropertyController implements Initializable {
     private TextField streetNumber;
     @FXML
     private TextField unitNumber;
-    private String type="Apartment";
+    private String type = "Apartment";
     @FXML
     private Button closebutton;
     private PropertyServices propertyServices = new PropertyServices(PropertiesRepository.getInstance());

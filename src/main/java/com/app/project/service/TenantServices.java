@@ -7,6 +7,7 @@ import com.app.project.repository.TenantRepository;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
+
 /**
  * This class all the services performed to tenant leases.
  */
@@ -21,10 +22,12 @@ public class TenantServices {
         this.propertyServices = propertyServices;
         this.notificationServices = new NotificationServices();
     }
-    public TenantServices(PropertyServices propertyServices){
+
+    public TenantServices(PropertyServices propertyServices) {
         this.tenantRepository = TenantRepository.getInstance();
         this.propertyServices = propertyServices;
     }
+
     public List<Tenant> findMany(List<UUID> userIds) {
         return this.tenantRepository.findMany(userIds);
     }

@@ -65,7 +65,8 @@ public class AddTenantController implements Initializable {
 //        navigate();
         cancel();
     }
-    public void navigate(){
+
+    public void navigate() {
 //        let's make this utility function or something
         try {
             Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/DisplayTenants.fxml")));
@@ -73,10 +74,11 @@ public class AddTenantController implements Initializable {
             App.stage.setScene(scene);
             App.stage.setTitle("Display Tenants");
             App.stage.show();
-        }catch (Exception ex){
+        } catch (Exception ex) {
 
         }
     }
+
     public void cancel() {
         Stage stage = (Stage) closebutton.getScene().getWindow();
         stage.close();

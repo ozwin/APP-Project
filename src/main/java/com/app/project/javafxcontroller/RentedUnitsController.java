@@ -17,23 +17,26 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-public class RentedUnitsController implements Initializable{
-    private PropertyServices propertyServices=new PropertyServices(PropertiesRepository.getInstance());
-    @FXML private ListView<Property> rentedUnitsListView;
+public class RentedUnitsController implements Initializable {
+    private PropertyServices propertyServices = new PropertyServices(PropertiesRepository.getInstance());
+    @FXML
+    private ListView<Property> rentedUnitsListView;
     private ObservableList<Property> rentedUnitsObservableList;
     @FXML
     private Button closebtn;
+
     public void initialize() {
         rentedUnitsObservableList = FXCollections.observableArrayList();
         rentedUnitsListView.setItems(rentedUnitsObservableList);
         displayAllVacantUnits();
 
     }
+
     private void displayAllVacantUnits() {
         // Retrieve all items from the model and add them to the list
-        ArrayList<Property> vacantUnits = (ArrayList<Property>)(ArrayList<?>)propertyServices.findRented();
+        ArrayList<Property> vacantUnits = (ArrayList<Property>) (ArrayList<?>) propertyServices.findRented();
         rentedUnitsObservableList.addAll(vacantUnits);
-        rentedUnitsListView=new ListView<>(rentedUnitsObservableList);
+        rentedUnitsListView = new ListView<>(rentedUnitsObservableList);
         rentedUnitsListView.setCellFactory(param -> new ListCell<Property>() {
             @Override
             protected void updateItem(Property item, boolean empty) {
@@ -50,7 +53,8 @@ public class RentedUnitsController implements Initializable{
         rentedUnitsListView.setItems(rentedUnitsObservableList);
         displayAllVacantUnits();
     }
-//    @FXML
+
+    //    @FXML
 //    private void handleAddNewProperty(ActionEvent ae) throws IOException {
 //        Parent root = FXMLLoader.load(getClass().getResource("/AddProperty.fxml"));
 //        Stage stage = new Stage();
@@ -59,10 +63,10 @@ public class RentedUnitsController implements Initializable{
 //        stage.show();
 //        App.stage.close();
 //    }
-@FXML
-private void back(){
-    Stage stage = (Stage) closebtn.getScene().getWindow();
-    stage.close();
-    App.navigate();
-}
+    @FXML
+    private void back() {
+        Stage stage = (Stage) closebtn.getScene().getWindow();
+        stage.close();
+        App.navigate();
+    }
 }

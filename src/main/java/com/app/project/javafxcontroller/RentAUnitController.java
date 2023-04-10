@@ -19,6 +19,7 @@ import java.util.ResourceBundle;
 import java.util.UUID;
 
 public class RentAUnitController implements Initializable {
+    private static UUID ppid;
     @FXML
     private Button closebutton;
     @FXML
@@ -30,9 +31,13 @@ public class RentAUnitController implements Initializable {
     @FXML
     private TextField userID;
     private PropertyServices propertyServices;
-    private static UUID ppid;
     @FXML
     private TextField propertyID;
+
+    public static UUID getProperty() {
+        return ppid;
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         propertyID.setText("");
@@ -40,27 +45,28 @@ public class RentAUnitController implements Initializable {
         ppid = null;
         propertyServices = new PropertyServices(PropertiesRepository.getInstance());
     }
+
     public void cancel() {
         Stage stage = (Stage) closebutton.getScene().getWindow();
         stage.close();
         App.navigate();
         //navigate to main screen
     }
-    public static UUID getProperty(){
-        return ppid;
-    }
+
     public void next() throws Exception {
 //        propertyServices.moveTenantToProperty();
         nobtn.setVisible(false);
         userID.setVisible(true);
         submitbtn.setVisible(true);
     }
+
     public void moveTenants() throws Exception {
         UUID pID = UUID.fromString(propertyID.getText());
         ppid = pID;
         UUID uid = UUID.fromString(userID.getText());
         propertyServices.moveTenantToProperty(pID, uid);
     }
+
     public void addTenant() throws IOException {
         UUID pid = UUID.fromString(propertyID.getText());
         ppid = pid;

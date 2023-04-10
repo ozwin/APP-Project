@@ -20,6 +20,7 @@ public class LeaseController {
 
     /**
      * Constructor for Lease.
+     *
      * @param view
      */
     public LeaseController(LeaseView view) {
@@ -30,6 +31,7 @@ public class LeaseController {
 
     /**
      * Adds a lease into the system.
+     *
      * @param lease
      */
     public void addLease(Lease lease) {
@@ -38,6 +40,7 @@ public class LeaseController {
 
     /**
      * Adds leases for a given tenant ID.
+     *
      * @param uuid
      */
     public void addLeaseView(UUID uuid) {
@@ -58,6 +61,7 @@ public class LeaseController {
 
     /**
      * This method records the payment for given property
+     *
      * @param propertyID
      * @param rent
      */

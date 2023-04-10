@@ -3,7 +3,10 @@ package com.app.project.entity;
 import com.app.project.interfaces.IProperty;
 import com.app.project.util.Helper;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Observer;
+import java.util.UUID;
 
 /**
  * Describes the behaviour of a property.
@@ -49,6 +52,7 @@ abstract public class Property implements IProperty {
 
     /**
      * Adds a tenant to the property.
+     *
      * @param tenant
      */
     public void addTenantToProperty(Tenant tenant) {
@@ -77,16 +81,17 @@ abstract public class Property implements IProperty {
         return false;
     }
 
-    public void addTenant(Tenant tenant){
+    public void addTenant(Tenant tenant) {
         this.tenants.add(tenant.getUserID());
     }
 
     /**
      * Checks if the tenant is already in the waitlist, if yes remove from it and make him tenant.
+     *
      * @param userID
      */
     public void moveTenant(UUID userID) throws Exception {
-        if(tenants.size()>0)
+        if (tenants.size() > 0)
             throw new Exception("This property is already occupied and not available fo renting at the moment");
         if (waitingList.contains(userID)) {
             tenants.add(userID);

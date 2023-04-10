@@ -11,6 +11,7 @@ public class ApartmentController extends PropertyController {
 
     /**
      * Constructor for Apartment Controller
+     *
      * @param apartmentView
      */
     public ApartmentController(ApartmentView apartmentView) {
@@ -21,6 +22,7 @@ public class ApartmentController extends PropertyController {
 
     /**
      * Display the Apartment Property
+     *
      * @param apartment
      */
     public void displayProperty(Apartment apartment) {

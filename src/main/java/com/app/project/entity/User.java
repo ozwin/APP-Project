@@ -4,6 +4,7 @@ import com.app.project.interfaces.IEntity;
 import com.app.project.util.Helper;
 
 import java.util.UUID;
+
 /**
  * Describes the properties of a User.
  */
@@ -35,6 +36,7 @@ public class User implements IEntity<UUID> {
     public String toString() {
         return String.format("User Id: %s\n Full Name: %s \n Contact Details: %s\n", this.getUserID().toString(), this.fullName(), this.contact.toString());
     }
+
     @Override
     public UUID getID() {
         return ID;

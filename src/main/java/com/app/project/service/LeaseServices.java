@@ -27,11 +27,13 @@ public class LeaseServices {
         this.propertiesRepository = PropertiesRepository.getInstance();
         this.tenantRepository = TenantRepository.getInstance();
     }
-    public LeaseServices(LeaseRepository leaseRepository,PropertiesRepository propertiesRepository,TenantRepository tenantRepository){
+
+    public LeaseServices(LeaseRepository leaseRepository, PropertiesRepository propertiesRepository, TenantRepository tenantRepository) {
         this.leaseRepository = leaseRepository;
         this.propertiesRepository = propertiesRepository;
         this.tenantRepository = tenantRepository;
     }
+
     public List<UUID> getTenants(UUID propertyID) {
         return this.propertiesRepository.findByKey(propertyID).getTenants();
     }

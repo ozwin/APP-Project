@@ -27,11 +27,12 @@ public class Lease implements IEntity<UUID> {
         this.occupiedTenants.addAll(tenants);
         this.propertyID = propertyID;
         this.signedOn = LocalDate.now();
-        this.rentHistory=new ArrayList<LocalDate>();
+        this.rentHistory = new ArrayList<LocalDate>();
     }
 
     /**
      * Assign a lease duration.
+     *
      * @param months
      */
     public void setLeaseDuration(int months) {
@@ -40,6 +41,7 @@ public class Lease implements IEntity<UUID> {
 
     /**
      * Assign tenants to the lease.
+     *
      * @param names
      */
     public void setTenantNames(List<String> names) {
@@ -57,6 +59,7 @@ public class Lease implements IEntity<UUID> {
 
     /**
      * Return true if the rent is paid for this month.
+     *
      * @return
      */
     public boolean isRentPaidForThisMonth() {
@@ -101,6 +104,7 @@ public class Lease implements IEntity<UUID> {
             return true;
         return false;
     }
+
     @Override
     public UUID getID() {
         return this.ID;

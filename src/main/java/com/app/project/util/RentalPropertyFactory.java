@@ -1,6 +1,9 @@
 package com.app.project.util;
 
-import com.app.project.entity.*;
+import com.app.project.entity.Address;
+import com.app.project.entity.Apartment;
+import com.app.project.entity.Condo;
+import com.app.project.entity.PrivateHouse;
 import com.app.project.interfaces.IProperty;
 
 import java.util.Locale;

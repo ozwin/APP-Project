@@ -3,6 +3,7 @@ package com.app.project.entity;
 import com.app.project.service.NotificationServices;
 
 import java.util.UUID;
+
 /**
  * Describes the behaviour of a Tenant
  */

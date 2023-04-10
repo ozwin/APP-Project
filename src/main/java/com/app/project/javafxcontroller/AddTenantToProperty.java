@@ -60,6 +60,7 @@ public class AddTenantToProperty implements Initializable {
         tenantServices.addAndRent(tenant);
         navigate();
     }
+
     public void navigate() throws IOException {
 //        let's make this utility function or something
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/LeaseData.fxml")));
@@ -67,6 +68,7 @@ public class AddTenantToProperty implements Initializable {
         App.stage.setScene(scene);
         App.stage.show();
     }
+
     public void cancel() {
         Stage stage = (Stage) closebutton.getScene().getWindow();
         stage.close();

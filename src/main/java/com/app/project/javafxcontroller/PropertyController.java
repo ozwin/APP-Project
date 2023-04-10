@@ -24,11 +24,12 @@ import java.util.ArrayList;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
-public class PropertyController  implements Initializable{
+public class PropertyController implements Initializable {
     @FXML
     private Button closebtn;
-    private PropertyServices propertyServices=new PropertyServices(PropertiesRepository.getInstance());
-    @FXML private ListView<Property> propertyListView;
+    private PropertyServices propertyServices = new PropertyServices(PropertiesRepository.getInstance());
+    @FXML
+    private ListView<Property> propertyListView;
     private ObservableList<Property> propertyObservableList;
 
     public void initialize() {
@@ -37,18 +38,19 @@ public class PropertyController  implements Initializable{
         displayAllProperties();
 
     }
+
     private void displayAllProperties() {
         // Retrieve all items from the model and add them to the list
         System.out.println("Running a new Thread");
         Thread thread = new Thread(new Runnable() {
             @Override
             public void run() {
-                ArrayList<Property> properties = (ArrayList<Property>)(ArrayList<?>)propertyServices.getAll();
+                ArrayList<Property> properties = (ArrayList<Property>) (ArrayList<?>) propertyServices.getAll();
                 propertyObservableList.addAll(properties);
-                Platform.runLater(() ->{
-                    propertyListView=new ListView<>(propertyObservableList);
-                    for (Property p:
-                         properties) {
+                Platform.runLater(() -> {
+                    propertyListView = new ListView<>(propertyObservableList);
+                    for (Property p :
+                            properties) {
                         System.out.println(p.getPropertyId());
                     }
                     propertyListView.setCellFactory(param -> new ListCell<Property>() {
@@ -71,6 +73,7 @@ public class PropertyController  implements Initializable{
         propertyListView.setItems(propertyObservableList);
         displayAllProperties();
     }
+
     @FXML
     private void handleAddNewProperty(ActionEvent ae) throws IOException {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/AddProperty.fxml")));
@@ -82,7 +85,7 @@ public class PropertyController  implements Initializable{
     }
 
     @FXML
-    private void back(){
+    private void back() {
         Stage stage = (Stage) closebtn.getScene().getWindow();
         stage.close();
         App.navigate();

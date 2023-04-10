@@ -24,11 +24,12 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-public class TenantController implements Initializable{
+public class TenantController implements Initializable {
     @FXML
     private Button closebtn;
-    private TenantServices tenantServices=new TenantServices(TenantRepository.getInstance(), new PropertyServices(PropertiesRepository.getInstance()));
-    @FXML private ListView<Tenant> tenantListView;
+    private TenantServices tenantServices = new TenantServices(TenantRepository.getInstance(), new PropertyServices(PropertiesRepository.getInstance()));
+    @FXML
+    private ListView<Tenant> tenantListView;
     private ObservableList<Tenant> tenantObservableList;
 
     public void initialize() {
@@ -37,11 +38,12 @@ public class TenantController implements Initializable{
         displayAllTenants();
 
     }
+
     private void displayAllTenants() {
         // Retrieve all items from the model and add them to the list
         ArrayList<Tenant> tenants = (ArrayList<Tenant>) tenantServices.getAll();
         tenantObservableList.addAll(tenants);
-        tenantListView=new ListView<>(tenantObservableList);
+        tenantListView = new ListView<>(tenantObservableList);
         tenantListView.setCellFactory(param -> new ListCell<Tenant>() {
             @Override
             protected void updateItem(Tenant item, boolean empty) {
@@ -58,6 +60,7 @@ public class TenantController implements Initializable{
         tenantListView.setItems(tenantObservableList);
         displayAllTenants();
     }
+
     @FXML
     private void handleAddNewTenant(ActionEvent ae) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/AddTenant.fxml"));
@@ -67,8 +70,9 @@ public class TenantController implements Initializable{
         stage.show();
         App.stage.close();
     }
+
     @FXML
-    private void back(){
+    private void back() {
         Stage stage = (Stage) closebtn.getScene().getWindow();
         stage.close();
         App.navigate();

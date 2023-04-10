@@ -9,11 +9,13 @@ import java.util.stream.Collectors;
 /**
  * The repository where are the properties are stored.
  */
-public class PropertiesRepository extends Repository<IProperty,UUID> {
+public class PropertiesRepository extends Repository<IProperty, UUID> {
     private static PropertiesRepository propertiesRepository;
+
     private PropertiesRepository() {
         super();
     }
+
     public static synchronized PropertiesRepository getInstance() {
         if (propertiesRepository == null)
             propertiesRepository = new PropertiesRepository();
@@ -22,6 +24,7 @@ public class PropertiesRepository extends Repository<IProperty,UUID> {
 
     /**
      * Find vacant units.
+     *
      * @return
      */
     public ArrayList<IProperty> findVacant() {
@@ -30,6 +33,7 @@ public class PropertiesRepository extends Repository<IProperty,UUID> {
 
     /**
      * Find rented units.
+     *
      * @return
      */
     public ArrayList<IProperty> findRented() {

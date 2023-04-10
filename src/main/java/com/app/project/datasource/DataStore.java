@@ -11,7 +11,7 @@ import com.app.project.service.TenantServices;
  */
 public class DataStore {
     public static final PropertiesRepository propertiesRepository = PropertiesRepository.getInstance();
-    public static final TenantServices tenantServices = new TenantServices(TenantRepository.getInstance(),new PropertyServices(PropertiesRepository.getInstance()));
+    public static final TenantServices tenantServices = new TenantServices(TenantRepository.getInstance(), new PropertyServices(PropertiesRepository.getInstance()));
 
     public static void initializeDataBase() {
         propertiesRepository.insert(new Apartment(2, 2, 2000, new Address("St Cathrine", "Montreal", "H3H1K4")));

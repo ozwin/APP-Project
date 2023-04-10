@@ -14,9 +14,10 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-public class PendingRentPropertiesController implements Initializable{
-    private LeaseServices leaseServices=new LeaseServices();
-    @FXML private ListView<IProperty> pendingRentListView;
+public class PendingRentPropertiesController implements Initializable {
+    private LeaseServices leaseServices = new LeaseServices();
+    @FXML
+    private ListView<IProperty> pendingRentListView;
     private ObservableList<IProperty> pendingRentObservableList;
 
     public void initialize() {
@@ -25,6 +26,7 @@ public class PendingRentPropertiesController implements Initializable{
         displayAllPendingRentProperties();
 
     }
+
     private void displayAllPendingRentProperties() {
         // Retrieve all items from the model and add them to the list
         ArrayList<IProperty> pendingRent = (ArrayList<IProperty>) leaseServices.getPropertiesWithPendingRent();
