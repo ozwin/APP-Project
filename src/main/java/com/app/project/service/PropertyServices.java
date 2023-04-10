@@ -17,7 +17,6 @@ public class PropertyServices {
     private PropertiesRepository propertiesRepository;
     private NotificationServices notificationServices;
     private TenantRepository tenantRepository;
-
     private LeaseRepository leaseRepository;
 
     public PropertyServices() {

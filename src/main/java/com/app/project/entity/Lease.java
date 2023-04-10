@@ -13,10 +13,10 @@ import java.util.UUID;
  */
 public class Lease implements IEntity<UUID> {
 
-    UUID ID;
-    List<UUID> occupiedTenants = new ArrayList<>();
-    UUID propertyID;
-    List<String> tenantNames = new ArrayList<>();
+    private UUID ID;
+    private List<UUID> occupiedTenants = new ArrayList<>();
+    private UUID propertyID;
+    private List<String> tenantNames = new ArrayList<>();
     private int leaseDuration;
     private double agreedMonthlyRent;
     private LocalDate signedOn;

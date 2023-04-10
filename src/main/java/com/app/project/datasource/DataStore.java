@@ -6,8 +6,6 @@ import com.app.project.repository.TenantRepository;
 import com.app.project.service.PropertyServices;
 import com.app.project.service.TenantServices;
 
-import java.util.UUID;
-
 /**
  * Basic class for intialisation of the Data.
  */
@@ -21,8 +19,8 @@ public class DataStore {
 //        propertiesRepository.insert(new PrivateHouse("5th Main", new Address("Mount Royal", "Montreal", "H3H1K4")));
 //        propertiesRepository.insert(new Apartment(3, 4, 3000, new Address("Something", "Ottawa", "H3H1K4")));
 //        ArrayList<IProperty> properties = propertiesRepository.findVacant();
-        tenantServices.add(new Tenant("Ozwin", "Lobo", new Contact("xyz@gmail.com", "990909093"), UUID.fromString("ef4c0c57-3edc-4a45-bb6f-125032dc78e2")));
-        tenantServices.add(new Tenant("Jack", "Sparrow", new Contact("yy@gmail.com", "670909093"), UUID.fromString("ef4c0c57-3edc-4a45-bb6f-125032dc78e5")));
+        tenantServices.addTenant(new Tenant("Ozwin", "Lobo", new Contact("xyz@gmail.com", "990909093"), propertiesRepository.findVacant().get(0).getID()));
+        tenantServices.addTenant(new Tenant("Jack", "Sparrow", new Contact("yy@gmail.com", "670909093"), propertiesRepository.findVacant().get(0).getID()));
     }
 
 

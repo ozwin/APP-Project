@@ -52,9 +52,9 @@ class TenantServicesTest {
     @Test
     void addTenantSuccess() {
         Tenant tenant = new Tenant("Ozwin", "Lobo", new Contact("XXX@xx.com", "98989"), UUID.randomUUID());
-        doNothing().when(repository).add(tenant);
+        doNothing().when(repository).insert(tenant);
         when(repository.findByKey(any())).thenReturn(tenant);
-        tenantServices.add(tenant);
+        tenantServices.addTenant(tenant);
         Tenant tenant2 = tenantServices.get(tenant.getUserID());
         assertEquals(tenant, tenant2);
     }

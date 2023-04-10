@@ -8,7 +8,7 @@ import java.util.*;
 /**
  * Describes the behaviour of a property.
  */
-abstract public class Property extends Observable implements IProperty {
+abstract public class Property implements IProperty {
     protected Address address;
     protected List<UUID> waitingList;
 
@@ -77,20 +77,6 @@ abstract public class Property extends Observable implements IProperty {
         return false;
     }
 
-    public void addObserver(Observer observer) {
-        observers.add(observer);
-    }
-
-    public void removeObserver(Observer observer) {
-        observers.remove(observer);
-    }
-
-    @Override
-    public void notifyObservers() {
-        for (Observer observer : observers) {
-            observer.update(this, null);
-        }
-    }
     public void addTenant(Tenant tenant){
         this.tenants.add(tenant.getUserID());
     }

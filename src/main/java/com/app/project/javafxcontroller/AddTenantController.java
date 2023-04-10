@@ -61,7 +61,7 @@ public class AddTenantController implements Initializable {
         String phoneText = phone.getText();
         String propertyIDText = propertyID.getText();
         Tenant tenant = new Tenant(firstNameText, lastNameText, new Contact(emailText, faxText, phoneText), UUID.fromString(propertyIDText));
-        tenantServices.add(tenant);
+        tenantServices.addTenant(tenant);
 //        navigate();
         cancel();
     }

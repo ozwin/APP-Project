@@ -40,7 +40,7 @@ class LeaseServicesTest {
         Apartment apartment = new Apartment(2, 2, 200, new Address("St Catherine", "Montreal", "H3H1K4"));
         Tenant tenant = new Tenant("Ozwin", "Lobo", new Contact("XXX@xx.com", "98989"), UUID.randomUUID());
         apartment.addTenant(tenant);
-        doNothing().when(tenantRepository).add(tenant);
+        doNothing().when(tenantRepository).insert(tenant);
         ArrayList<UUID> userIds=new ArrayList<UUID>();
         userIds.add(tenant.getUserID());
         Lease lease=new Lease(userIds,apartment.getPropertyId());
@@ -55,7 +55,8 @@ class LeaseServicesTest {
         when(propertiesRepository.findByKey(any())).thenReturn(apartment);
         when(tenantRepository.findByKey(any())).thenReturn(tenant);
         when(leaseRepository.findLease(any())).thenReturn(lease);
-        when(leaseRepository.getLeases()).thenReturn(leases);
+        when(leaseRepository.findByKey(any())).thenReturn(lease);
+        when(leaseRepository.getAll()).thenReturn(leases);
         when(propertiesRepository.findMany(any())).thenReturn(properties);
         when(propertiesRepository.getAll()).thenReturn(properties);
         doNothing().when(propertiesRepository).upsert(any());
@@ -71,7 +72,7 @@ class LeaseServicesTest {
         List<UUID> tenants = leaseServices.getTenants(propertyServices.getAll().get(0).getPropertyId());
         Tenant tenant = new Tenant("Srikar", "Akella", new Contact("ABC@gmail.com", "9120344"), UUID.randomUUID());
         tenants.add(tenant.getUserID());
-        doNothing().when(tenantRepository).add(tenant);
+        doNothing().when(tenantRepository).insert(tenant);
         List<UUID> output=leaseServices.getTenants(propertyServices.getAll().get(0).getPropertyId());
         assertEquals(tenants,output );
     }
@@ -86,7 +87,7 @@ class LeaseServicesTest {
 
     @Test
     void addLease() {
-        ArrayList<Lease> leases = leaseRepository.getLeases();
+        ArrayList<Lease> leases = (ArrayList<Lease>) leaseRepository.getAll();
         List<UUID> tenants = new ArrayList<>();
         UUID tenant = UUID.randomUUID();
         tenants.add(tenant);
@@ -94,8 +95,8 @@ class LeaseServicesTest {
         lease.setLeaseDuration(10);
         lease.setAgreedMonthlyRent(2000);
         leases.add(lease);
-        doNothing().when(leaseRepository).addLease(lease);
-        assertEquals(leases, leaseRepository.getLeases());
+        doNothing().when(leaseRepository).insert(lease);
+        assertEquals(leases, leaseRepository.getAll());
     }
 
     @Test
@@ -104,7 +105,7 @@ class LeaseServicesTest {
 
     @Test
     void getAllLeases() {
-        ArrayList<Lease> leases = leaseRepository.getLeases();
+        ArrayList<Lease> leases =(ArrayList<Lease>) leaseRepository.getAll();
         List<UUID> tenants = new ArrayList<>();
         UUID tenant = UUID.randomUUID();
         tenants.add(tenant);
@@ -112,8 +113,8 @@ class LeaseServicesTest {
         lease.setLeaseDuration(10);
         lease.setAgreedMonthlyRent(2000);
         leases.add(lease);
-        doNothing().when(leaseRepository).addLease(lease);
-        assertEquals(leases, leaseRepository.getLeases());
+        doNothing().when(leaseRepository).insert(lease);
+        assertEquals(leases, leaseRepository.getAll());
     }
 
     @Test

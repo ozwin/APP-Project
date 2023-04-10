@@ -39,7 +39,7 @@ public class TenantController {
      * @param tenant
      */
     public void addTenant(Tenant tenant) {
-        this.tenantServices.add(tenant);
+        this.tenantServices.addTenant(tenant);
     }
 
     /**

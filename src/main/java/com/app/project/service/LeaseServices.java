@@ -51,20 +51,20 @@ public class LeaseServices {
         Property property = (Property) propertiesRepository.findByKey(lease.getPropertyID());
         property.setLeaseId(lease.getLeaseID());
         propertiesRepository.upsert(property);
-        leaseRepository.addLease(lease);
+        leaseRepository.insert(lease);
     }
 
     public void removeLease(UUID leaseID) {
-        leaseRepository.removeLease(leaseID);
+        leaseRepository.removeLeaseByPropertyID(leaseID);
     }
 
     public ArrayList<Lease> getAllLeases() {
-        return this.leaseRepository.getLeases();
+        return this.leaseRepository.getAll();
     }
 
     public void recordPayment(UUID propertyId, double rent) throws Exception {
         Property property = (Property) propertiesRepository.findByKey(propertyId);
-        Lease lease = leaseRepository.findLease(property.getLeaseId());
+        Lease lease = leaseRepository.findByKey(property.getLeaseId());
         if (rent < lease.getAgreedMonthlyRent()) {
             throw new Exception("Amount is less than the agreed sum, please pay:" + lease.getAgreedMonthlyRent());
         }
