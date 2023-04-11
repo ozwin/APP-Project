@@ -80,6 +80,9 @@ public class VacateController implements Initializable {
         UUID propertyID = UUID.fromString(propertyId);
         propertyServices.removeTenants(propertyID);
         leaseServices.removeLease(propertyID);
+        Stage old = (Stage) backbutton.getScene().getWindow();
+        old.close();
+
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/WelcomePage.fxml")));
         Stage stage = new Stage();
         stage.setScene(new Scene(root));

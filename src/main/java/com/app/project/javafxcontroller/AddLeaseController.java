@@ -45,6 +45,7 @@ public class AddLeaseController implements Initializable {
             lease.setAgreedMonthlyRent(Double.parseDouble(rent.getText()));
             lease.setLeaseDuration(Integer.parseInt(duration.getText()));
             leaseServices.addLease(lease);
+            closeStage();
             displayNext();
         }
         catch(Exception e)
@@ -55,8 +56,7 @@ public class AddLeaseController implements Initializable {
     }
 
     public void cancel() {
-        Stage stage = (Stage) closebutton.getScene().getWindow();
-        stage.close();
+        closeStage();
         App.navigate();
         //navigate to main screen
     }
@@ -70,5 +70,8 @@ public class AddLeaseController implements Initializable {
         App.stage.getIcons().add(icon);
         App.stage.show();
     }
-
+    private void closeStage(){
+        Stage stage = (Stage) closebutton.getScene().getWindow();
+        stage.close();
+    }
 }

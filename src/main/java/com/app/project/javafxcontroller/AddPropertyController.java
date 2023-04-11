@@ -155,18 +155,21 @@ public class AddPropertyController implements Initializable {
                 }
             }
             propertyServices.add(property);
+            closeStage();
             App.navigate();
         }
         catch (Exception e)
         {
             App.errorPage();
         }
-
+    }
+    private void closeStage(){
+        Stage stage = (Stage) closebutton.getScene().getWindow();
+        stage.close();
     }
 
     public void cancel() {
-        Stage stage = (Stage) closebutton.getScene().getWindow();
-        stage.close();
+        closeStage();
         App.navigate();
         //navigate to main screen
     }

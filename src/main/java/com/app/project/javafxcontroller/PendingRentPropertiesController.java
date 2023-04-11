@@ -47,7 +47,7 @@ public class PendingRentPropertiesController implements Initializable {
                 });
             });
         }, "Pending unit threads");
-        App.navigate();
+        back();
     }
 
     @Override

@@ -5,122 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9f24fdae-1a2b-4e38-a0f4-471413627a31" name="Changes" comment="added a new thread for rent a unit">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/allclasses-index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/allpackages-index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/com/app/project/Main.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/com/app/project/controller/ApartmentController.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/com/app/project/controller/CLIController.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/com/app/project/controller/CondoController.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/com/app/project/controller/LeaseController.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/com/app/project/controller/PrivateHouseController.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/com/app/project/controller/PropertyController.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/com/app/project/controller/TenantController.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/com/app/project/controller/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/com/app/project/controller/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/com/app/project/datasource/DataStore.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/com/app/project/datasource/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/com/app/project/datasource/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/com/app/project/entity/Address.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/com/app/project/entity/Apartment.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/com/app/project/entity/Condo.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/com/app/project/entity/Contact.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/com/app/project/entity/Lease.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/com/app/project/entity/PrivateHouse.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/com/app/project/entity/Property.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/com/app/project/entity/Tenant.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/com/app/project/entity/User.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/com/app/project/entity/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/com/app/project/entity/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/com/app/project/interfaces/INotificationService.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/com/app/project/interfaces/IProperty.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/com/app/project/interfaces/IPropertyController.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/com/app/project/interfaces/IPropertyView.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/com/app/project/interfaces/IRepository.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/com/app/project/interfaces/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/com/app/project/interfaces/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/com/app/project/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/com/app/project/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/com/app/project/repository/LeaseRepository.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/com/app/project/repository/PropertiesRepository.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/com/app/project/repository/Repository.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/com/app/project/repository/TenantRepository.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/com/app/project/repository/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/com/app/project/repository/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/com/app/project/service/BillingService.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/com/app/project/service/LeaseServices.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/com/app/project/service/NotificationServices.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/com/app/project/service/PropertyServices.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/com/app/project/service/TenantServices.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/com/app/project/service/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/com/app/project/service/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/com/app/project/util/ControllerFactory.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/com/app/project/util/Helper.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/com/app/project/util/RentalPropertyFactory.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/com/app/project/util/ScannerSingleton.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/com/app/project/util/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/com/app/project/util/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/com/app/project/views/ApartmentView.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/com/app/project/views/CLIView.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/com/app/project/views/CondoView.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/com/app/project/views/LeaseView.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/com/app/project/views/PrivateHouseView.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/com/app/project/views/PropertyView.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/com/app/project/views/TenantView.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/com/app/project/views/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/com/app/project/views/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/copy.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/element-list" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/help-doc.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index-files/index-1.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index-files/index-10.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index-files/index-11.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index-files/index-12.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index-files/index-13.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index-files/index-14.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index-files/index-15.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index-files/index-16.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index-files/index-17.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index-files/index-18.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index-files/index-19.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index-files/index-2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index-files/index-3.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index-files/index-4.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index-files/index-5.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index-files/index-6.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index-files/index-7.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index-files/index-8.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index-files/index-9.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jquery-ui.overrides.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/legal/ADDITIONAL_LICENSE_INFO" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/legal/ASSEMBLY_EXCEPTION" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/legal/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/legal/jquery.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/legal/jqueryUI.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/member-search-index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module-search-index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/overview-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/overview-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-search-index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/glass.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/script-dir/jquery-3.6.0.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/script-dir/jquery-ui.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/script-dir/jquery-ui.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/script.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/search-page.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/search.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/search.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/Driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/Driver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/set/Set.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/set/Set.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/set/demoObjects/Demo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/set/demoObjects/Demo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/set/interfaces/ISet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/set/interfaces/ISet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/set/interfaces/ISetCollectionEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/set/interfaces/ISetCollectionEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stylesheet.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tag-search-index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/type-search-index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/javafxcontroller/AddLeaseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/javafxcontroller/AddLeaseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/javafxcontroller/AddPropertyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/javafxcontroller/AddPropertyController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/javafxcontroller/AddTenantController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/javafxcontroller/AddTenantController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/javafxcontroller/AddTenantToProperty.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/javafxcontroller/AddTenantToProperty.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/javafxcontroller/PayRentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/javafxcontroller/PayRentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/javafxcontroller/PendingRentPropertiesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/javafxcontroller/PendingRentPropertiesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/javafxcontroller/RentAUnitController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/javafxcontroller/RentAUnitController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/javafxcontroller/TenantController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/javafxcontroller/TenantController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/javafxcontroller/VacantUnitsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/javafxcontroller/VacantUnitsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/javafxcontroller/VacateController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/javafxcontroller/VacateController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -238,7 +133,7 @@
       <recent name="com.app.project.javafxcontroller" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Set Data type">
+  <component name="RunManager" selected="Application.APP_MVC_Phase2">
     <configuration name="APP_MVC_Phase1" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="com.app.project.Main" />
       <module name="APP-Project" />
@@ -475,6 +370,11 @@
           <url>file://$PROJECT_DIR$/src/main/java/com/app/project/set/Set.java</url>
           <line>53</line>
           <option name="timeStamp" value="41" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/app/project/javafxcontroller/AddPropertyController.java</url>
+          <line>167</line>
+          <option name="timeStamp" value="42" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -186,7 +186,7 @@ public class RentAUnitController implements Initializable {
             add(tenant.fullName());
         }});
         leaseServices.addLease(lease);
-        App.navigate();
+        cancel();
     }
 
     public void addTenant() throws IOException {
