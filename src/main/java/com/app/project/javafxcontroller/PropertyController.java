@@ -56,8 +56,9 @@ public class PropertyController implements Initializable {
                     tableView.setItems(propertyObservableList);
 //                    App.navigate();
                 });
+                System.out.println("Current Thread: " + Thread.currentThread());
             }
-        });
+        }, "Display Property Thread");
         thread.start();
     }
 

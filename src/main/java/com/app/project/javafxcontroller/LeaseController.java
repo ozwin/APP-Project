@@ -3,6 +3,7 @@ package com.app.project.javafxcontroller;
 import com.app.project.App;
 import com.app.project.entity.Lease;
 import com.app.project.service.LeaseServices;
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -36,13 +37,18 @@ public class LeaseController implements Initializable {
         ArrayList<Lease> leases = leaseServices.getAllLeases();
         leaseObservableList.addAll(leases);
         leaseListView = new ListView<>(leaseObservableList);
-        leaseListView.setCellFactory(param -> new ListCell<Lease>() {
-            @Override
-            protected void updateItem(Lease item, boolean empty) {
-                super.updateItem(item, empty);
-                setText(item.toString());
-            }
-        });
+        Thread thread = new Thread(() ->{
+            Platform.runLater(() ->{
+                leaseListView.setCellFactory(param -> new ListCell<Lease>() {
+                    @Override
+                    protected void updateItem(Lease item, boolean empty) {
+                        super.updateItem(item, empty);
+                        setText(item.toString());
+                    }
+                });
+            });
+        }, "Display Lease Thread");
+        thread.start();
         App.navigate();
     }
 

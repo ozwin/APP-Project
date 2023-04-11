@@ -4,11 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9f24fdae-1a2b-4e38-a0f4-471413627a31" name="Changes" comment="Display Leases, Pending Rent Properties, Vacant Units, Rented Units and Welcome page plus all the navigations fxml and controllers added">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/javafxcontroller/AddTenantToProperty.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/javafxcontroller/AddTenantToProperty.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/javafxcontroller/RentAUnitController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/javafxcontroller/RentAUnitController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/AddTenantToProperty.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/AddTenantToProperty.fxml" afterDir="false" />
+    <list default="true" id="9f24fdae-1a2b-4e38-a0f4-471413627a31" name="Changes" comment="added a new thread for rent a unit">
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/javafxcontroller/LeaseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/javafxcontroller/LeaseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/javafxcontroller/PendingRentPropertiesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/javafxcontroller/PendingRentPropertiesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/javafxcontroller/PropertyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/javafxcontroller/PropertyController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/javafxcontroller/RentedUnitsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/javafxcontroller/RentedUnitsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/javafxcontroller/TenantController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/javafxcontroller/TenantController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/javafxcontroller/VacantUnitsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/javafxcontroller/VacantUnitsController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

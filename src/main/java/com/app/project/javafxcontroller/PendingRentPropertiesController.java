@@ -3,6 +3,7 @@ package com.app.project.javafxcontroller;
 import com.app.project.App;
 import com.app.project.interfaces.IProperty;
 import com.app.project.service.LeaseServices;
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -35,13 +36,17 @@ public class PendingRentPropertiesController implements Initializable {
         ArrayList<IProperty> pendingRent = (ArrayList<IProperty>) leaseServices.getPropertiesWithPendingRent();
         pendingRentObservableList.addAll(pendingRent);
         pendingRentListView = new ListView<>(pendingRentObservableList);
-        pendingRentListView.setCellFactory(param -> new ListCell<IProperty>() {
-            @Override
-            protected void updateItem(IProperty item, boolean empty) {
-                super.updateItem(item, empty);
-                setText(item.toString());
-            }
-        });
+        Thread thread = new Thread(()->{
+            Platform.runLater(()->{
+                pendingRentListView.setCellFactory(param -> new ListCell<IProperty>() {
+                    @Override
+                    protected void updateItem(IProperty item, boolean empty) {
+                        super.updateItem(item, empty);
+                        setText(item.toString());
+                    }
+                });
+            });
+        }, "Pending unit threads");
         App.navigate();
     }
 

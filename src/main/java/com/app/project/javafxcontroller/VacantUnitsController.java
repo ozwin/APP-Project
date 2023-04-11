@@ -4,6 +4,7 @@ import com.app.project.App;
 import com.app.project.entity.Property;
 import com.app.project.repository.PropertiesRepository;
 import com.app.project.service.PropertyServices;
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -37,13 +38,17 @@ public class VacantUnitsController implements Initializable {
         ArrayList<Property> vacantUnits = (ArrayList<Property>) (ArrayList<?>) propertyServices.findVacant();
         vacantUnitsObservableList.addAll(vacantUnits);
         vacantUnitsListView = new ListView<>(vacantUnitsObservableList);
-        vacantUnitsListView.setCellFactory(param -> new ListCell<Property>() {
-            @Override
-            protected void updateItem(Property item, boolean empty) {
-                super.updateItem(item, empty);
-                setText(item.toString());
-            }
-        });
+        Thread thread = new Thread(()->{
+            Platform.runLater(()->{
+                vacantUnitsListView.setCellFactory(param -> new ListCell<Property>() {
+                    @Override
+                    protected void updateItem(Property item, boolean empty) {
+                        super.updateItem(item, empty);
+                        setText(item.toString());
+                    }
+                });
+            });
+        }, "Display Vacant Units");
         App.navigate();
     }
 
