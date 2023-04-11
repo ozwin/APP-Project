@@ -1,14 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
 <?import javafx.scene.layout.*?>
 
 <VBox alignment="CENTER" prefHeight="500" prefWidth="1000.0" spacing="10" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.app.project.javafxcontroller.PropertyController">
-<children>
-    <ListView fx:id="propertyListView" prefHeight="500.0" prefWidth="300.0" />
-    <Button onAction="#handleAddNewProperty" text="Add New Property" />
-</children>
-<stylesheets>
-<!--    <URL value="@style.css" />-->
-</stylesheets>
+    <children>
+      <TableView fx:id="tableView" editable="true" VBox.vgrow="ALWAYS">
+        <columns>
+          <TableColumn fx:id="propertyId" prefWidth="248.66666412353516" text="propertyId" />
+            <TableColumn fx:id="rented" editable="false" minWidth="0.0" prefWidth="119.0" text="rented" />
+          <TableColumn fx:id="address" editable="false" prefWidth="357.0" sortable="false" text="address" />
+        </columns>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <effect>
+            <SepiaTone level="0.93">
+               <input>
+                  <Lighting>
+                     <bumpInput>
+                        <GaussianBlur />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant />
+                     </light>
+                  </Lighting>
+               </input>
+            </SepiaTone>
+         </effect>
+      </TableView>
+        <Button onAction="#handleAddNewProperty" text="Add New Property" />
+        <Button fx:id="closebtn" onAction="#back" text="Back" />
+    </children>
+    <stylesheets>
+        <!--    <URL value="@style.css" />-->
+    </stylesheets>
 </VBox>

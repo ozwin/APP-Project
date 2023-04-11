@@ -2,13 +2,12 @@ package com.app.project.entity;
 
 import com.app.project.service.NotificationServices;
 
-import java.util.Observable;
-import java.util.Observer;
 import java.util.UUID;
+
 /**
  * Describes the behaviour of a Tenant
  */
-public class Tenant extends User implements Observer {
+public class Tenant extends User {
     UUID occupiedPropertyId;
     private NotificationServices notificationServices = new NotificationServices();
 
@@ -29,10 +28,5 @@ public class Tenant extends User implements Observer {
     @Override
     public String toString() {
         return String.format("Property Interested/Occupied : %s \n %s", getOccupiedPropertyId().toString(), super.toString());
-    }
-
-    @Override
-    public void update(Observable o, Object arg) {
-        this.notificationServices.sendMessage("The apartment that you wishlist  is empty!", fullName());
     }
 }

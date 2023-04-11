@@ -23,11 +23,13 @@ public class PropertyController implements IPropertyController {
         this.propertyServices = new PropertyServices(PropertiesRepository.getInstance());
         this.leaseServices = new LeaseServices();
     }
-    public PropertyController(){
+
+    public PropertyController() {
     }
 
     /**
      * Adds a property into the system
+     *
      * @param property
      */
     public void add(IProperty property) {
@@ -43,6 +45,7 @@ public class PropertyController implements IPropertyController {
 
     /**
      * Display the property.
+     *
      * @param property
      */
     @Override
@@ -83,6 +86,7 @@ public class PropertyController implements IPropertyController {
 
     /**
      * Move the tenants into a property when they are ready to rent a unit.
+     *
      * @param propertyID
      * @param userID
      */
@@ -92,6 +96,7 @@ public class PropertyController implements IPropertyController {
 
     /**
      * Remove a tenants from a property when they vacate.
+     *
      * @param propertyID
      */
     public void removeTenants(UUID propertyID) {

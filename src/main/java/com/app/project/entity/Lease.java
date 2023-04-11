@@ -13,10 +13,10 @@ import java.util.UUID;
  */
 public class Lease implements IEntity<UUID> {
 
-    UUID ID;
-    List<UUID> occupiedTenants = new ArrayList<>();
-    UUID propertyID;
-    List<String> tenantNames = new ArrayList<>();
+    private UUID ID;
+    private List<UUID> occupiedTenants = new ArrayList<>();
+    private UUID propertyID;
+    private List<String> tenantNames = new ArrayList<>();
     private int leaseDuration;
     private double agreedMonthlyRent;
     private LocalDate signedOn;
@@ -27,11 +27,12 @@ public class Lease implements IEntity<UUID> {
         this.occupiedTenants.addAll(tenants);
         this.propertyID = propertyID;
         this.signedOn = LocalDate.now();
-        this.rentHistory=new ArrayList<LocalDate>();
+        this.rentHistory = new ArrayList<LocalDate>();
     }
 
     /**
      * Assign a lease duration.
+     *
      * @param months
      */
     public void setLeaseDuration(int months) {
@@ -40,6 +41,7 @@ public class Lease implements IEntity<UUID> {
 
     /**
      * Assign tenants to the lease.
+     *
      * @param names
      */
     public void setTenantNames(List<String> names) {
@@ -48,7 +50,7 @@ public class Lease implements IEntity<UUID> {
 
     @Override
     public String toString() {
-        return "The lease is : " + ID + "\n" + "The tenants : " + String.join(",", tenantNames) + "For a duration of: " + leaseDuration;
+        return "Lease Id : " + ID + "\n" + "The tenants : " + String.join(",", tenantNames) + "\n For a duration of: " + leaseDuration+"\n Monthly rent of: "+agreedMonthlyRent+"\n Signed on: "+signedOn;
     }
 
     public UUID getLeaseID() {
@@ -57,6 +59,7 @@ public class Lease implements IEntity<UUID> {
 
     /**
      * Return true if the rent is paid for this month.
+     *
      * @return
      */
     public boolean isRentPaidForThisMonth() {
@@ -101,6 +104,7 @@ public class Lease implements IEntity<UUID> {
             return true;
         return false;
     }
+
     @Override
     public UUID getID() {
         return this.ID;

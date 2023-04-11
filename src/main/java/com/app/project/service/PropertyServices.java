@@ -17,7 +17,6 @@ public class PropertyServices {
     private PropertiesRepository propertiesRepository;
     private NotificationServices notificationServices;
     private TenantRepository tenantRepository;
-
     private LeaseRepository leaseRepository;
 
     public PropertyServices() {
@@ -61,18 +60,18 @@ public class PropertyServices {
     }
 
     public void moveTenantToProperty(UUID propertyID, UUID userID) throws Exception {
-            IProperty property = this.propertiesRepository.findByKey(propertyID);
-            property.moveTenant(userID);
+        IProperty property = this.propertiesRepository.findByKey(propertyID);
+        property.moveTenant(userID);
     }
 
     public void removeTenants(UUID propertyID) {
         Property property = (Property) this.propertiesRepository.findByKey(propertyID);
+        property.removeTenants();
+        this.propertiesRepository.upsert(property);
         for (UUID user :
                 property.getWaitingList()) {
             Tenant tenant = this.tenantRepository.findByKey(user);
             notificationServices.sendMessage("The below property is available now! " + property, tenant.fullName());
         }
     }
-
-
 }

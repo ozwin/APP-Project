@@ -13,7 +13,6 @@ import java.util.ArrayList;
 import java.util.UUID;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
 class PropertyServicesTest {
@@ -39,7 +38,7 @@ class PropertyServicesTest {
     void addTestSuccess() {
         Apartment apartment = new Apartment(2, 2, 200, new Address("St Catherine", "Montreal", "H3H1K4"));
         UUID propertyID = apartment.getPropertyId();
-        when(repository.insert(apartment)).thenReturn(true);
+        doNothing().when(repository).insert(apartment);
         when(repository.findByKey(propertyID)).thenReturn(apartment);
         propertyServices.add(apartment);
         IProperty property = propertyServices.getByKey(propertyID);
@@ -50,7 +49,7 @@ class PropertyServicesTest {
     void getByKeyTestSuccess() {
         Apartment apartment = new Apartment(2, 2, 200, new Address("St Catherine", "Montreal", "H3H1K4"));
         UUID propertyID = apartment.getPropertyId();
-        when(repository.insert(apartment)).thenReturn(true);
+        doNothing().when(repository).insert(apartment);
         when(repository.findByKey(propertyID)).thenReturn(apartment);
         propertyServices.add(apartment);
         IProperty property = propertyServices.getByKey(propertyID);
@@ -63,7 +62,7 @@ class PropertyServicesTest {
         Condo condo = new Condo("23", "2", new Address("St Catherine", "Montreal", "H3H1K4"));
         PrivateHouse house = new PrivateHouse("54", new Address("St Catherine", "Montreal", "H3H1K4"));
         ArrayList<IProperty> properties = propertyServices.getAll();
-        when(repository.insert(any())).thenReturn(true);
+        doNothing().when(repository).insert(apartment);
         propertyServices.add(apartment);
         propertyServices.add(condo);
         propertyServices.add(house);

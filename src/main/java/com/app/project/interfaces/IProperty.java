@@ -5,7 +5,7 @@ import com.app.project.entity.Tenant;
 import java.util.List;
 import java.util.UUID;
 
-public interface IProperty extends IEntity<UUID>{
+public interface IProperty extends IEntity<UUID> {
     UUID getPropertyId();
 
     boolean isVacant();

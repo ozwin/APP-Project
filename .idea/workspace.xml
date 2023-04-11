@@ -4,14 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9f24fdae-1a2b-4e38-a0f4-471413627a31" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="9f24fdae-1a2b-4e38-a0f4-471413627a31" name="Changes" comment="Display Leases, Pending Rent Properties, Vacant Units, Rented Units and Welcome page plus all the navigations fxml and controllers added">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/javafxcontroller/AddPropertyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/javafxcontroller/AddPropertyController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/javafxcontroller/PropertyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/javafxcontroller/PropertyController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/views/javafx/MainView.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/AddProperty.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/AddProperty.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/DisplayProperties.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/DisplayProperties.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/RentAUnit.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/RentAUnit.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,16 +74,16 @@
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;18&quot;,
     &quot;js.buildTools.gulp.gulp_package_dir&quot;: &quot;&quot;,
     &quot;last_directory_selection&quot;: &quot;C:/Personal/APP-Project/src/main/java/com/app/project&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Personal/APP-Project/src/main/resources/com.app.project&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/muskan/IdeaProjects/APP-Project/src/main/resources&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Global Libraries&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
@@ -97,6 +94,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources" />
       <recent name="C:\Personal\APP-Project\src\main\resources\com.app.project" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
@@ -109,6 +107,9 @@
       <recent name="com.app.project.controller" />
       <recent name="com.app.project.repository" />
       <recent name="com.app.project.service" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.app.project.javafxcontroller" />
     </key>
   </component>
   <component name="RunManager" selected="Application.APP_MVC_Phase2">
@@ -123,6 +124,13 @@
       <option name="MAIN_CLASS_NAME" value="com.app.project.App" />
       <module name="APP-Project" />
       <option name="VM_PARAMETERS" value="--module-path &quot;C:\Program Files\Java\javafx-sdk-19.0.2.1\lib&quot; --add-modules javafx.controls,javafx.fxml" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Set Data type" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="com.app.project.Driver" />
+      <module name="APP-Project" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -225,6 +233,7 @@
     </configuration>
     <list>
       <item itemvalue="Application.APP_MVC_Phase2" />
+      <item itemvalue="Application.Set Data type" />
       <item itemvalue="Application.APP_MVC_Phase1" />
       <item itemvalue="JUnit.LeaseServicesTest.addLease" />
       <item itemvalue="JUnit.LeaseServicesTest.getAllLeases" />
@@ -257,7 +266,26 @@
       <workItem from="1680740181258" duration="15569000" />
       <workItem from="1680881566162" duration="1646000" />
       <workItem from="1680883243015" duration="5593000" />
+      <workItem from="1680892899107" duration="973000" />
+      <workItem from="1680893881248" duration="209000" />
+      <workItem from="1680894097439" duration="19547000" />
+      <workItem from="1681157283212" duration="1787000" />
+      <workItem from="1681159085527" duration="427000" />
+      <workItem from="1681159524403" duration="187000" />
+      <workItem from="1681159714865" duration="283000" />
+      <workItem from="1681160021727" duration="31000" />
+      <workItem from="1681160054732" duration="63000" />
+      <workItem from="1681160120433" duration="116000" />
+      <workItem from="1681160239765" duration="4185000" />
     </task>
+    <task id="LOCAL-00001" summary="Add and Display Tenant FXML and Controllers added">
+      <created>1680937459972</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1680937459972</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -273,6 +301,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Add and Display Tenant FXML and Controllers added" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add and Display Tenant FXML and Controllers added" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -296,21 +328,15 @@
           <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/app/project/javafxcontroller/AddPropertyController.java</url>
-          <line>102</line>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/app/project/javafxcontroller/AddPropertyController.java</url>
-          <line>103</line>
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/app/project/javafxcontroller/AddPropertyController.java</url>
-          <line>60</line>
-          <option name="timeStamp" value="13" />
+          <url>file://$PROJECT_DIR$/src/main/java/com/app/project/Main.java</url>
+          <line>10</line>
+          <option name="timeStamp" value="19" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
