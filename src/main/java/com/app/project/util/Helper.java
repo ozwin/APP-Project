@@ -2,6 +2,8 @@ package com.app.project.util;
 
 import javafx.scene.control.TextField;
 import javafx.scene.control.TextFormatter;
+import javafx.scene.image.Image;
+import javafx.stage.Stage;
 
 import java.util.UUID;
 import java.util.function.UnaryOperator;
@@ -47,6 +49,13 @@ public class Helper {
         public String toString() {
             return displayText;
         }
+    }
+
+    public static void setAPPIcon(Stage stage,String URL){
+        if(URL.length()==0)
+            URL="/icons/laughing.png";
+        Image image=new Image(URL);
+        stage.getIcons().add(image);
     }
 
 }

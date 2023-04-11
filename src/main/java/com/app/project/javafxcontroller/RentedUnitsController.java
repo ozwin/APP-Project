@@ -4,6 +4,7 @@ import com.app.project.App;
 import com.app.project.entity.Property;
 import com.app.project.repository.PropertiesRepository;
 import com.app.project.service.PropertyServices;
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -36,14 +37,18 @@ public class RentedUnitsController implements Initializable {
         // Retrieve all items from the model and add them to the list
         ArrayList<Property> vacantUnits = (ArrayList<Property>) (ArrayList<?>) propertyServices.findRented();
         rentedUnitsObservableList.addAll(vacantUnits);
-        rentedUnitsListView = new ListView<>(rentedUnitsObservableList);
-        rentedUnitsListView.setCellFactory(param -> new ListCell<Property>() {
-            @Override
-            protected void updateItem(Property item, boolean empty) {
-                super.updateItem(item, empty);
-                setText(item.toString());
-            }
-        });
+        Thread thread = new Thread(()->{
+            Platform.runLater(()->{
+                rentedUnitsListView = new ListView<>(rentedUnitsObservableList);
+                rentedUnitsListView.setCellFactory(param -> new ListCell<Property>() {
+                    @Override
+                    protected void updateItem(Property item, boolean empty) {
+                        super.updateItem(item, empty);
+                        setText(item.toString());
+                    }
+                });
+            });
+        },"Display Rented unit thread");
         App.navigate();
     }
 

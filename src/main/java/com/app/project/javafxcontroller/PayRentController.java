@@ -45,7 +45,7 @@ public class PayRentController implements Initializable {
         Helper.setNumericInputFilter(rent);
         leaseServices = new LeaseServices();
         propertyServices = new PropertyServices(PropertiesRepository.getInstance());
-        List<Helper.Item> properties = ((List<Property>) (List<?>) propertyServices.getAll()).stream().map(x -> new Helper.Item(x.getAddress().toString(), x.getPropertyId().toString())).toList();
+        List<Helper.Item> properties = ((List<Property>) (List<?>) propertyServices.findRented()).stream().map(x -> new Helper.Item(x.getAddress().toString(), x.getPropertyId().toString())).toList();
         comboBox.getItems().addAll(properties);
         comboBox.setCellFactory(listView -> new ListCell<Helper.Item>() {
             @Override
@@ -81,9 +81,13 @@ public class PayRentController implements Initializable {
     }
 
     public void submit() throws Exception {
-        amount = Double.parseDouble(rent.getText());
-        leaseServices.recordPayment(UUID.fromString(propertyId), amount);
-        App.navigate();
+        try {
+            amount = Double.parseDouble(rent.getText());
+            leaseServices.recordPayment(UUID.fromString(propertyId), amount);
+            App.navigate();
+        }catch (Exception ex){
+            App.errorPage();
+        }
     }
 
     public void cancel() {

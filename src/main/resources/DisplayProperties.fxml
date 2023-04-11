@@ -9,26 +9,16 @@
     <children>
       <TableView fx:id="tableView" editable="true" VBox.vgrow="ALWAYS">
         <columns>
-          <TableColumn fx:id="propertyId" prefWidth="248.66666412353516" text="propertyId" />
-            <TableColumn fx:id="rented" editable="false" minWidth="0.0" prefWidth="119.0" text="rented" />
-          <TableColumn fx:id="address" editable="false" prefWidth="357.0" sortable="false" text="address" />
+          <TableColumn fx:id="propertyId" prefWidth="248.66666412353516" text="Property Id" />
+            <TableColumn fx:id="rented" editable="false" minWidth="0.0" prefWidth="119.0" text="Availability" />
+          <TableColumn fx:id="address" editable="false" prefWidth="357.0" sortable="false" text="Location" />
+<!--            <TableColumn fx:id="propertyType" editable="false" prefWidth="357.0" sortable="false" text="Property type" />-->
         </columns>
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
          <effect>
-            <SepiaTone level="0.93">
-               <input>
-                  <Lighting>
-                     <bumpInput>
-                        <GaussianBlur />
-                     </bumpInput>
-                     <light>
-                        <Light.Distant />
-                     </light>
-                  </Lighting>
-               </input>
-            </SepiaTone>
+            <SepiaTone level="0.00" />
          </effect>
       </TableView>
         <Button onAction="#handleAddNewProperty" text="Add New Property" />

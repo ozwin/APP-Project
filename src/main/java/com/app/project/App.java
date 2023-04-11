@@ -5,6 +5,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -23,30 +24,45 @@ public class App extends Application {
         try {
             App.stage.setScene(scene);
             App.stage.show();
+//            setAPPIcon(stage,"");
+            Image icon = new Image("/icons/logo.png");
+            stage.getIcons().add(icon);
         } catch (Exception ex) {
 
         }
     }
 
-    public static void errorpage() throws IOException {
+    public static void errorPage() throws IOException {
 //        call this in case of exception
         Parent root = FXMLLoader.load(Objects.requireNonNull(App.class.getResource("/ErrorPage.fxml")));
         Stage stage = new Stage();
         stage.setTitle("ERROR");
         stage.setScene(new Scene(root));
         stage.show();
+//        setAPPIcon(stage,"");
+        Image icon = new Image("/icons/logo.png");
+        stage.getIcons().add(icon);
         App.stage.close();
     }
 
     public void start(Stage primaryStage) throws Exception {
-        DataStore.initializeDataBase();
-        this.stage = primaryStage;
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/WelcomePage.fxml")));
-        Scene scene = new Scene(root);
-        this.scene = scene;
-        stage.setScene(scene);
-        stage.setTitle("OSM Real Estate");
-        stage.show();
+        try {
+            DataStore.initializeDataBase();
+            this.stage = primaryStage;
+
+            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/WelcomePage.fxml")));
+            Scene scene = new Scene(root);
+            this.scene = scene;
+            stage.setScene(scene);
+//            setAPPIcon(stage,"");
+            Image icon = new Image("/icons/logo.png");
+            stage.getIcons().add(icon);
+            stage.setTitle("OSM Real Estate");
+
+            stage.show();
+        }catch (Exception ex){
+            App.errorPage();
+        }
 
     }
 }

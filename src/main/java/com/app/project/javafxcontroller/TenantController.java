@@ -6,6 +6,7 @@ import com.app.project.repository.PropertiesRepository;
 import com.app.project.repository.TenantRepository;
 import com.app.project.service.PropertyServices;
 import com.app.project.service.TenantServices;
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -17,6 +18,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -44,13 +46,17 @@ public class TenantController implements Initializable {
         ArrayList<Tenant> tenants = (ArrayList<Tenant>) tenantServices.getAll();
         tenantObservableList.addAll(tenants);
         tenantListView = new ListView<>(tenantObservableList);
-        tenantListView.setCellFactory(param -> new ListCell<Tenant>() {
-            @Override
-            protected void updateItem(Tenant item, boolean empty) {
-                super.updateItem(item, empty);
-                setText(item.toString());
-            }
-        });
+        Thread thread = new Thread(()->{
+            Platform.runLater(()->{
+                tenantListView.setCellFactory(param -> new ListCell<Tenant>() {
+                    @Override
+                    protected void updateItem(Tenant item, boolean empty) {
+                        super.updateItem(item, empty);
+                        setText(item.toString());
+                    }
+                });
+            });
+        }, "Display Tenant Thread");
         App.navigate();
     }
 
@@ -67,6 +73,8 @@ public class TenantController implements Initializable {
         Stage stage = new Stage();
         stage.setTitle("Add a Tenant");
         stage.setScene(new Scene(root));
+        Image icon = new Image("/icons/logo.png");
+        stage.getIcons().add(icon);
         stage.show();
         App.stage.close();
     }

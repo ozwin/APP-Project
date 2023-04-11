@@ -10,6 +10,7 @@ import com.app.project.service.LeaseServices;
 import com.app.project.service.PropertyServices;
 import com.app.project.service.TenantServices;
 import com.app.project.util.Helper;
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -44,6 +45,10 @@ public class RentAUnitController implements Initializable {
     @FXML
     private Label rentLabel;
     @FXML
+    private Label validation1;
+    @FXML
+    private Label validation2;
+    @FXML
     private ComboBox<Item> comboBox = new ComboBox<>();
     @FXML
     private ComboBox<Item> tenantCombobox = new ComboBox<>();
@@ -70,7 +75,7 @@ public class RentAUnitController implements Initializable {
         leaseServices = new LeaseServices();
         Helper.setNumericInputFilter(duration);
         Helper.setNumericInputFilter(monthlyRent);
-        List<Item> properties = ((List<Property>) (List<?>) propertyServices.getAll()).stream().map(x -> new Item(x.getAddress().toString(), x.getPropertyId().toString())).toList();
+        List<Item> properties = ((List<Property>) (List<?>) propertyServices.findVacant()).stream().map(x -> new Item(x.getAddress().toString(), x.getPropertyId().toString())).toList();
         comboBox.getItems().addAll(properties);
         comboBox.setCellFactory(listView -> new ListCell<Item>() {
             @Override
@@ -133,7 +138,7 @@ public class RentAUnitController implements Initializable {
 
             }
         });
-        if(properties.size()>0){
+        if (properties.size() > 0) {
             comboBox.setValue(properties.get(0));
             propertyID = properties.get(0).value;
         }
@@ -149,17 +154,21 @@ public class RentAUnitController implements Initializable {
 
     public void next() throws Exception {
 //        propertyServices.moveTenantToProperty();
-        nobtn.setVisible(false);
-        submitbtn.setVisible(true);
-        duration.setVisible(true);
-        monthlyRent.setVisible(true);
-        userLabel.setVisible(true);
-        rentLabel.setVisible(true);
-        durationLabel.setVisible(true);
-        tenantCombobox.setVisible(true);
-        if (propertyID.trim().length() > 0)
-            setUserListForProperty(propertyID);
-
+        if (tenantCombobox.getItems().size()>0) {
+            nobtn.setVisible(false);
+            submitbtn.setVisible(true);
+            duration.setVisible(true);
+            monthlyRent.setVisible(true);
+            userLabel.setVisible(true);
+            rentLabel.setVisible(true);
+            durationLabel.setVisible(true);
+            tenantCombobox.setVisible(true);
+            if (propertyID.trim().length() > 0)
+                setUserListForProperty(propertyID);
+        } else {
+            validation1.setVisible(true);
+            validation2.setVisible(true);
+        }
     }
 
     public void moveTenants() throws Exception {
@@ -183,6 +192,8 @@ public class RentAUnitController implements Initializable {
     public void addTenant() throws IOException {
         UUID pid = UUID.fromString(propertyID);
         ppid = pid;
+        Stage stage1 = (Stage) nobtn.getScene().getWindow();
+        stage1.close();
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/AddTenantToProperty.fxml")));
         Stage stage = new Stage();
         stage.setTitle("Add a Tenant");
@@ -215,13 +226,17 @@ public class RentAUnitController implements Initializable {
     }
 
     private void setUserListForProperty(String propertyID) {
-        List<Tenant> waitingListUsers = tenantServices.findMany(((Property) propertyServices.getByKey(UUID.fromString(propertyID))).getWaitingList());
-        List<Item> userList = waitingListUsers.stream().map(x -> new Item(x.fullName(), x.getID().toString())).toList();
-        tenantCombobox.getItems().clear();
-        tenantCombobox.getItems().addAll(userList);
-        if (userList.size() > 0) userID = userList.get(0).value;
+        Thread thread = new Thread(() -> {
+            List<Tenant> waitingListUsers = tenantServices.findMany(((Property) propertyServices.getByKey(UUID.fromString(propertyID))).getWaitingList());
+            Platform.runLater(() -> {
+                List<Item> userList = waitingListUsers.stream().map(x -> new Item(x.fullName(), x.getID().toString())).toList();
+                tenantCombobox.getItems().clear();
+                tenantCombobox.getItems().addAll(userList);
+                if (userList.size() > 0) userID = userList.get(0).value;
+            });
+        });
+        thread.start();
     }
-
 
 
 }

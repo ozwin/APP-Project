@@ -8,10 +8,13 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.util.Objects;
+
+import static com.app.project.util.Helper.setAPPIcon;
 
 public class WelcomeController {
 
@@ -48,6 +51,7 @@ public class WelcomeController {
         stage.setTitle("Add Property");
         stage.setScene(new Scene(root));
         stage.show();
+        setAPPIcon(stage,"/icons/house.png");
         App.stage.close();
     }
 
@@ -57,6 +61,8 @@ public class WelcomeController {
         stage.setTitle("Add a Tenant");
         stage.setScene(new Scene(root));
         stage.show();
+        Image icon = new Image("/icons/logo.png");
+        stage.getIcons().add(icon);
         App.stage.close();
     }
 
@@ -66,6 +72,8 @@ public class WelcomeController {
         stage.setTitle("Rent a Unit");
         stage.setScene(new Scene(root));
         stage.show();
+        Image icon = new Image("/icons/logo.png");
+        stage.getIcons().add(icon);
         App.stage.close();
     }
 
@@ -75,6 +83,8 @@ public class WelcomeController {
         stage.setTitle("Display Properties");
         stage.setScene(new Scene(root));
         stage.show();
+        Image icon = new Image("/icons/logo.png");
+        stage.getIcons().add(icon);
         App.stage.close();
     }
 
@@ -84,6 +94,8 @@ public class WelcomeController {
         stage.setTitle("Display Tenants");
         stage.setScene(new Scene(root));
         stage.show();
+        Image icon = new Image("/icons/logo.png");
+        stage.getIcons().add(icon);
         App.stage.close();
     }
 
@@ -93,6 +105,8 @@ public class WelcomeController {
         stage.setTitle("Display Vacant Units");
         stage.setScene(new Scene(root));
         stage.show();
+        Image icon = new Image("/icons/logo.png");
+        stage.getIcons().add(icon);
         App.stage.close();
     }
 
@@ -102,6 +116,8 @@ public class WelcomeController {
         stage.setTitle("Diplay Rented Units");
         stage.setScene(new Scene(root));
         stage.show();
+        Image icon = new Image("/icons/logo.png");
+        stage.getIcons().add(icon);
         App.stage.close();
     }
 
@@ -111,6 +127,8 @@ public class WelcomeController {
         stage.setTitle("Display All Leases");
         stage.setScene(new Scene(root));
         stage.show();
+        Image icon = new Image("/icons/logo.png");
+        stage.getIcons().add(icon);
         App.stage.close();
     }
 
@@ -120,6 +138,8 @@ public class WelcomeController {
         stage.setTitle("Vacate a Unit");
         stage.setScene(new Scene(root));
         stage.show();
+        Image icon = new Image("/icons/logo.png");
+        stage.getIcons().add(icon);
         App.stage.close();
     }
 
@@ -129,6 +149,7 @@ public class WelcomeController {
         stage.setTitle("Pay Rent");
         stage.setScene(new Scene(root));
         stage.show();
+        setAPPIcon(stage,"/icons/salary.png");
         App.stage.close();
     }
 
@@ -138,6 +159,8 @@ public class WelcomeController {
         stage.setTitle("Display Pending Rent Properties");
         stage.setScene(new Scene(root));
         stage.show();
+        Image icon = new Image("/icons/logo.png");
+        stage.getIcons().add(icon);
         App.stage.close();
     }
 

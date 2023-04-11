@@ -14,6 +14,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.ListCell;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -40,7 +41,7 @@ public class VacateController implements Initializable {
         propertyServices = new PropertyServices();
         leaseServices = new LeaseServices();
         propertyServices = new PropertyServices(PropertiesRepository.getInstance());
-        List<Helper.Item> properties = ((List<Property>) (List<?>) propertyServices.getAll()).stream().map(x -> new Helper.Item(x.getAddress().toString(), x.getPropertyId().toString())).toList();
+        List<Helper.Item> properties = ((List<Property>) (List<?>) propertyServices.findRented()).stream().map(x -> new Helper.Item(x.getAddress().toString(), x.getPropertyId().toString())).toList();
         comboBox.getItems().addAll(properties);
         comboBox.setCellFactory(listView -> new ListCell<Helper.Item>() {
             @Override
@@ -83,6 +84,8 @@ public class VacateController implements Initializable {
         Stage stage = new Stage();
         stage.setScene(new Scene(root));
         stage.setTitle("OSM Real Estate");
+        Image icon = new Image("/icons/logo.png");
+        stage.getIcons().add(icon);
         stage.show();
         App.stage.close();
     }

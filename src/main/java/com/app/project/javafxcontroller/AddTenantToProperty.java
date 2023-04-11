@@ -16,6 +16,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -38,7 +39,8 @@ public class AddTenantToProperty implements Initializable {
     private TextField phone;
     @FXML
     private Button closebutton;
-
+    @FXML
+    private Button savebtn;
     private TenantServices tenantServices = new TenantServices(TenantRepository.getInstance(), new PropertyServices(PropertiesRepository.getInstance()));
 
     @Override
@@ -63,10 +65,14 @@ public class AddTenantToProperty implements Initializable {
 
     public void navigate() throws IOException {
 //        let's make this utility function or something
+        Stage stage = (Stage) savebtn.getScene().getWindow();
+        stage.close();
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/LeaseData.fxml")));
         Scene scene = new Scene(root);
         App.stage.setScene(scene);
         App.stage.setTitle("Lease Data");
+        Image icon = new Image("/icons/logo.png");
+        stage.getIcons().add(icon);
         App.stage.show();
     }
 
