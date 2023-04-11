@@ -6,16 +6,70 @@
   <component name="ChangeListManager">
     <list default="true" id="9f24fdae-1a2b-4e38-a0f4-471413627a31" name="Changes" comment="Display Leases, Pending Rent Properties, Vacant Units, Rented Units and Welcome page plus all the navigations fxml and controllers added">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/Driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/Driver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/controller/ApartmentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/controller/ApartmentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/controller/LeaseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/controller/LeaseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/controller/PrivateHouseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/controller/PrivateHouseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/controller/PropertyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/controller/PropertyController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/controller/TenantController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/controller/TenantController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/datasource/DataStore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/datasource/DataStore.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/entity/Condo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/entity/Condo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/entity/Lease.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/entity/Lease.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/entity/Property.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/entity/Property.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/entity/Tenant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/entity/Tenant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/interfaces/IProperty.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/interfaces/IProperty.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/interfaces/IRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/interfaces/IRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/javafxcontroller/AddLeaseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/javafxcontroller/AddLeaseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/javafxcontroller/AddPropertyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/javafxcontroller/AddPropertyController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/javafxcontroller/AddTenantController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/javafxcontroller/AddTenantController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/javafxcontroller/AddTenantToProperty.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/javafxcontroller/AddTenantToProperty.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/javafxcontroller/LeaseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/javafxcontroller/LeaseController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/javafxcontroller/PayRentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/javafxcontroller/PayRentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/javafxcontroller/PendingRentPropertiesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/javafxcontroller/PendingRentPropertiesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/javafxcontroller/PropertyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/javafxcontroller/PropertyController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/javafxcontroller/RentAUnitController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/javafxcontroller/RentAUnitController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/javafxcontroller/RentedUnitsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/javafxcontroller/RentedUnitsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/javafxcontroller/TenantController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/javafxcontroller/TenantController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/javafxcontroller/VacantUnitsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/javafxcontroller/VacantUnitsController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/javafxcontroller/VacateController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/javafxcontroller/VacateController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/javafxcontroller/WelcomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/javafxcontroller/WelcomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/repository/LeaseRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/repository/LeaseRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/repository/PropertiesRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/repository/PropertiesRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/repository/Repository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/repository/Repository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/repository/TenantRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/repository/TenantRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/service/LeaseServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/service/LeaseServices.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/service/PropertyServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/service/PropertyServices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/service/TenantServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/service/TenantServices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/set/Set.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/set/Set.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/set/demoObjects/Demo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/set/demoObjects/Demo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/set/interfaces/ISet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/set/interfaces/ISet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/set/interfaces/ISetCollectionEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/set/interfaces/ISetCollectionEntity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/util/Helper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/util/Helper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/util/RentalPropertyFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/util/RentalPropertyFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/views/CLIView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/views/CLIView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/views/PropertyView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/views/PropertyView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/AddProperty.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/AddProperty.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/AddTenant.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/AddTenant.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/AddTenantToProperty.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/AddTenantToProperty.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/DisplayLeases.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/DisplayLeases.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/DisplayPendingRentProperties.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/DisplayPendingRentProperties.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/DisplayProperties.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/DisplayProperties.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/DisplayRentedUnits.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/DisplayRentedUnits.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/DisplayTenants.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/DisplayTenants.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/DisplayVacantUnits.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/DisplayVacantUnits.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/ErrorPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ErrorPage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/LeaseData.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/LeaseData.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/PayRent.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/PayRent.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/RentAUnit.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/RentAUnit.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/Vacate.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Vacate.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/WelcomePage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/WelcomePage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/app/project/service/LeaseServicesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/app/project/service/LeaseServicesTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/app/project/service/PropertyServicesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/app/project/service/PropertyServicesTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/app/project/service/TenantServicesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/app/project/service/TenantServicesTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,7 +173,7 @@
       <recent name="com.app.project.javafxcontroller" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.APP_MVC_Phase2">
+  <component name="RunManager" selected="Application.Set Data type">
     <configuration name="APP_MVC_Phase1" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="com.app.project.Main" />
       <module name="APP-Project" />
@@ -131,6 +185,13 @@
       <option name="MAIN_CLASS_NAME" value="com.app.project.App" />
       <module name="APP-Project" />
       <option name="VM_PARAMETERS" value="--module-path &quot;C:\Program Files\Java\javafx-sdk-19.0.2.1\lib&quot; --add-modules javafx.controls,javafx.fxml" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Set Data type" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="com.app.project.Driver" />
+      <module name="APP-Project" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -233,6 +294,7 @@
     </configuration>
     <list>
       <item itemvalue="Application.APP_MVC_Phase2" />
+      <item itemvalue="Application.Set Data type" />
       <item itemvalue="Application.APP_MVC_Phase1" />
       <item itemvalue="JUnit.LeaseServicesTest.addLease" />
       <item itemvalue="JUnit.LeaseServicesTest.getAllLeases" />
