@@ -40,7 +40,7 @@
             </font></Label>
         <TextField fx:id="phone" layoutX="175.0" layoutY="180.0" promptText="Phone" visible="true" />
 
-        <Button layoutX="265.0" layoutY="237.0" mnemonicParsing="false" onAction="#addTenant" prefHeight="25.0" prefWidth="140.0" text="Save" />
+        <Button fx:id="savebtn" layoutX="265.0" layoutY="237.0" mnemonicParsing="false" onAction="#addTenant" prefHeight="25.0" prefWidth="140.0" text="Save" />
         <Button fx:id="closebutton" layoutX="80.0" layoutY="237.0" mnemonicParsing="false" onAction="#cancel" prefHeight="25.0" prefWidth="140.0" text="Cancel" />
 
     </children>
