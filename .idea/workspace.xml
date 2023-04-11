@@ -6,9 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="9f24fdae-1a2b-4e38-a0f4-471413627a31" name="Changes" comment="Display Leases, Pending Rent Properties, Vacant Units, Rented Units and Welcome page plus all the navigations fxml and controllers added">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/javafxcontroller/AddPropertyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/javafxcontroller/AddPropertyController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/AddProperty.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/AddProperty.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/RentAUnit.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/RentAUnit.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/javafxcontroller/AddTenantToProperty.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/javafxcontroller/AddTenantToProperty.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/javafxcontroller/RentAUnitController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/javafxcontroller/RentAUnitController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/AddTenantToProperty.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/AddTenantToProperty.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,6 +113,15 @@
     </key>
   </component>
   <component name="RunManager" selected="Application.APP_MVC_Phase2">
+    <configuration default="true" type="js.build_tools.gulp">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+      <method v="2" />
+    </configuration>
     <configuration name="APP_MVC_Phase1" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="com.app.project.Main" />
       <module name="APP-Project" />
@@ -123,7 +132,7 @@
     <configuration name="APP_MVC_Phase2" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="com.app.project.App" />
       <module name="APP-Project" />
-      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Program Files\Java\javafx-sdk-19.0.2.1\lib&quot; --add-modules javafx.controls,javafx.fxml" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;$USER_HOME$/Downloads/javafx-sdk-19.0.2/lib&quot; --add-modules javafx.controls,javafx.fxml" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -220,15 +229,6 @@
           </MavenRunnerParameters>
         </option>
       </MavenSettings>
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="js.build_tools.gulp">
-      <node-interpreter>project</node-interpreter>
-      <node-options />
-      <gulpfile />
-      <tasks />
-      <arguments />
-      <envs />
       <method v="2" />
     </configuration>
     <list>

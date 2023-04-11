@@ -10,6 +10,7 @@ import com.app.project.service.LeaseServices;
 import com.app.project.service.PropertyServices;
 import com.app.project.service.TenantServices;
 import com.app.project.util.Helper;
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -159,7 +160,6 @@ public class RentAUnitController implements Initializable {
         tenantCombobox.setVisible(true);
         if (propertyID.trim().length() > 0)
             setUserListForProperty(propertyID);
-
     }
 
     public void moveTenants() throws Exception {
@@ -183,6 +183,8 @@ public class RentAUnitController implements Initializable {
     public void addTenant() throws IOException {
         UUID pid = UUID.fromString(propertyID);
         ppid = pid;
+        Stage stage1 = (Stage) nobtn.getScene().getWindow();
+        stage1.close();
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/AddTenantToProperty.fxml")));
         Stage stage = new Stage();
         stage.setTitle("Add a Tenant");
@@ -215,11 +217,16 @@ public class RentAUnitController implements Initializable {
     }
 
     private void setUserListForProperty(String propertyID) {
-        List<Tenant> waitingListUsers = tenantServices.findMany(((Property) propertyServices.getByKey(UUID.fromString(propertyID))).getWaitingList());
-        List<Item> userList = waitingListUsers.stream().map(x -> new Item(x.fullName(), x.getID().toString())).toList();
-        tenantCombobox.getItems().clear();
-        tenantCombobox.getItems().addAll(userList);
-        if (userList.size() > 0) userID = userList.get(0).value;
+        Thread thread = new Thread(() -> {
+            List<Tenant> waitingListUsers = tenantServices.findMany(((Property) propertyServices.getByKey(UUID.fromString(propertyID))).getWaitingList());
+            Platform.runLater(() ->{
+                List<Item> userList = waitingListUsers.stream().map(x -> new Item(x.fullName(), x.getID().toString())).toList();
+                tenantCombobox.getItems().clear();
+                tenantCombobox.getItems().addAll(userList);
+                if (userList.size() > 0) userID = userList.get(0).value;
+            });
+        });
+        thread.start();
     }
 
 
