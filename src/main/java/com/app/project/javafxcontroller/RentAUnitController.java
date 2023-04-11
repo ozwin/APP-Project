@@ -129,6 +129,9 @@ public class RentAUnitController implements Initializable {
             if (newValue != null) {
                 propertyID = newValue.getValue();
                 setUserListForProperty(propertyID);
+                validation1.setVisible(false);
+                validation2.setVisible(false);
+                nobtn.setVisible(true);
             }
         });
 
