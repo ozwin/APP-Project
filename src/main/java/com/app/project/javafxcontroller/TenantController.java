@@ -6,6 +6,7 @@ import com.app.project.repository.PropertiesRepository;
 import com.app.project.repository.TenantRepository;
 import com.app.project.service.PropertyServices;
 import com.app.project.service.TenantServices;
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -44,13 +45,17 @@ public class TenantController implements Initializable {
         ArrayList<Tenant> tenants = (ArrayList<Tenant>) tenantServices.getAll();
         tenantObservableList.addAll(tenants);
         tenantListView = new ListView<>(tenantObservableList);
-        tenantListView.setCellFactory(param -> new ListCell<Tenant>() {
-            @Override
-            protected void updateItem(Tenant item, boolean empty) {
-                super.updateItem(item, empty);
-                setText(item.toString());
-            }
-        });
+        Thread thread = new Thread(()->{
+            Platform.runLater(()->{
+                tenantListView.setCellFactory(param -> new ListCell<Tenant>() {
+                    @Override
+                    protected void updateItem(Tenant item, boolean empty) {
+                        super.updateItem(item, empty);
+                        setText(item.toString());
+                    }
+                });
+            });
+        }, "Display Tenant Thread");
         App.navigate();
     }
 
