@@ -48,7 +48,7 @@ public class AddLeaseController implements Initializable {
         }
         catch(Exception e)
         {
-            App.errorpage();
+            App.errorPage();
         }
 
     }
