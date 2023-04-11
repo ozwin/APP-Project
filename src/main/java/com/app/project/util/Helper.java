@@ -26,4 +26,27 @@ public class Helper {
         textField.setTextFormatter(textFormatter);
     }
 
+    public static class Item {
+        private String displayText;
+        private String value;
+
+        public Item(String displayText, String value) {
+            this.displayText = displayText;
+            this.value = value;
+        }
+
+        public String getDisplayText() {
+            return displayText;
+        }
+
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return displayText;
+        }
+    }
+
 }

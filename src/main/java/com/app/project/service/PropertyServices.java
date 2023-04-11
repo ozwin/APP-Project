@@ -66,6 +66,8 @@ public class PropertyServices {
 
     public void removeTenants(UUID propertyID) {
         Property property = (Property) this.propertiesRepository.findByKey(propertyID);
+        property.removeTenants();
+        this.propertiesRepository.upsert(property);
         for (UUID user :
                 property.getWaitingList()) {
             Tenant tenant = this.tenantRepository.findByKey(user);

@@ -50,7 +50,7 @@ public class Lease implements IEntity<UUID> {
 
     @Override
     public String toString() {
-        return "The lease is : " + ID + "\n" + "The tenants : " + String.join(",", tenantNames) + "\n For a duration of: " + leaseDuration;
+        return "Lease Id : " + ID + "\n" + "The tenants : " + String.join(",", tenantNames) + "\n For a duration of: " + leaseDuration+"\n Monthly rent of: "+agreedMonthlyRent+"\n Signed on: "+signedOn;
     }
 
     public UUID getLeaseID() {

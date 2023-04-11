@@ -8,6 +8,7 @@ import com.app.project.repository.PropertiesRepository;
 import com.app.project.repository.TenantRepository;
 import com.app.project.service.PropertyServices;
 import com.app.project.service.TenantServices;
+import com.app.project.util.Helper;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -42,7 +43,7 @@ public class AddTenantController implements Initializable {
     @FXML
     private Button closebutton;
     @FXML
-    private ComboBox<Item> comboBox = new ComboBox<>();
+    private ComboBox<Helper.Item> comboBox = new ComboBox<>();
     private PropertyServices propertyServices;
     private TenantServices tenantServices = new TenantServices(TenantRepository.getInstance(), new PropertyServices(PropertiesRepository.getInstance()));
 
@@ -54,11 +55,11 @@ public class AddTenantController implements Initializable {
         fax.setText("");
         phone.setText("");
         propertyServices = new PropertyServices(PropertiesRepository.getInstance());
-        List<Item> properties = ((List<Property>) (List<?>) propertyServices.getAll()).stream().map(x -> new Item(x.getAddress().toString(), x.getPropertyId().toString())).toList();
+        List<Helper.Item> properties = ((List<Property>) (List<?>) propertyServices.getAll()).stream().map(x -> new Helper.Item(x.getAddress().toString(), x.getPropertyId().toString())).toList();
         comboBox.getItems().addAll(properties);
-        comboBox.setCellFactory(listView -> new ListCell<Item>() {
+        comboBox.setCellFactory(listView -> new ListCell<Helper.Item>() {
             @Override
-            protected void updateItem(Item item, boolean empty) {
+            protected void updateItem(Helper.Item item, boolean empty) {
                 super.updateItem(item, empty);
                 if (empty || item == null) {
                     setText(null);
@@ -67,9 +68,9 @@ public class AddTenantController implements Initializable {
                 }
             }
         });
-        comboBox.setButtonCell(new ListCell<Item>() {
+        comboBox.setButtonCell(new ListCell<Helper.Item>() {
             @Override
-            protected void updateItem(Item item, boolean empty) {
+            protected void updateItem(Helper.Item item, boolean empty) {
                 super.updateItem(item, empty);
                 if (empty || item == null) {
                     setText(null);
@@ -83,8 +84,10 @@ public class AddTenantController implements Initializable {
                 propertyID = newValue.getValue();
             }
         });
-        comboBox.setValue(properties.get(0));
-        propertyID = properties.get(0).value;
+        if(properties.size()>0){
+            comboBox.setValue(properties.get(0));
+            propertyID = properties.get(0).getValue();
+        }
     }
 
     public void addTenant(ActionEvent ae) {
@@ -119,26 +122,4 @@ public class AddTenantController implements Initializable {
         //navigate to main screen
     }
 
-    static class Item {
-        private String displayText;
-        private String value;
-
-        public Item(String displayText, String value) {
-            this.displayText = displayText;
-            this.value = value;
-        }
-
-        public String getDisplayText() {
-            return displayText;
-        }
-
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return displayText;
-        }
-    }
 }
