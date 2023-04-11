@@ -71,7 +71,7 @@ public class RentAUnitController implements Initializable {
         leaseServices = new LeaseServices();
         Helper.setNumericInputFilter(duration);
         Helper.setNumericInputFilter(monthlyRent);
-        List<Item> properties = ((List<Property>) (List<?>) propertyServices.getAll()).stream().map(x -> new Item(x.getAddress().toString(), x.getPropertyId().toString())).toList();
+        List<Item> properties = ((List<Property>) (List<?>) propertyServices.findVacant()).stream().map(x -> new Item(x.getAddress().toString(), x.getPropertyId().toString())).toList();
         comboBox.getItems().addAll(properties);
         comboBox.setCellFactory(listView -> new ListCell<Item>() {
             @Override

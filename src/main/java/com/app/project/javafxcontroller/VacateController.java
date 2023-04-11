@@ -40,7 +40,7 @@ public class VacateController implements Initializable {
         propertyServices = new PropertyServices();
         leaseServices = new LeaseServices();
         propertyServices = new PropertyServices(PropertiesRepository.getInstance());
-        List<Helper.Item> properties = ((List<Property>) (List<?>) propertyServices.getAll()).stream().map(x -> new Helper.Item(x.getAddress().toString(), x.getPropertyId().toString())).toList();
+        List<Helper.Item> properties = ((List<Property>) (List<?>) propertyServices.findRented()).stream().map(x -> new Helper.Item(x.getAddress().toString(), x.getPropertyId().toString())).toList();
         comboBox.getItems().addAll(properties);
         comboBox.setCellFactory(listView -> new ListCell<Helper.Item>() {
             @Override
