@@ -81,9 +81,13 @@ public class PayRentController implements Initializable {
     }
 
     public void submit() throws Exception {
-        amount = Double.parseDouble(rent.getText());
-        leaseServices.recordPayment(UUID.fromString(propertyId), amount);
-        App.navigate();
+        try {
+            amount = Double.parseDouble(rent.getText());
+            leaseServices.recordPayment(UUID.fromString(propertyId), amount);
+            App.navigate();
+        }catch (Exception ex){
+            App.errorPage();
+        }
     }
 
     public void cancel() {
