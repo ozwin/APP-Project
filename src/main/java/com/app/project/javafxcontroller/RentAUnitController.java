@@ -45,6 +45,10 @@ public class RentAUnitController implements Initializable {
     @FXML
     private Label rentLabel;
     @FXML
+    private Label validation1;
+    @FXML
+    private Label validation2;
+    @FXML
     private ComboBox<Item> comboBox = new ComboBox<>();
     @FXML
     private ComboBox<Item> tenantCombobox = new ComboBox<>();
@@ -134,7 +138,7 @@ public class RentAUnitController implements Initializable {
 
             }
         });
-        if(properties.size()>0){
+        if (properties.size() > 0) {
             comboBox.setValue(properties.get(0));
             propertyID = properties.get(0).value;
         }
@@ -150,16 +154,21 @@ public class RentAUnitController implements Initializable {
 
     public void next() throws Exception {
 //        propertyServices.moveTenantToProperty();
-        nobtn.setVisible(false);
-        submitbtn.setVisible(true);
-        duration.setVisible(true);
-        monthlyRent.setVisible(true);
-        userLabel.setVisible(true);
-        rentLabel.setVisible(true);
-        durationLabel.setVisible(true);
-        tenantCombobox.setVisible(true);
-        if (propertyID.trim().length() > 0)
-            setUserListForProperty(propertyID);
+        if (tenantCombobox.getItems().size()>0) {
+            nobtn.setVisible(false);
+            submitbtn.setVisible(true);
+            duration.setVisible(true);
+            monthlyRent.setVisible(true);
+            userLabel.setVisible(true);
+            rentLabel.setVisible(true);
+            durationLabel.setVisible(true);
+            tenantCombobox.setVisible(true);
+            if (propertyID.trim().length() > 0)
+                setUserListForProperty(propertyID);
+        } else {
+            validation1.setVisible(true);
+            validation2.setVisible(true);
+        }
     }
 
     public void moveTenants() throws Exception {
@@ -219,7 +228,7 @@ public class RentAUnitController implements Initializable {
     private void setUserListForProperty(String propertyID) {
         Thread thread = new Thread(() -> {
             List<Tenant> waitingListUsers = tenantServices.findMany(((Property) propertyServices.getByKey(UUID.fromString(propertyID))).getWaitingList());
-            Platform.runLater(() ->{
+            Platform.runLater(() -> {
                 List<Item> userList = waitingListUsers.stream().map(x -> new Item(x.fullName(), x.getID().toString())).toList();
                 tenantCombobox.getItems().clear();
                 tenantCombobox.getItems().addAll(userList);
@@ -228,7 +237,6 @@ public class RentAUnitController implements Initializable {
         });
         thread.start();
     }
-
 
 
 }
