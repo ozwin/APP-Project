@@ -26,6 +26,8 @@
       <ComboBox fx:id="comboBox" editable="true" layoutX="140.0" layoutY="141.0" prefHeight="25.0" prefWidth="306.0" promptText="Select a property" />
         <ComboBox fx:id="tenantCombobox" editable="true" layoutX="24.0" layoutY="280.0" prefHeight="25.0" prefWidth="168.0" promptText="Select a user" visible="false" />
       <Label layoutX="140.0" layoutY="114.0" prefHeight="17.0" prefWidth="306.0" text="Select a property you want to rent" />
+      <Label fx:id="validation1" layoutX="92.0" layoutY="258.0" prefHeight="17.0" prefWidth="416.0" text="Sorry! It looks like there are no users in the waiting list for this property" textFill="#eb1313" visible="false"/>
+      <Label fx:id="validation2" layoutX="94.0" layoutY="284.0" prefHeight="17.0" prefWidth="380.0" text="Please register yourself from Add a tenant menu from the main meu" textFill="#e01a1a" visible="false" />
 
     </children>
 </AnchorPane>
