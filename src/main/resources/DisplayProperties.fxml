@@ -18,7 +18,7 @@
             <Insets />
          </opaqueInsets>
          <effect>
-            <SepiaTone level="0.93" />
+            <SepiaTone level="0.00" />
          </effect>
       </TableView>
         <Button onAction="#handleAddNewProperty" text="Add New Property" />

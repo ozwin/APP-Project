@@ -17,6 +17,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -74,6 +75,8 @@ public class PropertyController implements Initializable {
         Stage stage = new Stage();
         stage.setTitle("Add property");
         stage.setScene(new Scene(root));
+        Image icon = new Image("/icons/logo.png");
+        stage.getIcons().add(icon);
         stage.show();
         App.stage.close();
     }

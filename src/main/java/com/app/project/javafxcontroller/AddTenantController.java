@@ -16,6 +16,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.net.URL;
@@ -109,6 +110,8 @@ public class AddTenantController implements Initializable {
             Scene scene = new Scene(root);
             App.stage.setScene(scene);
             App.stage.setTitle("Display Tenants");
+            Image icon = new Image("/icons/logo.png");
+            App.stage.getIcons().add(icon);
             App.stage.show();
         } catch (Exception ex) {
 
