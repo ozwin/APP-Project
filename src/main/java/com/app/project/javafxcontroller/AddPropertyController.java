@@ -159,7 +159,7 @@ public class AddPropertyController implements Initializable {
         }
         catch (Exception e)
         {
-            App.errorpage();
+            App.errorPage();
         }
 
     }

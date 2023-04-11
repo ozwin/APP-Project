@@ -36,6 +36,7 @@ public class PropertyController implements Initializable {
     private TableColumn<Property, String> address;
     @FXML
     private TableColumn<Property, String> propertyId;
+
     @FXML
     private TableColumn<Property, String> rented;
     private ObservableList<Property> propertyObservableList;

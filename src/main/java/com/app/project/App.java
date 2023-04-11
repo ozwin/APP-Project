@@ -5,6 +5,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -28,7 +29,7 @@ public class App extends Application {
         }
     }
 
-    public static void errorpage() throws IOException {
+    public static void errorPage() throws IOException {
 //        call this in case of exception
         Parent root = FXMLLoader.load(Objects.requireNonNull(App.class.getResource("/ErrorPage.fxml")));
         Stage stage = new Stage();
@@ -39,14 +40,20 @@ public class App extends Application {
     }
 
     public void start(Stage primaryStage) throws Exception {
-        DataStore.initializeDataBase();
-        this.stage = primaryStage;
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/WelcomePage.fxml")));
-        Scene scene = new Scene(root);
-        this.scene = scene;
-        stage.setScene(scene);
-        stage.setTitle("OSM Real Estate");
-        stage.show();
+        try {
+            DataStore.initializeDataBase();
+            this.stage = primaryStage;
+            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/WelcomePage.fxml")));
+            Scene scene = new Scene(root);
+            this.scene = scene;
+            stage.setScene(scene);
+            Image image=new Image("/icons/laughing.png");
+            stage.getIcons().add(image);
+            stage.setTitle("OSM Real Estate");
+            stage.show();
+        }catch (Exception ex){
+            App.errorPage();
+        }
 
     }
 }
