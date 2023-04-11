@@ -2,9 +2,9 @@ package com.app.project.set.demoObjects;
 
 import com.app.project.set.interfaces.ISetCollectionEntity;
 
-public class Demo implements ISetCollectionEntity {
+public class Demo implements ISetCollectionEntity<Integer>,Cloneable {
     private static int counter = 0;
-    private int Id;
+    private Integer Id;
     private String name;
 
     public Demo() {
@@ -22,11 +22,12 @@ public class Demo implements ISetCollectionEntity {
     }
 
     @Override
-    public int getId() {
+    public Integer getId() {
         return this.Id;
     }
 
     public String toString() {
         return "\n{Id:" + Id + "\tName:" + name+"}";
     }
+
 }
