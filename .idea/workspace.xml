@@ -5,7 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9f24fdae-1a2b-4e38-a0f4-471413627a31" name="Changes" comment="Display Leases, Pending Rent Properties, Vacant Units, Rented Units and Welcome page plus all the navigations fxml and controllers added">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/set/demoObjects/Demo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/set/demoObjects/Demo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/project/javafxcontroller/AddPropertyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/project/javafxcontroller/AddPropertyController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/AddProperty.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/AddProperty.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/RentAUnit.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/RentAUnit.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,7 +112,7 @@
       <recent name="com.app.project.javafxcontroller" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Set Data type">
+  <component name="RunManager" selected="Application.APP_MVC_Phase2">
     <configuration name="APP_MVC_Phase1" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="com.app.project.Main" />
       <module name="APP-Project" />

@@ -40,7 +40,7 @@ public class AddPropertyController implements Initializable {
 
     private ToggleGroup toggleGroup;
     @FXML
-    private Label detailsLabel;
+    private Label squareftLabel;
     @FXML
     private TextField streetName;
     @FXML
@@ -75,7 +75,7 @@ public class AddPropertyController implements Initializable {
         unitNumberlbl.setVisible(false);
         streetNumber.setVisible(false);
         streetNumberlbl.setVisible(false);
-
+        squareftLabel.setVisible(false);
         switch (type) {
             case "Apartment" -> {
                 bedrooms.setVisible(true);
@@ -83,7 +83,7 @@ public class AddPropertyController implements Initializable {
                 bathrooms.setVisible(true);
                 bathroomslbl.setVisible(true);
                 squarefoot.setVisible(true);
-
+                squareftLabel.setVisible(true);
             }
             case "Condo" -> {
                 unitNumber.setVisible(true);
