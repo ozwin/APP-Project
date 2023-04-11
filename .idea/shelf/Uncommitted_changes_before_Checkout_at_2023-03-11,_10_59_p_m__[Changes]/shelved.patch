@@ -1,0 +1,26 @@
+Index: src/main/java/com/app/project/repository/PropertiesRepository.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/app/project/repository/PropertiesRepository.java b/src/main/java/com/app/project/repository/PropertiesRepository.java
+--- a/src/main/java/com/app/project/repository/PropertiesRepository.java	
++++ b/src/main/java/com/app/project/repository/PropertiesRepository.java	
+@@ -12,7 +12,7 @@
+     private static PropertiesRepository propertiesRepository;
+ 
+     private PropertiesRepository() {
+-        properties = new ArrayList<IProperty>();
++        properties = new ArrayList<>();
+     }
+ 
+     public static synchronized PropertiesRepository getInstance() {
+@@ -26,7 +26,7 @@
+     }
+ 
+     public IProperty findByKey(UUID propertyId) {
+-        return this.properties.stream().filter(r -> r.getPropertyId().equals(propertyId)).findFirst().orElse(null);
++        return properties.stream().filter(r -> r.getPropertyId().equals(propertyId)).findFirst().orElse(null);
+     }
+ 
+     public boolean insert(IProperty property) {
