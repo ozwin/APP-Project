@@ -27,6 +27,6 @@ public class Demo implements ISetCollectionEntity {
     }
 
     public String toString() {
-        return "Id:" + Id + "\tName:" + name;
+        return "\n{Id:" + Id + "\tName:" + name+"}";
     }
 }
