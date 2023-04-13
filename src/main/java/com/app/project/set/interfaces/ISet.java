@@ -2,12 +2,12 @@ package com.app.project.set.interfaces;
 
 import java.util.List;
 
-public interface ISet<E> {
+public interface ISet<E,K> {
     boolean add(E entity);
 
-    E remove(int ID);
+    E remove(K ID);
 
-    boolean peek(int ID);
+    boolean peek(K ID);
 
     int size();
 

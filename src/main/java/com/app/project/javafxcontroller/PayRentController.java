@@ -84,7 +84,7 @@ public class PayRentController implements Initializable {
         try {
             amount = Double.parseDouble(rent.getText());
             leaseServices.recordPayment(UUID.fromString(propertyId), amount);
-            App.navigate();
+            cancel();
         }catch (Exception ex){
             App.errorPage();
         }

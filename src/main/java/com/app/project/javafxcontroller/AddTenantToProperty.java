@@ -77,9 +77,13 @@ public class AddTenantToProperty implements Initializable {
     }
 
     public void cancel() {
-        Stage stage = (Stage) closebutton.getScene().getWindow();
-        stage.close();
+        closeStage();
         App.navigate();
         //navigate to main screen
+    }
+
+    private void closeStage() {
+        Stage stage = (Stage) closebutton.getScene().getWindow();
+        stage.close();
     }
 }

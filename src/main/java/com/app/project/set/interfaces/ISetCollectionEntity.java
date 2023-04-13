@@ -1,5 +1,5 @@
 package com.app.project.set.interfaces;
 
-public interface ISetCollectionEntity {
-    int getId();
+public interface ISetCollectionEntity<K> {
+    K getId();
 }
